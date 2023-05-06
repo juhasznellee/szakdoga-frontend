@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+/* ---------- Háttér ---------- */
+.main-container{
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/filler.png);
+    background-size: 100%;
+}
+.desc-container{
+    display: flex;
+    flex-direction: column;
+}
+.desc{
+    padding: 50px 100px;
+    zoom: 200%;
+    box-shadow: 30px 30px 30px black;
+    border: 2px solid;
+    border-color: #b6b6b6;
+    border-radius: 5%;
+    background-color: #241231;
+}
+/* ---------- Gombok ---------- */
+.button-player, .button-admin{
+    background: url(../images/button.png);
+    background-size: 180px 45px;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    position: relative;
+    width: 180px;
+    height: 45px;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 8px 8px 30px black;
+    font-family: 'Merienda', cursive;
+}
+button:hover{
+    filter: brightness(120%);
+}
+/* ---------- Vissza nyíl ---------- */
+a img:hover{
+    scale: 115%;
+}
+.backPrevPage{
+    float: left;
+    margin-top: 5px;
+    margin-left: -5px;
+}
+img.back{           /*  Szerkesztés gomb */
+    vertical-align: middle;
+    width: 30px;
+}

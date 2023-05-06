@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+/* ---------- Háttér ---------- */
+.main-container{
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/filler.png);
+    background-size: 100%;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+}
+.login-form{
+    padding: 50px 100px;
+    zoom: 200%;
+    box-shadow: 30px 30px 30px black;
+    border: 2px solid;
+    border-color: #b6b6b6;
+    border-radius: 5%;
+    background-color: #241231;
+}
+/* ---------- Bekérő mező + hiba üzenet ---------- */
+input{
+    background: 0;
+    border: 0;
+    border-bottom: 2px solid white;
+    outline: none;
+    width: 250px;
+    max-width: 400px;
+    color: white;
+    transition: padding 0.3s 0.2s ease;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'Merienda', cursive;
+}
+::placeholder{
+    color: rgb(198, 197, 197);
+}
+input:focus{
+    padding-bottom: 5px;
+}
+.error-message{
+    color: rgb(198, 197, 197);
+    margin-bottom: 20px;
+    margin-top: -10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+/* ---------- Gombok ---------- */
+button{
+    font-family: 'Merienda', cursive;
+    background: url(../images/button.png);
+    background-size: 100px 35px;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    width: 100px;
+    height: 35px;
+    margin-top: 15px;
+    border: none;
+    box-shadow: 8px 8px 30px black;
+}
+button:hover{
+    filter: brightness(120%);
+}
+/* ---------- Vissza nyíl ---------- */
+a img:hover{
+    scale: 115%;
+}
+.backPrevPage{
+    float: left;
+}
+img.back{           /*  Szerkesztés gomb */
+    vertical-align: middle;
+    width: 30px;
+    margin-left: -150px;
+    margin-top: -100px;
+}
