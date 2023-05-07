@@ -2,7 +2,7 @@ import './App.css';
 import noi_karakter from '../images/noi_karakter.png';
 import ferfi_karakter from '../images/ferfi_karakter.png';
 import React, { useState, useEffect } from 'react';
-import DescPopup from '../component/GameDescPopup';
+import DescPopup from '../component/GameDescPopup.jsx';
 import 'semantic-ui-css/semantic.min.css';
 import ErrorMsg from '../component/ErrorMsg.jsx';
 
