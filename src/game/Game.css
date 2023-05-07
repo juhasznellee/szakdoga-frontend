@@ -76,7 +76,7 @@ div#main-line{
   border-radius: 50%;
   position: absolute;
 }
-/* ---------- Infó tábla + Állapot jelző + Kerék ---------- */
+/* ---------- Infó tábla + Állapot jelző + Pörgethető kerék + Hiba üzi ---------- */
 div.container{
   display: flex;
   position: relative;
@@ -171,6 +171,15 @@ div#player-inv4{
   margin-left: 60%;
   font-size: 20px;
   margin-top: -4%;
+}
+.error-message{
+  color: white;
+  font-family: 'Merienda', cursive;
+  font-size: 18px;
+  margin-left: 73%;
+  margin-top: 23%;
+  position: absolute;
+  width: 200px;
 }
 /* ----- Setup */
 .begin-game{
@@ -268,6 +277,21 @@ input::-webkit-inner-spin-button {
   letter-spacing: 0.2px;
   line-height: 125%;
   font-size: 20px;
+  padding: 20px 20px;
+  position: absolute;
+}
+.table-narration-smaller{
+  background-color: rgb(255, 255, 255, 0.7);
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 20px;
+  height: 40vh;
+  color: black;
+  font-family: 'Merienda', cursive;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 125%;
+  font-size: 19px;
   padding: 20px 20px;
   position: absolute;
 }

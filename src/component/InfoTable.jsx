@@ -646,8 +646,8 @@ export default function InfoTable(props) {
                     <div>
                         Sikerült befektetni a pénzemet valutába ahogy javasoltad. Sok gondolkodás és mérlegelés után végül az alábbiakkal lettem gazdagabb:
                         <ul>
-                            <li>WEZ: {props.val1}</li>
-                            <li>KNO: {props.val2}</li>
+                            <li>{props.inv1} WEZ</li>
+                            <li>{props.inv2} KNO</li>
                         </ul>
                         Szeretném 5 év múlva eladni őket a piacon, remélem fentebb mentek az <PopupInfo place="arfolyam"/>ok és pozitívan fogok kijönni belőle.<br/>Rengeteg jó tanáccsal láttál el az évek során és segítettél egyenesbe hozni az életemet, ezért örökké hálás leszek neked. Viszont itt az ideje, hogy elköszönjünk egymástól, hogy megtanuljak egyedül is boldogulni a nagyvilágban.<be/>Örültem, hogy megismertelek, még találkoznk!
                     </div>
@@ -657,9 +657,9 @@ export default function InfoTable(props) {
                     <div>
                         Sikerült befektetni a pénzemet valutába ahogy javasoltad. Sok gondolkodás és mérlegelés után végül az alábbiakkal lettem gazdagabb:
                         <ul>
-                            <li>WEZ: {props.val1}</li>
-                            <li>KNO: {props.val2}</li>
-                            <li>LIS: {props.val3}</li>
+                            <li>{props.inv1} WEZ</li>
+                            <li>{props.inv2} KNO</li>
+                            <li>{props.inv3} LIS</li>
                         </ul>
                         Szeretném 5 év múlva eladni őket a piacon, remélem fentebb mentek az <PopupInfo place="arfolyam"/>ok és pozitívan fogok kijönni belőle.<br/>Rengeteg jó tanáccsal láttál el az évek során és segítettél egyenesbe hozni az életemet, ezért örökké hálás leszek neked. Viszont itt az ideje, hogy elköszönjünk egymástól, hogy megtanuljak egyedül is boldogulni a nagyvilágban.<be/>Örültem, hogy megismertelek, még találkoznk!
                     </div>
@@ -669,21 +669,53 @@ export default function InfoTable(props) {
                     <div>
                         Sikerült befektetni a pénzemet valutába ahogy javasoltad. Sok gondolkodás és mérlegelés után végül az alábbiakkal lettem gazdagabb:
                         <ul>
-                            <li>WEZ: {props.val1}</li>
-                            <li>KNO: {props.val2}</li>
-                            <li>LIS: {props.val3}</li>
-                            <li>ADP: {props.val4}</li>
+                            <li>{props.inv1} WEZ</li>
+                            <li>{props.inv2} KNO</li>
+                            <li>{props.inv3} LIS</li>
+                            <li>{props.inv4} ADP</li>
                         </ul>
                         Szeretném 5 év múlva eladni őket a piacon, remélem fentebb mentek az <PopupInfo place="arfolyam"/>ok és pozitívan fogok kijönni belőle.<br/>Rengeteg jó tanáccsal láttál el az évek során és segítettél egyenesbe hozni az életemet, ezért örökké hálás leszek neked. Viszont itt az ideje, hogy elköszönjünk egymástól, hogy megtanuljak egyedül is boldogulni a nagyvilágban.<be/>Örültem, hogy megismertelek, még találkoznk!
                     </div>
                 );
             }
         }else if(props.stage === 31){
-            return ( 
-                <div>
-                    Nagyon hálás vagyok a segítségedért, sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Marad az alap felállás, már minden papír el van intézve, így a következő hónapban kezdhetek is. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
-                </div>
-            );
+            if(props.skill < 2){
+                return ( 
+                    <div>
+                        Sikerült befektetni a pénzemet kötvénybe ahogy javasoltad. Sok gondolkodás és mérlegelés után végül az alábbiakkal lettem gazdagabb:
+                        <ul>
+                            <li>Magyar Állampapír 1 {props.inv1} Ft értékben</li>
+                            <li>Magyar Állampapír 2 {props.inv2} Ft értékben</li>
+                        </ul>
+                        Már csak ki kell várnom, hogy leteljen a megszabott <PopupInfo place="futamido"/>, hogy visszakapjam a már  <PopupInfo place="kamat"/>ozott pénzemet.<br/>Rengeteg jó tanáccsal láttál el az évek során és segítettél egyenesbe hozni az életemet, ezért örökké hálás leszek neked. Viszont itt az ideje, hogy elköszönjünk egymástól, hogy megtanuljak egyedül is boldogulni a nagyvilágban.<be/>Örültem, hogy megismertelek, még találkoznk!
+                    </div>
+                );
+            }else if(props.skill >= 2 && props.skill < 4){
+                return ( 
+                    <div>
+                        Sikerült befektetni a pénzemet valutába ahogy javasoltad. Sok gondolkodás és mérlegelés után végül az alábbiakkal lettem gazdagabb:
+                        <ul>
+                            <li>Magyar Állampapír 1 {props.inv1} Ft értékben</li>
+                            <li>Magyar Állampapír 2 {props.inv2} Ft értékben</li>
+                            <li>Magyar Állampapír Plusz {props.inv3} Ft értékben</li>
+                        </ul>
+                        Már csak ki kell várnom, hogy leteljen a megszabott <PopupInfo place="futamido"/>, hogy visszakapjam a már  <PopupInfo place="kamat"/>ozott pénzemet.<br/>Rengeteg jó tanáccsal láttál el az évek során és segítettél egyenesbe hozni az életemet, ezért örökké hálás leszek neked. Viszont itt az ideje, hogy elköszönjünk egymástól, hogy megtanuljak egyedül is boldogulni a nagyvilágban.<be/>Örültem, hogy megismertelek, még találkoznk!
+                    </div>
+                );
+            }else{
+                return ( 
+                    <div>
+                        Sikerült befektetni a pénzemet valutába ahogy javasoltad. Sok gondolkodás és mérlegelés után végül az alábbiakkal lettem gazdagabb:
+                        <ul>
+                            <li>Magyar Állampapír 1 {props.inv1} Ft értékben</li>
+                            <li>Magyar Állampapír 2 {props.inv2} Ft értékben</li>
+                            <li>Magyar Állampapír Plusz {props.inv3} Ft értékben</li>
+                            <li>Magyar Állampapír Prémium {props.inv4} Ft értékben</li>
+                        </ul>
+                        Már csak ki kell várnom, hogy leteljen a megszabott <PopupInfo place="futamido"/>, hogy visszakapjam a már  <PopupInfo place="kamat"/>ozott pénzemet.<br/>Rengeteg jó tanáccsal láttál el az évek során és segítettél egyenesbe hozni az életemet, ezért örökké hálás leszek neked. Viszont itt az ideje, hogy elköszönjünk egymástól, hogy megtanuljak egyedül is boldogulni a nagyvilágban.<be/>Örültem, hogy megismertelek, még találkoznk!
+                    </div>
+                );
+            }
         }else{
             return <></>;
         }

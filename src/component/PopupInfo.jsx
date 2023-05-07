@@ -127,6 +127,14 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
+    }else if(props.place === "kamat"){
+        return <>
+            <Popup trigger={<span className='popup-info'>kamat</span>} wide>
+                <div className='description'>
+                    A kamat mindig egy pénzösszeg, amit a befektetésünk névértéke (futamidő végén kamatok nélküli visszafizetendő) után fizet meg az, akinek a tőkénket kölcsönadtuk. A névértékre vetített kamat összege %-os formában kifejezve a kamatláb (kamatként is hivatkoznak rá).
+                </div>
+            </Popup>
+        </>
     }else if(props.place === "Kamat"){
         return <>
             <Popup trigger={<span className='popup-info'>Kamat</span>} wide>
