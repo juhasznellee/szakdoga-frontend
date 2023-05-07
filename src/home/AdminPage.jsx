@@ -94,7 +94,7 @@ function AdminPage() {
                 Start
               </button><br/>
               <div id='start-error-message'>
-                <ErrorMsg active={errorMsg}/>
+                <ErrorMsg place="home" active={errorMsg}/>
               </div>
               <DescPopup/><br/>
               <a href="http://localhost/szakdoga-backend/task/task_edit.php"><button className='button-edit' id='first'>

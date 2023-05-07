@@ -94,7 +94,7 @@ function PlayerPage() {
                 Start
               </button><br/>
               <div id='start-error-message'>
-                <ErrorMsg active={errorMsg}/>
+                <ErrorMsg place="home" active={errorMsg}/>
               </div>
               <DescPopup/><br/>
             </div>
