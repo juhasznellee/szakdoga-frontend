@@ -48,25 +48,25 @@ export default function InfoTable(props) {
         }else if(props.stage === 14){
             return(
                 <div>
-                    Megfogadtam a tanácsodat, és ezer helyre beadtam az önéletrajzomat illetve rengeteg interjún is kellett részt vettem. Végül sikerült találnom egy nekem tetsző munkát amit el is fogadtam. {props.jobname} lennék és havi <PopupInfo place="brutto"/> {props.salary} Ft-ot ajánlottak.<br/>Felajánlották, hogy ha a következő napra a megoldom a kiadott feladatokat hibátlanra, akkor magasabb alapfizetéssel kezdhetek. Megoldottam a feladatokat, viszont nagyon bizonytalan vagyok a végeredményekben.<br/>Kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
+                    Megfogadtam a tanácsodat, ezer helyre beadtam az önéletrajzomat. Telefonáltak egy helyről, hogy alkalmasnak találnak az állásra, és el is fogadtam az ajánlatukat. {props.jobname} lennék és havi <PopupInfo place="brutto"/> {props.salary} Ft-ot kaphatnék.<br/>Felajánlották, hogy ha másnapra a megoldom a kiadott feladatokat hibátlanra, akkor magasabb alapfizetéssel kezdhetek. Megoldottam a feladatokat, viszont nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit már későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
                 </div>
             );
         }else if(props.stage === 16 && props.answer === 5){
             return ( 
                 <div>
-                    Nagyon köszönöm, hogy kijavítottad a feladatok megoldásait! Hála neked hibátlan lett és megkapom a magasabb alapfizetést. Már minden papír el van intézve, így a következő hónapban kezdhetek is. Nagyon izgatott vagyok miatta, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
+                    Megérkeztek az eredmények, szerencsére csak 1 napot kellett várni. Nagyon köszönöm, hogy kijavítottad a feladatok megoldásait, hála neked hibátlan lett és megkapom a magasabb alapfizetést. Már minden papír el van intézve, így a következő hónapban kezdhetek is. Nagyon izgatott vagyok miatta, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
                 </div>
             );
         }else if(props.stage === 16 && props.answer < 5){
             return ( 
                 <div>
-                    Nagyon hálás vagyok a segítségedért, sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Marad az alap felállás, már minden papír el van intézve, így a következő hónapban kezdhetek is. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva, mikor már jobban átlátom az életem.
+                    Megérkeztek az eredmények, szerencsére csak 1 napot kellett várni. Nagyon hálás vagyok a segítségedért, de sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Marad az alap felállás, már minden papír el van intézve, így a következő hónapban kezdhetek is. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva, mikor már jobban átlátom az életem.
                 </div>
             );
         }else if(props.stage === 24){
             return ( 
                 <div>
-                     Megfogadtam a tanácsodat és utána néztem az egyetemeknek. A városban 3 olyan egyetem van, ahol indulni fog olyan szak ami érdekel engem, így ezekre beadtam a jelentkezésem:
+                     Megfogadtam a tanácsodat és utána néztem az egyetemeknek. A városban 3 egyetem van, ahol indulni fog olyan szak ami érdekel is engem, így ezekre beadtam a jelentkezésem:
                     <ul>
                         <li>A város legjobb egyeteme, mindenki ide szeretne bekerülni: MEW Egyetem</li>
                         <li>Egészen átlagos egyetem, semmi kiemelkedő nincs benne: VRF Egyetem</li>
@@ -101,7 +101,6 @@ export default function InfoTable(props) {
                     }else{
                         props.onclick(1);
                     }
-                    
                 }, 3000);
             }
             return(
@@ -110,7 +109,7 @@ export default function InfoTable(props) {
                         segments={segments}
                         segColors={segColors}
                         onFinished={(winner) =>  tempfunction(winner)}
-                        primaryColor='#241231'
+                        primaryColor='black'
                         contrastColor='white'
                         buttonText='Pörgetés'
                         isOnlyOnce={true}
@@ -124,19 +123,19 @@ export default function InfoTable(props) {
         }else if(props.stage === 26 && props.level === 3){
             return(
                 <div>
-                    Megjöttek az eredmények a felvételivel kapcsolatban és fel is vettek a város legjobb egyetemére, a MEW Egyetemre. Sokat kell majd tanulnom, hogy tudjam tartani a lépést a többiekkel és eleget tudjak tenni az elvárásoknak.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni.<br/>Találkozunk 5 év múlva, miután elvégeztem az egyetemet.
+                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. Felvettek az első helyen jelölt egyetemre, a MEW Egyetemre. Sokat kell majd tanulnom, hogy tudjam tartani a lépést a többiekkel és eleget tudjak tenni az elvárásoknak.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Minden esetre találkozunk 5 év múlva, miután elvégeztem az egyetemet.
                 </div>
             );
         }else if(props.stage === 26 && props.level === 2){
             return(
                 <div>
-                    Megjöttek az eredmények a felvételivel kapcsolatban és fel is vettek abba amit második helyen jelöltem, a VRF Egyetemre. Sajnálom, hogy lecsúsztam az elsőről, de ez is egy nehéz egyetemnek ígérkezik. Biztos sokat kell majd tanulnom így is, de legalább szórakozni is lesz időm.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni.<br/>Találkozunk 5 év múlva, miután elvégeztem az egyetemet.
+                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. Felvettek a második helyen jelölt egyetemre, a VRF Egyetemre. Sajnálom, hogy lecsúsztam az elsőről, de ez is egy nehéz egyetemnek ígérkezik. Biztos sokat kell majd tanulnom így is, de legalább szórakozni is lesz időm.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Minden esetre találkozunk 5 év múlva, miután elvégeztem az egyetemet.
                 </div>
             );
         }else if(props.stage === 26 && props.level === 1){
             return(
                 <div>
-                    Megjöttek az eredmények a felvételivel kapcsolatban és fel is vettek abba amit harmadik helyen jelöltem, a KEG Egyetemre. Legalább nem kell halálra tanulnom magam és a követelmények sem tűnnek vészesnek. Akár el tudok menni többször is szórakozni, programokat csinálni és kapcsolatokat építeni.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni.<br/>Találkozunk 5 év múlva, miután elvégeztem az egyetemet.
+                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. Felvettek a harmadik helyen jelölt egyetemre, a KEG Egyetemre. Örülök, hogy felvettek, legalább itt nem kell halálra tanulnom magam és a követelmények sem tűnnek vészesnek. Akár el tudok menni többször is szórakozni, programokat csinálni és kapcsolatokat építeni.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Minden esetre találkozunk 5 év múlva, miután elvégeztem az egyetemet.
                 </div>
             );
         }else{
@@ -167,15 +166,15 @@ export default function InfoTable(props) {
             );
         }else if(props.stage === 12){
             const segments = [
-                'Előléptetés',
-                '',
-                '',
-                '',
-                'Előléptetés',
-                'Előléptetés',
-                '',
-                '',
-                ''
+                'Előléptetve',
+                'Elutasítva',
+                'Elutasítva',
+                'Elutasítva',
+                'Előléptetve',
+                'Előléptetve',
+                'Elutasítva',
+                'Elutasítva',
+                'Elutasítva'
             ];
             const segColors = [
                 '#2ECC71',
@@ -190,7 +189,7 @@ export default function InfoTable(props) {
             ];
             const tempfunction = (winner) => {
                 setTimeout(function() {
-                    if(winner === 'Előléptetés'){
+                    if(winner === 'Előléptetve'){
                         props.onclick(1);
                     }else{
                         props.onclick(0);
@@ -217,13 +216,13 @@ export default function InfoTable(props) {
         }else if(props.stage === 13){
             return (
                 <div>
-                    Ahogy tanácsoltad, meglátogattam a főnökömet és beszéltem vele a fizetésemről, és az előléptetésemről. Elmesélte, hogy már a felső körökben is előjött ez a téma, és mostanában szerette volna közölni velem a jó hírt, de megelőztem ezzel.<br/>Az új fizetésem <PopupInfo place="brutto"/> {props.salary} Ft lesz, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-ot jelent.
+                    Ahogy tanácsoltad, napközben meglátogattam a főnökömet és beszéltem vele a fizetésemről, és az előléptetésemről. Elmesélte, hogy már a felső körökben is előjött ez a téma, és pont a holnapi megbeszélésen szerette volna közölni velem a jó hírt, de megelőztem ezzel.<br/>Az új fizetésem <PopupInfo place="brutto"/> {props.salary} Ft lesz, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-ot jelent.<br/>Most mennem kell mert későre jár. 5 év elteltével újra kereslek és beszélünk!
                 </div>
             );
         }else if(props.stage === 14){
             return (
                 <div>
-                    Ahogy tanácsoltad, meglátogattam a főnökömet és beszéltem vele a fizetésemről, és az előléptetésemről. Elmondta, hogy jobban bele kéne húznom ha előrébb szeretnék jutni a ranglétrán. Sajnos még nem tartok azon a szinten, és jobban belegondolva igaza is van, több energiát kell belefektetnem a munkámba.<br/>Elég szomorú vagyok a hír hallatán, mert azt hittem ennyi idő után megérdemelném, de úgy látszik nem elég csak az időnek telnie, le is kell tenni valamit az asztalra, ami nálam még hiányzik.
+                    Ahogy tanácsoltad, napközben meglátogattam a főnökömet és beszéltem vele a fizetésemről, és az előléptetésemről. Elmondta, hogy jobban bele kéne húznom ha előrébb szeretnék jutni a ranglétrán. Sajnos még nem tartok azon a szinten, és jobban belegondolva igaza is van, több energiát kell belefektetnem a munkámba.<br/>Elég szomorú vagyok a hír hallatán, mert azt hittem ennyi idő után megérdemelném, de úgy látszik nem elég csak az időnek telnie, le is kell tenni valamit az asztalra, ami nálam még hiányzik.<br/>Most mennem kell mert későre jár. 5 év elteltével újra kereslek és beszélünk!
                 </div>
             );
         }else if(props.stage === 22){
@@ -234,12 +233,12 @@ export default function InfoTable(props) {
             );
         }else if(props.stage === 23){
             const segments = [
-                '',
-                '',
+                'Elutasítva',
+                'Elutasítva',
                 'Elutasítva',
                 'Felvéve',
-                '',
-                '',
+                'Felvéve',
+                'Elutasítva',
                 'Elutasítva'
             ];
             const segColors = [
@@ -247,7 +246,7 @@ export default function InfoTable(props) {
                 '#CB4335',
                 '#CB4335',
                 '#2ECC71',
-                '#CB4335',
+                '#2ECC71',
                 '#CB4335',
                 '#CB4335'
             ];
@@ -351,13 +350,13 @@ export default function InfoTable(props) {
         }else if((props.stage === 37 || props.stage === 38) && props.answer === 5){
             return ( 
                 <div>
-                    Nagyon köszönöm, hogy kijavítottad a feladatok megoldásait! Hála neked hibátlan lett és megkapom a magasabb alapfizetést. Már minden papír el van intézve, így a következő hónapban kezdhetek is. Nagyon izgatott vagyok miatta, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
+                    Megérkeztek az eredmények, szerencsére csak 1 napot kellett várni. Nagyon köszönöm, hogy kijavítottad a feladatok megoldásait, hála neked hibátlan lett és megkapom a magasabb alapfizetést. Már minden papír el van intézve, így a következő hónapban kezdhetek is. Nagyon izgatott vagyok miatta, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
                 </div>
             );
         }else if((props.stage === 37 || props.stage === 38) && props.answer < 5){
             return ( 
                 <div>
-                    Nagyon hálás vagyok a segítségedért, sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Marad az alap felállás, már minden papír el van intézve, így a következő hónapban kezdhetek is. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
+                    Megérkeztek az eredmények, szerencsére csak 1 napot kellett várni. Nagyon hálás vagyok a segítségedért, sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Marad az alap felállás, már minden papír el van intézve, így a következő hónapban kezdhetek is. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
                 </div>
             );
         }else{

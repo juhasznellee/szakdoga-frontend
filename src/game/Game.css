@@ -2,19 +2,25 @@
   margin: 0;
 }
 /* ---------- Háttér ---------- */
-div#game-background {
-  background-color: #241231;
+.day-background{
+  background: url(../images/_BG_Day.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  min-height: 100vh;
+}
+.evening-background{
+  background: url(../images/_BG_Evening.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  min-height: 100vh;
+}
+.night-background{
+  background: url(../images/_BG_Night.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
   min-height: 100vh;
 }
 /* ---------- Fő vonal, megálló pontok, skill gombok ---------- */
-div#main-line{
-  height: 5px;
-  width: 80%;
-  background-color: black;
-  margin-left: 10%;
-  position: absolute;
-  bottom: 20%;
-} 
 .chapter-one-circle{
   background-color: black;
   height: 40px;
@@ -87,12 +93,21 @@ div.chapterTitle{
   font-weight: 400;
   font-size: 50px;
 }
+.day{
+  color: black;
+}
+.evening{
+  color: white;
+}
+.night{
+  color: white;
+}
 div#player-money{
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 80%;
-  margin-top: 20px;
+  margin-top: 50px;
   font-weight: 400;
 }
 div#player-job{
@@ -100,7 +115,7 @@ div#player-job{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 80%;
-  margin-top: 60px;
+  margin-top: 90px;
   font-weight: 400;
 }
 div#player-salary{
@@ -108,7 +123,7 @@ div#player-salary{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 80%;
-  margin-top: 100px;
+  margin-top: 130px;
   font-weight: 400;
 }
 div#player-skill{
@@ -116,7 +131,7 @@ div#player-skill{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 80%;
-  margin-top: 140px;
+  margin-top: 170px;
   font-weight: 400;
 }
 div#player-loan{
@@ -124,7 +139,7 @@ div#player-loan{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 80%;
-  margin-top: 180px;
+  margin-top: 210px;
   font-weight: 400;
 }
 div#player-inv-title{
@@ -132,7 +147,7 @@ div#player-inv-title{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 10%;
-  margin-top: 20px;
+  margin-top: 50px;
   font-weight: 400;
 }
 div#player-inv1{
@@ -140,7 +155,7 @@ div#player-inv1{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 10%;
-  margin-top: 60px;
+  margin-top: 90px;
   font-weight: 400;
 }
 div#player-inv2{
@@ -148,7 +163,7 @@ div#player-inv2{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 10%;
-  margin-top: 100px;
+  margin-top: 130px;
   font-weight: 400;
 }
 div#player-inv3{
@@ -156,7 +171,7 @@ div#player-inv3{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 10%;
-  margin-top: 140px;
+  margin-top: 170px;
   font-weight: 400;
 }
 div#player-inv4{
@@ -164,13 +179,13 @@ div#player-inv4{
   font-family: 'Merienda', cursive;
   font-size: 22px;
   margin-left: 10%;
-  margin-top: 180px;
+  margin-top: 210px;
   font-weight: 400;
 }
 .wheelspin{
   margin-left: 60%;
   font-size: 20px;
-  margin-top: -4%;
+  margin-top: -2%;
 }
 .error-message{
   color: white;
@@ -184,11 +199,12 @@ div#player-inv4{
 /* ----- Setup */
 .begin-game{
   background-color: rgb(255, 255, 255, 0.7);
+  color: black;
   width: 50%;
   margin-left: 25%;
-  margin-top: 20px;
+  margin-top: 50px;
   height: 40vh;
-  color: black;
+  
   font-family: 'Merienda', cursive;
   letter-spacing: 0.2px;
   line-height: 130%;
@@ -269,7 +285,7 @@ input::-webkit-inner-spin-button {
   background-color: rgb(255, 255, 255, 0.7);
   width: 50%;
   margin-left: 25%;
-  margin-top: 20px;
+  margin-top: 50px;
   height: 40vh;
   color: black;
   font-family: 'Merienda', cursive;
@@ -284,7 +300,7 @@ input::-webkit-inner-spin-button {
   background-color: rgb(255, 255, 255, 0.7);
   width: 50%;
   margin-left: 25%;
-  margin-top: 20px;
+  margin-top: 50px;
   height: 40vh;
   color: black;
   font-family: 'Merienda', cursive;
@@ -299,7 +315,7 @@ input::-webkit-inner-spin-button {
   background-color: rgb(255, 255, 255, 0.7);
   width: 50%;
   margin-left: 25%;
-  margin-top: 20px;
+  margin-top: 50px;
   height: 40vh;
   color: black;
   font-family: 'Merienda', cursive;
@@ -315,7 +331,7 @@ input::-webkit-inner-spin-button {
   background-color: rgb(255, 255, 255, 0.7);
   width: 50%;
   margin-left: 25%;
-  margin-top: 20px;
+  margin-top: 50px;
   height: 40vh;
   color: black;
   letter-spacing: 0.2px;
@@ -366,7 +382,7 @@ div#info-table button#chapter-investment{
   background-color: rgb(255, 255, 255, 0.7);
   width: 50%;
   margin-left: 480px;
-  margin-top: 20px;
+  margin-top: 50px;
   height: 40vh;
   color: black;
   font-family: 'Merienda', cursive;
@@ -398,7 +414,7 @@ div#info-table button#chapter-investment{
   background-color: rgb(255, 255, 255, 0.7);
   width: 50%;
   margin-left: 480px;
-  margin-top: 20px;
+  margin-top: 50px;
   height: 40vh;
   color: black;
   font-family: 'Merienda', cursive;
@@ -432,7 +448,7 @@ div#info-table button#chapter-investment{
   background-color: rgb(255, 255, 255, 0.7);
   width: 50%;
   margin-left: 480px;
-  margin-top: 20px;
+  margin-top: 50px;
   height: 40vh;
   color: black;
   font-family: 'Merienda', cursive;
@@ -670,7 +686,7 @@ div#info-table button#chapter-investment{
 img#character{
   position: absolute;
   bottom: 20.5%;
-  height: 35vh;
+  height: 30vh;
   margin-left: 5%;
 }
 /* ----- Az első fejezet felé */
@@ -716,6 +732,22 @@ img.moveChapterTwoStyle{
 }
 img.moveChapterThreeStyle{
   animation: moveChapterThree forwards 5s linear;
+  position: absolute;
+  bottom: 20.5%;
+  height: 35vh;
+  margin-left: 5%;
+}
+/* ----- A vége felé */
+@keyframes moveChapterEnd {
+  from {
+    transform: translateX(1200px);
+  }
+  to {
+    transform: translateX(1600px);
+  }
+}
+img.moveChapterEndStyle{
+  animation: moveChapterEnd forwards 5s linear;
   position: absolute;
   bottom: 20.5%;
   height: 35vh;

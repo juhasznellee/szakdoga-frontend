@@ -43,38 +43,44 @@ function getMultipleRandom(arr) {
 /* ---------- Pénzzel kapcsolatos függvény ---------- */
 function getPaid(player) {
     let month = 12; //1 év
-    let temp = (player.salary * 0.665) * month; //nettó
-    console.log("Keresett összeg 1 év alatt: " + temp);
-    return Math.round(temp);
+    let sum = (player.salary * 0.665) * month; //nettó
+    console.log("Keresett összeg 1 év alatt: " + sum);
+    return Math.round(sum);
 }
 function spendMoneyWhileWork(player, min, max) {
     let month = 12; //1 év
     let temp = 0;
+    let sum = 0;
     for (let i = 0; i < month; i++) {
         let randomPercent = randomNumber(min, max) - player.skill;
-        temp = temp + (player.salary * 0.665) * (randomPercent / 100);
+        temp = Math.round((player.salary * 0.665) * (randomPercent / 100));
+        sum = sum + temp;
+        console.log((i + 1) + ". hónapban a fizetésének a " + randomPercent + " százalékát költötte el: " + temp+ " Ft");
     }
-    console.log("Kiadott összeg 1 év alatt: " + temp);
-    return Math.round(temp);
+    console.log("Kiadott összeg 1 év alatt: " + sum  + " Ft");
+    return Math.round(sum);
 }
 function spendMoneyWhileUni(player, min, max) {
     let month = 6; //1 félév
     let temp = 0;
+    let sum = 0;
     for (let i = 0; i < month; i++) {
         let randomPercent = randomNumber(min, max) - player.skill;
-        temp = temp + (100000 * (randomPercent / 100));
+        temp =  Math.round(100000 * (randomPercent / 100));
+        sum = sum + temp;
+        console.log((i + 1) + ". hónapban 100000 Ft-nak a " + randomPercent + " százalékát költötte el: " + temp + " Ft");
     }
-    console.log("Kiadott összeg 1 félév alatt: " + temp);
-    return Math.round(temp);
+    console.log("Kiadott összeg 1 félév alatt: " + sum + " Ft");
+    return Math.round(sum);
 }
 function payBackStudentLoan() {
     let month = 12; //1 év
-    let temp = 0;
+    let sum = 0;
     for (let i = 0; i < month; i++) {
-        temp = temp + 48857;
+        sum = sum + 48857;
     }
-    console.log("Visszafizetett összeg 1 év alatt: " + temp);
-    return Math.round(temp);
+    console.log("Visszafizetett összeg 1 év alatt: " + sum + " Ft");
+    return Math.round(sum);
 }
 
 
@@ -117,6 +123,7 @@ export default function Game() {
     const [optionCh1, setOptionCh1] = useState(0);
     const [optionCh2, setOptionCh2] = useState(0);
     const [optionCh3, setOptionCh3] = useState(0);
+    const [weather, setWeather] = useState('day');
 
     useEffect(() => {
         setTempArray(getMultipleRandom(tasks));
@@ -192,6 +199,7 @@ export default function Game() {
     };
     const beforeTasksCh1 = () => {
         setStage(stage + 1); //15
+        setWeather('evening');
     };
     const getTasks = () => { //feladatok kiosztása - CH1 / CH2
         if (tasks.length > 0) {
@@ -203,6 +211,7 @@ export default function Game() {
                     <CustomButton chapter={1} stage={15} onclick={increaseMoneyAfterTasks} />
                 </div>
             );
+
         } else {
             return (
                 <div className='table-narration'>
@@ -222,6 +231,7 @@ export default function Game() {
         }
     };
     const increaseMoneyAfterTasks = () => { //helyes válaszok esetén alapfizetés növelése - CH1 / CH2
+        setWeather('night');
         if (chapter === 1) {
             setStage(stage + 1); //16 - 3.skill (1.gomb)
             setTimeout(function () {
@@ -242,8 +252,9 @@ export default function Game() {
         let allGet = 0;
         let allSpent = 0;
         for (let i = 0; i < 5; i++) { //5 év
+            console.log("----- " + (i + 1) + ". év -----");
             let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 70, 90);
+            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -255,6 +266,7 @@ export default function Game() {
         setChapter(chapter + 1); //2
         setStage(10);
         setTimeout(function () {
+            setWeather('day');
             setCircle(true);
         }, 5000);
     };
@@ -272,8 +284,10 @@ export default function Game() {
     };
     const spinWheelCh1 = () => { //kerék pörgetés, hogy melyik egyetem
         setStage(stage + 1); //25
+        setWeather('evening');
     };
     const afterSpinWheelCh1 = (winner) => { //kerék kiértékelése - 3.skill (1.gomb)
+        setWeather('night');
         playerInfo[0].job_name = "Egyetemista";
         setJob("Egyetemista");
         setStage(stage + 1); //26
@@ -298,10 +312,11 @@ export default function Game() {
         let allSpent = 0;
         let spent = 0;
         for (let i = 0; i < 10; i++) { //10 félév
+            console.log("----- " + (i + 1) + ". félév -----");
             if (playerInfo[0].level === 3) {
-                spent = spendMoneyWhileUni(playerInfo[0], 20, 40);
-            } else if (playerInfo[0].level === 2) {
                 spent = spendMoneyWhileUni(playerInfo[0], 40, 60);
+            } else if (playerInfo[0].level === 2) {
+                spent = spendMoneyWhileUni(playerInfo[0], 50, 70);
             } else {
                 spent = spendMoneyWhileUni(playerInfo[0], 60, 80);
             }
@@ -317,6 +332,7 @@ export default function Game() {
 
         setTimeout(function () {
             setCircle(true);
+            setWeather('day');
         }, 5000);
     };
 
@@ -329,10 +345,12 @@ export default function Game() {
 
     /* ----- MUNKA - ELŐLÉPTETÉS */
     const spinWheelPromotionCh2 = () => { // előléptetés
+        setWeather('evening');
         setStage(stage + 1); //12
         setOptionCh2(1);
     };
-    const afterSpinWheelPromotionCh2 = (winner) => { // előléptetés eredménye - 4.skill(1/2.gomb) 
+    const afterSpinWheelPromotionCh2 = (winner) => { // előléptetés eredménye - 4.skill(1/2.gomb)
+        setWeather('night');
         if (winner === 1) { //sikerült
             playerInfo[0].level = 1;
             playerInfo[0].salary_id = randomSelector(salaries, 1);
@@ -366,8 +384,9 @@ export default function Game() {
         let allGet = 0;
         let allSpent = 0;
         for (let i = 0; i < 5; i++) { //5 év
+            console.log("----- " + (i + 5 + 1) + ". év -----");
             let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 60, 80);
+            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -380,14 +399,16 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircle(true);
+            setWeather('day');
         }, 5000);
     };
     const backFromFailedPromotionCh2 = () => { //sikertelen előléptetés után
         let allGet = 0;
         let allSpent = 0;
         for (let i = 0; i < 5; i++) { //5 év
+            console.log("----- " + (i + 5 + 1) + ". év -----");
             let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 70, 90);
+            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -400,6 +421,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircle(true);
+            setWeather('day');
         }, 5000);
     };
 
@@ -407,11 +429,13 @@ export default function Game() {
     const newJobCh2 = () => { // új munka keresés 
         setStage(stage + 10 + 1); //22
         setOptionCh2(2);
+        setWeather('evening');
     };
     const spinWheelNewJobCh2 = () => { //álom munkára jelentkezés 
         setStage(stage + 1); //23
     };
     const afterSpinWheelNewJobCh2 = (winner) => { // álom munka eredménye - 4.skill(1/2.gomb)
+        setWeather('night');
         if (winner === 1) { //sikerült
             playerInfo[0].level = 2;
             playerInfo[0].salary_id = randomSelector(salaries, 2);
@@ -466,8 +490,9 @@ export default function Game() {
         let allGet = 0;
         let allSpent = 0;
         for (let i = 0; i < 5; i++) { //5 év
+            console.log("----- " + (i + 5 + 1) + ". év -----");
             let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 60, 80);
+            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -480,6 +505,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircle(true);
+            setWeather('day');
         }, 5000);
     };
     const backFromFailedNewJobCh2 = () => { //sikertelen álom munka megszerzése
@@ -487,7 +513,8 @@ export default function Game() {
         let allSpent = 0;
         for (let i = 0; i < 5; i++) { //5 év
             let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 70, 90);
+            console.log("----- " + (i + 5 + 1) + ". év -----");
+            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -500,6 +527,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircle(true);
+            setWeather('day');
         }, 5000);
     };
 
@@ -528,6 +556,7 @@ export default function Game() {
         setStage(stage + 1); //32
     };
     const newJobAfterUniCh2 = () => { //nem fogadja el az első munkát
+        setWeather('evening');
         setOptionCh2(3);
         playerInfo[0].salary_id = randomSelector(salaries, playerInfo[0].level);
         playerInfo[0].job_id = randomSelector(jobs, playerInfo[0].level);
@@ -547,12 +576,14 @@ export default function Game() {
         setStage(stage + 1); //33
     };
     const acceptJobCh2 = () => { //elfogadja az első munkát
+        setWeather('evening');
         setOptionCh2(4);
         setJob(playerInfo[0].job_name);
         setSalary(parseInt(playerInfo[0].salary));
         setStage(stage + 2); //34
     };
     const beforeTasksCh2 = () => {
+        setWeather('night');
         setStage(stage + 2); //35- nem fogadja / 36- elfogadja
     };
     const backFromWorkFirstJobCh2 = () => {
@@ -561,18 +592,20 @@ export default function Game() {
         let spent = 0;
         let allPaidLoan = 0;
         for (let i = 0; i < 5; i++) { //5 év
+            console.log("----- " + (i + 5 + 1) + ". év -----");
             let get = getPaid(playerInfo[0]);
             if (playerInfo[0].level === 3) {
-                spent = spendMoneyWhileWork(playerInfo[0], 50, 70);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 50);
             } else if (playerInfo[0].level === 2) {
-                spent = spendMoneyWhileWork(playerInfo[0], 60, 80);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 60);
             } else {
-                spent = spendMoneyWhileWork(playerInfo[0], 70, 90);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             }
             let paidLoan = payBackStudentLoan();
             allPaidLoan = allPaidLoan + paidLoan;
             allGet = allGet + get;
-            allSpent = allSpent + spent + paidLoan;
+            spent = spent + paidLoan;
+            allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
         }
         setLoan(loan - allPaidLoan);
@@ -584,6 +617,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircle(true);
+            setWeather('day');
         }, 5000);
     };
     const backFromWorkSecondJobCh2 = () => {
@@ -592,32 +626,34 @@ export default function Game() {
         let spent = 0;
         let allPaidLoan = 0;
         for (let i = 0; i <  4; i++) { //4 év - mivel eltart mire másik munkát keresünk
+            console.log("----- " + (i + 5 + 1) + ". év -----");
             let get = getPaid(playerInfo[0]);
             if (playerInfo[0].level === 3) {
-                spent = spendMoneyWhileWork(playerInfo[0], 50, 70);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 50);
             } else if (playerInfo[0].level === 2) {
-                spent = spendMoneyWhileWork(playerInfo[0], 60, 80);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 60);
             } else {
-                spent = spendMoneyWhileWork(playerInfo[0], 70, 90);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             }
             let paidLoan = payBackStudentLoan();
             allPaidLoan = allPaidLoan + paidLoan;
             allGet = allGet + get;
-            allSpent = allSpent + spent + paidLoan;
             spent = spent + paidLoan;
+            allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
         } //+1 év költés
+        console.log("----- " + (4 + 5 + 1) + ". év -----");
         if (playerInfo[0].level === 3) {
-            spent = spendMoneyWhileWork(playerInfo[0], 50, 70);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 50);
         } else if (playerInfo[0].level === 2) {
-            spent = spendMoneyWhileWork(playerInfo[0], 60, 80);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 60);
         } else {
-            spent = spendMoneyWhileWork(playerInfo[0], 70, 90);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
         }
         let paidLoan = payBackStudentLoan();
         allPaidLoan = allPaidLoan + paidLoan;
-        allSpent = allSpent + spent + paidLoan;
         spent = spent + paidLoan;
+        allSpent = allSpent + spent;
         playerInfo[0].money = parseInt(playerInfo[0].money) - spent;
         setLoan(loan - allPaidLoan);
         setMoney(playerInfo[0].money);
@@ -628,6 +664,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircle(true);
+            setWeather('day');
         }, 5000);
     };
 
@@ -643,6 +680,7 @@ export default function Game() {
     const selectCurrenciesInvestmentCh3 = () => {     //valuta befektetés
         setStage(20); //20
         setOptionCh3(1);
+        setWeather('evening');
     };
     const selectValuta1Ch3 = (amount) => {
         if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
@@ -701,6 +739,7 @@ export default function Game() {
     const selectBondsInvestmentCh3 = () => {     //kötvény befektetés
         setStage(30); //30
         setOptionCh3(2);
+        setWeather('evening');
     };
     const selectBond1Ch3 = (amount) => {
         if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
@@ -758,6 +797,7 @@ export default function Game() {
     /* ----- VÁSÁRLÁS KIÉRTÉKELÉSE */
     const summaryOfInvestmetCh3 = () => {
         setStage(stage + 1);
+        setWeather('night');
     };
     const getInvestmentCh3 = () => {
         let allGet = 0;
@@ -781,21 +821,22 @@ export default function Game() {
 
         }
         
-        for (let i = 0; i < 4; i++) { //5 év
+        for (let i = 0; i < 5; i++) { //5 év
+            console.log("----- " + (i + 10 + 1) + ". év -----");
             let get = getPaid(playerInfo[0]);
             if (playerInfo[0].level === 3) {
-                spent = spendMoneyWhileWork(playerInfo[0], 50, 70);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 50);
             } else if (playerInfo[0].level === 2) {
-                spent = spendMoneyWhileWork(playerInfo[0], 60, 80);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 60);
             } else {
-                spent = spendMoneyWhileWork(playerInfo[0], 70, 90);
+                spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             }
 
             if(optionCh1 === 2){
                 let paidLoan = payBackStudentLoan();
                 allPaidLoan = allPaidLoan + paidLoan;
-                allSpent = allSpent + spent + paidLoan;
                 spent = spent + paidLoan;
+                allSpent = allSpent + spent;
             }else{
                 allSpent = allSpent + spent;
             }
@@ -814,61 +855,61 @@ export default function Game() {
     /* ---------- Állapot jelzők ---------- */
     const setPlayerStateMoney = () => {
         if (playerInfo.length > 0 && money >= 0) {
-            return <PlayerState place="money" value={money} />;
+            return <PlayerState place="money" value={money} class={weather}/>;
         }
         return <></>;
     }
     const setPlayerStateJob = () => {
         if (playerInfo.length > 0 && job.length > 0) {
-            return <PlayerState place="job" value={job} />;
+            return <PlayerState place="job" value={job} class={weather}/>;
         }
         return <></>;
     }
     const setPlayerStateSalary = () => {
         if (playerInfo.length > 0 && salary >= 0) {
-            return <PlayerState place="salary" value={salary} />;
+            return <PlayerState place="salary" value={salary} class={weather}/>;
         }
         return <></>;
     }
     const setPlayerStateSkill = () => {
         if (playerInfo.length > 0 && job.length > 0) {
-            return <PlayerState place="skill" value={playerSkill} />;
+            return <PlayerState place="skill" value={playerSkill} class={weather}/>;
         }
         return <></>;
     }
     const setPlayerStateLoan = () => {
         if (playerInfo.length > 0 && loan > 0) {
-            return <PlayerState place="loan" value={loan} />;
+            return <PlayerState place="loan" value={loan} class={weather}/>;
         }
         return <></>;
     }
     const setPlayerInvTitle = () => {
         if (playerInfo.length > 0 && optionCh3 > 0) {
-            return <PlayerState place="inv-title"/>;
+            return <PlayerState place="inv-title" class={weather}/>;
         }
         return <></>;
     }
     const setPlayerInv1 = () => {
         if (playerInfo.length > 0 && optionCh3 > 0 && inv1 > 0) {
-            return <PlayerState investment={optionCh3} place="inv1" value={inv1}/>;
+            return <PlayerState investment={optionCh3} place="inv1" value={inv1} class={weather}/>;
         }
         return <></>;
     }
     const setPlayerInv2 = () => {
         if (playerInfo.length > 0 && optionCh3 > 0 && inv2 > 0) {
-            return <PlayerState investment={optionCh3} place="inv2" value={inv2}/>;
+            return <PlayerState investment={optionCh3} place="inv2" value={inv2} class={weather}/>;
         }
         return <></>;
     }
     const setPlayerInv3 = () => {
         if (playerInfo.length > 0 && optionCh3 > 0 && inv3 > 0) {
-            return <PlayerState investment={optionCh3} place="inv3" value={inv3}/>;
+            return <PlayerState investment={optionCh3} place="inv3" value={inv3} class={weather}/>;
         }
         return <></>;
     }
     const setPlayerInv4 = () => {
         if (playerInfo.length > 0 && optionCh3 > 0  && inv4 > 0) {
-            return <PlayerState investment={optionCh3} place="inv4" value={inv4}/>;
+            return <PlayerState investment={optionCh3} place="inv4" value={inv4} class={weather}/>;
         }
         return <></>;
     }
@@ -1078,7 +1119,7 @@ export default function Game() {
     /* ---------- Kezdő állapot ---------- */
     return (
         <div className="App">
-            <div id='game-background'>
+            <div id='game-background' className={weather + "-background"}>
                 <div className='container'>
                     <div id='info-table'>
                         {getInfoTableContent()}
@@ -1123,7 +1164,6 @@ export default function Game() {
                 <div id='character-place'>
                     {getCharacter()}
                 </div>
-                <div id='main-line'></div>
                 <div id='chapter-one-place'>
                     {(chapter === 1 && circle === true) ? <Circle chapter={1} active={true} onclick={setCh1} /> : <Circle chapter={1} active={false} />}
                 </div>
