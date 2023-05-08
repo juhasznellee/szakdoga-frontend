@@ -3,83 +3,140 @@
 }
 /* ---------- Háttér ---------- */
 .day-background{
-  background: url(../images/_BG_Day.png);
+  background: url(../images/background_day.png);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
 }
 .evening-background{
-  background: url(../images/_BG_Evening.png);
+  background: url(../images/background_evening.png);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
 }
 .night-background{
-  background: url(../images/_BG_Night.png);
+  background: url(../images/background_night.png);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
 }
 /* ---------- Fő vonal, megálló pontok, skill gombok ---------- */
 .chapter-one-circle{
-  background-color: black;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  bottom: 18%;
+  background: url(../images/circle_inactive.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
   position: absolute;
   margin-left: 30%;
 }
 .chapter-one-circle-active{
-  background-color: rgb(255, 255, 255);
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  bottom: 18%;
+  background: url(../images/circle_active.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 30%;
+}
+.chapter-one-work{
+  background: url(../images/ch1_work.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 30%;
+}
+.chapter-one-uni{
+  background: url(../images/ch1_uni.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
   position: absolute;
   margin-left: 30%;
 }
 .chapter-two-circle{
-  background-color: black;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  bottom: 18%;
+  background: url(../images/circle_inactive.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
   position: absolute;
   margin-left: 50%;
 }
 .chapter-two-circle-active{
-  background-color: rgb(255, 255, 255);
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  bottom: 18%;
+  background: url(../images/circle_active.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 50%;
+}
+.chapter-two-promotion{
+  background: url(../images/ch2_promotion.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 50%;
+}
+.chapter-two-new-job{
+  background: url(../images/ch2_new_job.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 50%;
+}
+.chapter-two-work-after-uni{
+  background: url(../images/ch2_work_after_uni.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 50%;
+}
+.chapter-two-2nd-work-after-uni{
+  background: url(../images/ch2_2nd_work_after_uni.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
   position: absolute;
   margin-left: 50%;
 }
 .chapter-three-circle{
-  background-color: black;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  bottom: 18%;
+  background: url(../images/circle_inactive.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
   position: absolute;
   margin-left: 70%;
 }
 .chapter-three-circle-active{
-  background-color: rgb(255, 255, 255);
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  bottom: 18%;
+  background: url(../images/circle_active.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 70%;
+}
+.chapter-three-valuta{
+  background: url(../images/circle_inactive.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 70%;
+}
+.chapter-three-bonds{
+  background: url(../images/circle_inactive.png);
+  bottom: 17%;
+  width: 70px;
+  height: 70px;
   position: absolute;
   margin-left: 70%;
 }
 .skill-circle{
-  background-color: green;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
+  background: url(../images/button_skill.png);
+  height: 50px;
+  width: 50px;
   position: absolute;
 }
 /* ---------- Infó tábla + Állapot jelző + Pörgethető kerék + Hiba üzi ---------- */
@@ -198,13 +255,14 @@ div#player-inv4{
 }
 /* ----- Setup */
 .begin-game{
-  background-color: rgb(255, 255, 255, 0.7);
+  /*background-color: rgb(255, 255, 255, 0.7);*/
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   color: black;
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
   height: 40vh;
-  
   font-family: 'Merienda', cursive;
   letter-spacing: 0.2px;
   line-height: 130%;
@@ -222,7 +280,7 @@ button#to-chapter-one-button{
   background-repeat: no-repeat;
   border: 2px solid;
   border-color: #b6b6b6;
-  box-shadow: 8px 8px 30px black;
+  box-shadow: 4px 4px 15px black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   font-size: 20px;
@@ -282,7 +340,8 @@ input::-webkit-inner-spin-button {
   font-weight: 400;
 }
 .table-narration{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
@@ -297,7 +356,8 @@ input::-webkit-inner-spin-button {
   position: absolute;
 }
 .table-narration-smaller{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
@@ -312,7 +372,8 @@ input::-webkit-inner-spin-button {
   position: absolute;
 }
 .table-narration-shorter1{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
@@ -328,7 +389,8 @@ input::-webkit-inner-spin-button {
   position: absolute;
 }
 .table-narration-shorter2{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
@@ -351,7 +413,7 @@ div#info-table button{
   background-repeat: no-repeat;
   border: 1px solid;
   border-color: #b6b6b6;
-  box-shadow: 8px 8px 30px black;
+  box-shadow: 4px 4px 15px black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   font-size: 20px;
@@ -365,7 +427,7 @@ div#info-table button#chapter-investment{
   background-repeat: no-repeat;
   border: 1px solid;
   border-color: #b6b6b6;
-  box-shadow: 8px 8px 30px black;
+  box-shadow: 4px 4px 15px black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   font-size: 20px;
@@ -379,7 +441,8 @@ div#info-table button#chapter-investment{
 }
 /* ----- CH1 ----- */
 .chapter-one-table{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 480px;
   margin-top: 50px;
@@ -411,7 +474,8 @@ div#info-table button#chapter-investment{
 }
 /* ----- CH2 ----- */
 .chapter-two-table{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 480px;
   margin-top: 50px;
@@ -445,7 +509,8 @@ div#info-table button#chapter-investment{
 }
 /* ----- CH3 ----- */
 .chapter-three-table{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 480px;
   margin-top: 50px;
@@ -464,7 +529,8 @@ div#info-table button#chapter-investment{
   position: absolute;
 }
 .chapter-three-table-half-skill{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 480px;
   margin-top: 20px;
@@ -483,7 +549,8 @@ div#info-table button#chapter-investment{
   position: absolute;
 }
 .chapter-three-table-full-skill{
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
   width: 50%;
   margin-left: 480px;
   margin-top: 20px;

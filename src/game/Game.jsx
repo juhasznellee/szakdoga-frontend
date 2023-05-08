@@ -95,7 +95,9 @@ export default function Game() {
     const [move, setMove] = useState(0);
     const [chapter, setChapter] = useState(0);
     const [stage, setStage] = useState(1);
-    const [circle, setCircle] = useState(false);
+    const [circleCh1, setCircleCh1] = useState(false);
+    const [circleCh2, setCircleCh2] = useState(false);
+    const [circleCh3, setCircleCh3] = useState(false);
     const [money, setMoney] = useState(-1);
     const [job, setJob] = useState("");
     const [salary, setSalary] = useState(-1);
@@ -154,14 +156,14 @@ export default function Game() {
         setChapter(chapter + 1); //1
         setStage(stage + 1); //2
         setTimeout(function () {
-            setCircle(true);
+            setCircleCh1(true);
             setMoney(money + parseInt(playerInfo[0].money) + 1);
             setJob("Munkanélküli");
             setSalary(salary + 1);
         }, 5000);
     };
     const setCh1 = () => { //döntés választás - 1.skill (1.gomb)
-        setCircle(false);
+        setCircleCh1(false);
         setStage(stage + 1); //3
         setTimeout(function () {
             setSkillB1(true);
@@ -267,7 +269,7 @@ export default function Game() {
         setStage(10);
         setTimeout(function () {
             setWeather('day');
-            setCircle(true);
+            setCircleCh2(true);
         }, 5000);
     };
 
@@ -331,7 +333,7 @@ export default function Game() {
         setStage(30); //30
 
         setTimeout(function () {
-            setCircle(true);
+            setCircleCh2(true);
             setWeather('day');
         }, 5000);
     };
@@ -340,7 +342,7 @@ export default function Game() {
     /* ---------- Második döntési pont ---------- */
     const setCh2 = () => {
         setStage(stage + 1); //11 / 31
-        setCircle(false);
+        setCircleCh2(false);
     };
 
     /* ----- MUNKA - ELŐLÉPTETÉS */
@@ -398,7 +400,7 @@ export default function Game() {
         setStage(1); //1
         setMove(3);
         setTimeout(function () {
-            setCircle(true);
+            setCircleCh3(true);
             setWeather('day');
         }, 5000);
     };
@@ -420,7 +422,7 @@ export default function Game() {
         setStage(2); //2
         setMove(3);
         setTimeout(function () {
-            setCircle(true);
+            setCircleCh3(true);
             setWeather('day');
         }, 5000);
     };
@@ -504,7 +506,7 @@ export default function Game() {
         setStage(3); //3
         setMove(3);
         setTimeout(function () {
-            setCircle(true);
+            setCircleCh3(true);
             setWeather('day');
         }, 5000);
     };
@@ -526,7 +528,7 @@ export default function Game() {
         setStage(4); //4
         setMove(3);
         setTimeout(function () {
-            setCircle(true);
+            setCircleCh3(true);
             setWeather('day');
         }, 5000);
     };
@@ -616,7 +618,7 @@ export default function Game() {
         setStage(5); //5
         setMove(3);
         setTimeout(function () {
-            setCircle(true);
+            setCircleCh3(true);
             setWeather('day');
         }, 5000);
     };
@@ -663,7 +665,7 @@ export default function Game() {
         setStage(6); //6
         setMove(3);
         setTimeout(function () {
-            setCircle(true);
+            setCircleCh3(true);
             setWeather('day');
         }, 5000);
     };
@@ -671,7 +673,7 @@ export default function Game() {
 
     /* ---------- Harmadik döntési pont ---------- */
     const setCh3 = () => { //befektetés módja
-        setCircle(false);
+        setCircleCh3(false);
         setStage(10); //10
         setMoneySpent(0);
     };
@@ -979,7 +981,7 @@ export default function Game() {
                 return <InfoTable chapter={2} stage={12} onclick={afterSpinWheelPromotionCh2} />
             } else if (chapter === 2 && stage === 13) {
                 return (
-                    <div className='table-narration-shorter1'>
+                    <div className='table-narration-shorter2'>
                         <InfoTable chapter={2} stage={13} salary={playerInfo[0].salary} />
                         <CustomButton onclick={backFromSuccessPromotionCh2} />
                     </div>
@@ -1165,13 +1167,13 @@ export default function Game() {
                     {getCharacter()}
                 </div>
                 <div id='chapter-one-place'>
-                    {(chapter === 1 && circle === true) ? <Circle chapter={1} active={true} onclick={setCh1} /> : <Circle chapter={1} active={false} />}
+                    {<Circle chapter={1} active={circleCh1} onclick={setCh1} option={optionCh1}/>}
                 </div>
                 <div id='chapter-two-place'>
-                    {(chapter === 2 && circle === true) ? <Circle chapter={2} active={true} onclick={setCh2} /> : <Circle chapter={2} active={false} />}
+                    {<Circle chapter={2} active={circleCh2} onclick={setCh2} option={optionCh2}/>}
                 </div>
                 <div id='chapter-three-place'>
-                    {(chapter === 3 && circle === true) ? <Circle chapter={3} active={true} onclick={setCh3} /> : <Circle chapter={3} active={false} />}
+                    {<Circle chapter={3} active={circleCh3} onclick={setCh3} option={optionCh3}/>}
                 </div>
             </div>
         </div>

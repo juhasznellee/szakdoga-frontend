@@ -33,7 +33,7 @@ export default function InfoTable(props) {
         if(props.stage === 2){
             return(
                 <div className="table-narration-shorter1">
-                    <i className="narration">A felvillanó körökre kattintva láthatod a döntési lehetőségeket, és az általad választott gombot megnyomva véglegesítheted a döntést, hogy mi szerint cselekedjen {props.name}.<br/>A jobb felső sarokban láthatod {props.name} aktuális pénzét, munkáját, havi <PopupInfo place="brutto"/> fizetését és a képzettségi szintjét. Lehetőségünk van képzések elvégzésére, amit odafigyeléssel és gyorsasággal szerezhetünk meg.</i>
+                    <i className="narration">A kérdőjeles lila aktív körökre kattintva láthatod az adott pont döntési lehetőségeit. Az általad választott gombot megnyomva véglegesítheted a döntést, hogy mi szerint cselekedjen {props.name}.<br/>A jobb felső sarokban láthatod {props.name} aktuális pénzét, munkáját, havi <PopupInfo place="brutto"/> fizetését és a képzettségi szintjét. Lehetőségünk van képzések elvégzésére, amit odafigyeléssel és gyorsasággal szerezhetünk meg.</i>
                 </div>
             );
         }else if(props.stage === 3){
@@ -202,7 +202,7 @@ export default function InfoTable(props) {
                         segments={segments}
                         segColors={segColors}
                         onFinished={(winner) =>  tempfunction(winner)}
-                        primaryColor='#241231'
+                        primaryColor='black'
                         contrastColor='white'
                         buttonText='Pörgetés'
                         isOnlyOnce={true}
@@ -265,7 +265,7 @@ export default function InfoTable(props) {
                         segments={segments}
                         segColors={segColors}
                         onFinished={(winner) =>  tempfunction(winner)}
-                        primaryColor='#241231'
+                        primaryColor='black'
                         contrastColor='white'
                         buttonText='Pörgetés'
                         isOnlyOnce={true}
