@@ -33,7 +33,7 @@ export default function InfoTable(props) {
         if(props.stage === 2){
             return(
                 <div className="table-narration-shorter1">
-                    <i className="narration">A kérdőjeles lila aktív körökre kattintva láthatod az adott pont döntési lehetőségeit. Az általad választott gombot megnyomva véglegesítheted a döntést, hogy mi szerint cselekedjen {props.name}.<br/>A jobb felső sarokban láthatod {props.name} aktuális pénzét, munkáját, havi <PopupInfo place="brutto"/> fizetését és a képzettségi szintjét. Lehetőségünk van képzések elvégzésére, amit odafigyeléssel és gyorsasággal szerezhetünk meg.</i>
+                    <i className="narration">Az aktív kérdőjeles körökre kattintva láthatod az adott pont döntési lehetőségeit. Az általad választott gombot megnyomva véglegesítheted a döntést, hogy mi szerint cselekedjen {props.name}.<br/>A jobb felső sarokban láthatod {props.name} aktuális pénzét, munkáját, havi <PopupInfo place="brutto"/> fizetését és a képzettségi szintjét. Lehetőségünk van képzések elvégzésére, amit odafigyeléssel és gyorsasággal szerezhetünk meg.</i>
                 </div>
             );
         }else if(props.stage === 3){
@@ -48,25 +48,25 @@ export default function InfoTable(props) {
         }else if(props.stage === 14){
             return(
                 <div>
-                    Megfogadtam a tanácsodat, ezer helyre beadtam az önéletrajzomat. Telefonáltak egy helyről, hogy alkalmasnak találnak az állásra, és el is fogadtam az ajánlatukat. {props.jobname} lennék és havi <PopupInfo place="brutto"/> {props.salary} Ft-ot kaphatnék.<br/>Felajánlották, hogy ha másnapra a megoldom a kiadott feladatokat hibátlanra, akkor magasabb alapfizetéssel kezdhetek. Megoldottam a feladatokat, viszont nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit már későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
+                    Ahogy tanácsoltad, elkezdtem munkák után érdeklődni, és rengeteg helyre be is adtam az önéletrajzomat. Hívtak egy cégtől, hogy alkalmasnak találtak az állásra amire jelentkeztem. {props.jobname} lennék és havi <PopupInfo place="brutto"/> {props.salary} Ft-ot kaphatnék. Tetszett az ajánlatuk, így elfogadtam az állásajánlatot.<br/>Felajánlották, hogy ha másnapra hibátlanra megoldom a kiadott feladatokat, akkor <PopupInfo place="brutto"/> +50 000 Ft alapfizetéssel indulhatok. Már megoldottam a feladatokat, de nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
                 </div>
             );
         }else if(props.stage === 16 && props.answer === 5){
             return ( 
                 <div>
-                    Megérkeztek az eredmények, szerencsére csak 1 napot kellett várni. Nagyon köszönöm, hogy kijavítottad a feladatok megoldásait, hála neked hibátlan lett és megkapom a magasabb alapfizetést. Már minden papír el van intézve, így a következő hónapban kezdhetek is. Nagyon izgatott vagyok miatta, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
+                    Kicsit későn de megkaptam az emailt benne az eredményekkel. Nagyon köszönöm, hogy kijavítottad a feladatok megoldásait, hála neked hibátlan lett és megkapom a magasabb alapfizetést. Holnap elintézzük a papírmunkát, hogy minél hamarabb tudjak kezdeni. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Most viszont megyek, találkozunk 5 év múlva!
                 </div>
             );
         }else if(props.stage === 16 && props.answer < 5){
             return ( 
                 <div>
-                    Megérkeztek az eredmények, szerencsére csak 1 napot kellett várni. Nagyon hálás vagyok a segítségedért, de sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Marad az alap felállás, már minden papír el van intézve, így a következő hónapban kezdhetek is. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva, mikor már jobban átlátom az életem.
+                    Kicsit későn de megkaptam az emailt benne az eredményekkel. Nagyon hálás vagyok a segítségedért, de sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Holnap elintézzük a papírmunkát, hogy minél hamarabb tudjak kezdeni. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Most viszont megyek, találkozunk 5 év múlva!
                 </div>
             );
         }else if(props.stage === 24){
             return ( 
                 <div>
-                     Megfogadtam a tanácsodat és utána néztem az egyetemeknek. A városban 3 egyetem van, ahol indulni fog olyan szak ami érdekel is engem, így ezekre beadtam a jelentkezésem:
+                     Ahogy tanácsoltad, elkezdtem utána nézni az egyetemeknek és az ott lévő képzéseknek. A városban 3 egyetem van, ahol indulni fog olyan szak ami érdekel is engem, így ezekre beadtam a jelentkezésem:
                     <ul>
                         <li>A város legjobb egyeteme, mindenki ide szeretne bekerülni: MEW Egyetem</li>
                         <li>Egészen átlagos egyetem, semmi kiemelkedő nincs benne: VRF Egyetem</li>
@@ -105,15 +105,16 @@ export default function InfoTable(props) {
             }
             return(
                 <div className='wheelspin'>
+                    <span className='title'>A felvételi eredménye</span>
                     <WheelComponent
                         segments={segments}
                         segColors={segColors}
                         onFinished={(winner) =>  tempfunction(winner)}
-                        primaryColor='black'
-                        contrastColor='white'
-                        buttonText='Pörgetés'
+                        primaryColor='rgba(239, 239, 239, 0)'
+                        contrastColor='black'
+                        buttonText=''
                         isOnlyOnce={true}
-                        size={250}
+                        size={180}
                         upDuration={randomNumber(50, 100)}
                         downDuration={randomNumber(1500, 2000)}
                         fontFamily='Merienda'
@@ -123,19 +124,19 @@ export default function InfoTable(props) {
         }else if(props.stage === 26 && props.level === 3){
             return(
                 <div>
-                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. Felvettek az első helyen jelölt egyetemre, a MEW Egyetemre. Sokat kell majd tanulnom, hogy tudjam tartani a lépést a többiekkel és eleget tudjak tenni az elvárásoknak.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Minden esetre találkozunk 5 év múlva, miután elvégeztem az egyetemet.
+                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. Az első helyen jelölt egyetemre vettek fel, a MEW Egyetemre. Sokat kell majd tanulnom, hogy tudjam tartani a lépést a többiekkel és eleget tudjak tenni az elvárásoknak.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Most viszont megyek, felkereslek 5 év múlva, miután elvégeztem az egyetemet.
                 </div>
             );
         }else if(props.stage === 26 && props.level === 2){
             return(
                 <div>
-                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. Felvettek a második helyen jelölt egyetemre, a VRF Egyetemre. Sajnálom, hogy lecsúsztam az elsőről, de ez is egy nehéz egyetemnek ígérkezik. Biztos sokat kell majd tanulnom így is, de legalább szórakozni is lesz időm.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Minden esetre találkozunk 5 év múlva, miután elvégeztem az egyetemet.
+                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. A második helyen jelölt egyetemre vettek fel, a VRF Egyetemre. Sajnálom, hogy lecsúsztam az elsőről, de ez is egy nehéz egyetemnek ígérkezik. Biztos sokat kell majd tanulnom, de legalább szórakozni és ismerkedni is lesz időm.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Most viszont megyek, felkereslek 5 év múlva, miután elvégeztem az egyetemet.
                 </div>
             );
         }else if(props.stage === 26 && props.level === 1){
             return(
                 <div>
-                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. Felvettek a harmadik helyen jelölt egyetemre, a KEG Egyetemre. Örülök, hogy felvettek, legalább itt nem kell halálra tanulnom magam és a követelmények sem tűnnek vészesnek. Akár el tudok menni többször is szórakozni, programokat csinálni és kapcsolatokat építeni.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Minden esetre találkozunk 5 év múlva, miután elvégeztem az egyetemet.
+                    Tudom későre jár, de megjöttek az eredmények a felvételivel kapcsolatban és muszáj vagyok elmesélni. A harmadik helyen jelölt egyetemre vettek fel, a KEG Egyetemre. Örülök, hogy felvettek, legalább itt nem kell halálra tanulnom magam és a követelmények sem tűnnek vészesnek. Akár el tudok menni többször is szórakozni, programokat csinálni és kapcsolatokat építeni.<br/>Egyetemi éveimre fel kell vennem a <PopupInfo place="hitel"/>-et, mert a szüleim sajnos nem engedhetik meg maguknak, hogy anyagilag támogassanak. Kivételesen van lehetőségem, hogy egybe megkapjam az összeget (tehát 4 000 000 Ft) majd az összeget egyetem után kezdjem visszafizetni. Terveim szerint minden hónapban maximum 100 000 Ft-ot költhetek, és ami marad azt félre tudom tenni.<br/>Most viszont megyek, felkereslek 5 év múlva, miután elvégeztem az egyetemet.
                 </div>
             );
         }else{
@@ -147,18 +148,18 @@ export default function InfoTable(props) {
                 <div className='table-narration'>
                     Az első részben elért eredmények:
                     <ul>
-                        <li>{props.name} csak érettségi bizonyítvánnyal rendelkezik, így nehezebb jólfizető munkát találni. Sok keresgélés után talált magának egy megfelelő munkát és egyből el is vállalta. Így most <span className="lower">{props.jobname}ként</span> dolgozik. Úgy néz ki tetszik neki a munka és megállja a helyét.</li>
+                        <li>Mivel {props.name} csak érettségi bizonyítvánnyal rendelkezik, ezért nehezére esett jólfizető munkát találnia. Sok keresgélés után és nagy szerencsével talált magának egy megfelelő munkát amit el is tudott vállalni. Így most <span className="lower">{props.jobname}ként</span> dolgozik.</li>
                         <li>A <PopupInfo place="brutto"/> fizetése havi {props.salary} Ft, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-ot jelent.</li>
-                        <li>Ebben az időszakban összesen {props.moneyGet} Ft-ot sikerült szereznie.</li>
+                        <li>Ebben az időszakban összesen {props.moneyGet} Ft-ot sikerült keresnie.</li>
                         <li>És ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
                     </ul>
-                    <i className="narration">Kattints a felvillanó körre a tovább lépéshez!</i>
+                    <i className="narration">Kattints az aktív körre a tovább lépéshez!</i>
                 </div>
             );
         }else if(props.stage === 11){
             return(
                 <div className="chapter-two-table">
-                    <p className='box0'>Szia!<br/>Jó újra látni téged!<br/>Mint tudod, a jelenlegi munkahelyemen már 5 éve dolgozok, és még semmilyen fizetést emelést nem kaptam, még csak nem is volt róla szó. Nem tudom, hogy szóvá tegyem-e a főnökömnek hátha egy kis eséllyel mégis megkapom a fizetés emelést, vagy inkább keressek másik munkahelyet.</p>
+                    <p className='box0'>Szia!<br/>Jó újra látni téged, régen beszéltünk!<br/>Mint tudod, a jelenlegi munkahelyemen már 5 éve dolgozok, és még semmilyen fizetés emelést nem kaptam, de még csak nem is volt róla szó. Nem tudom, hogy szóvá tegyem-e a főnökömnek hátha egy kis eséllyel kapok fizetés emelést, vagy inkább keressek egy másik munkahelyet.</p>
                     <div className='box1-ch2'>Te hogy döntenél?</div>
                     <button className='box2-ch2' onClick={e => props.onclick1(props.player)}>Megpróbálok előlépni</button>
                     <button className='box3-ch2' onClick={e => props.onclick2(props.player)}>Új munkát keresek</button>
@@ -173,7 +174,7 @@ export default function InfoTable(props) {
                 'Előléptetve',
                 'Előléptetve',
                 'Elutasítva',
-                'Elutasítva',
+                'Előléptetve',
                 'Elutasítva'
             ];
             const segColors = [
@@ -184,7 +185,7 @@ export default function InfoTable(props) {
                 '#2ECC71',
                 '#2ECC71',
                 '#CB4335',
-                '#CB4335',
+                '#2ECC71',
                 '#CB4335'
             ];
             const tempfunction = (winner) => {
@@ -198,15 +199,16 @@ export default function InfoTable(props) {
             }
             return(
                 <div className='wheelspin'>
+                    <span className='title'>Előléptetés eredménye</span>
                     <WheelComponent
                         segments={segments}
                         segColors={segColors}
                         onFinished={(winner) =>  tempfunction(winner)}
-                        primaryColor='black'
-                        contrastColor='white'
-                        buttonText='Pörgetés'
+                        primaryColor='rgba(239, 239, 239, 0)'
+                        contrastColor='black'
+                        buttonText=''
                         isOnlyOnce={true}
-                        size={250}
+                        size={180}
                         upDuration={randomNumber(50, 100)}
                         downDuration={randomNumber(1500, 2000)}
                         fontFamily='Merienda'
@@ -216,19 +218,19 @@ export default function InfoTable(props) {
         }else if(props.stage === 13){
             return (
                 <div>
-                    Ahogy tanácsoltad, napközben meglátogattam a főnökömet és beszéltem vele a fizetésemről, és az előléptetésemről. Elmesélte, hogy már a felső körökben is előjött ez a téma, és pont a holnapi megbeszélésen szerette volna közölni velem a jó hírt, de megelőztem ezzel.<br/>Az új fizetésem <PopupInfo place="brutto"/> {props.salary} Ft lesz, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-ot jelent.<br/>Most mennem kell mert későre jár. 5 év elteltével újra kereslek és beszélünk!
+                    Délután meglátogattam a főnökömet és beszéltem vele a jelenlegi fizetésemről, és az előléptetésemről. Elmesélte, hogy már a felső körökben is szóbajött ez a téma, és pont a holnapi megbeszélésen szerette volna közölni velem a jó hírt, de megelőztem ezzel.<br/>Elmondásai alapján az új fizetésem <PopupInfo place="brutto"/> {props.salary} Ft lesz, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-nak felel meg.<br/>Most viszont mennem kell mert későre jár. 5 év elteltével újra kereslek és beszélünk!
                 </div>
             );
         }else if(props.stage === 14){
             return (
                 <div>
-                    Ahogy tanácsoltad, napközben meglátogattam a főnökömet és beszéltem vele a fizetésemről, és az előléptetésemről. Elmondta, hogy jobban bele kéne húznom ha előrébb szeretnék jutni a ranglétrán. Sajnos még nem tartok azon a szinten, és jobban belegondolva igaza is van, több energiát kell belefektetnem a munkámba.<br/>Elég szomorú vagyok a hír hallatán, mert azt hittem ennyi idő után megérdemelném, de úgy látszik nem elég csak az időnek telnie, le is kell tenni valamit az asztalra, ami nálam még hiányzik.<br/>Most mennem kell mert későre jár. 5 év elteltével újra kereslek és beszélünk!
+                    Délután meglátogattam a főnökömet és beszéltem vele a jelenlegi fizetésemről, és az előléptetésemről. Elmondta, hogy jobban bele kéne húznom ha előrébb szeretnék jutni a ranglétrán. Magamnak köszönhetem, hogy még nem tartok azon a szinten, és jobban belegondolva igaza is van, több energiát kell belefektetnem a munkámba.<br/>Elég szomorú vagyok a hír hallatán, mert azt hittem ennyi idő után megérdemelném az előléptetést, de úgy látszik nem elég csak az időnek telnie, le is kell tenni valamit az asztalra..<br/>Most viszont mennem kell mert későre jár. 5 év elteltével újra kereslek és beszélünk!
                 </div>
             );
         }else if(props.stage === 22){
             return (
                 <div>
-                    A bíztatásodra elkezdtem új munkák íránt érdeklődni. A keresgélés során megtaláltam az álom munkámat, ahova egyből be is adtam a jelentkezésemet. Az interjúk alatt nagyon izgultam, de próbáltam a legtöbbet kihozni magamból. Most már csak várnom kell az eredményre, hogy miként dönt a cég ügyvezetője.<br/>Közben felmondtam a régi munkahelyemen, így  mire lejár a 30 napos <PopupInfo place="felmondasi"/>m, addigra biztos vagyok benne, hogy találni fogok egy új munkát ha ez nem is jön össze. 
+                    A bíztatásodra elkezdtem új munkák íránt érdeklődni. A keresgélés során megtaláltam azt a munkát amiről mindig is álmodtam, így egyből be is adtam az önéletrajzomat. Az interjúk alatt nagyon izgultam, de próbáltam a legtöbbet kihozni magamból. Most már csak várnom kell az eredményre, hogy miként dönt a cég ügyvezetője.<br/>Mindeközben felmondtam a jelenlegi munkahelyemen, mert mire lejár a 30 napos <PopupInfo place="felmondasi"/>m, addigra biztos vagyok benne, hogy találni fogok egy új munkát, ha ez nem is jönne össze.
                 </div>
             );
         }else if(props.stage === 23){
@@ -261,15 +263,16 @@ export default function InfoTable(props) {
             }
             return(
                 <div className='wheelspin'>
+                    <span className='title'>Az interjú eredménye</span>
                     <WheelComponent
                         segments={segments}
                         segColors={segColors}
                         onFinished={(winner) =>  tempfunction(winner)}
-                        primaryColor='black'
-                        contrastColor='white'
-                        buttonText='Pörgetés'
+                        primaryColor='rgba(239, 239, 239, 0)'
+                        contrastColor='black'
+                        buttonText=''
                         isOnlyOnce={true}
-                        size={250}
+                        size={180}
                         upDuration={randomNumber(50, 100)}
                         downDuration={randomNumber(1500, 2000)}
                         fontFamily='Merienda'
@@ -279,13 +282,13 @@ export default function InfoTable(props) {
         }else if(props.stage === 24){
             return (
                 <div>
-                    Értesítettek az interjúm eredményéről, és úgy néz ki megkapom a munkát. A következő hónaptól <span className="lower">{props.jobname}ként</span> fogok dolgozni. Nagyon izgatott vagyok, mert mindig is tetszett ez a munkakör, és végre sikerült elérnem.<br/>A fizetésről nem is beszélve, <PopupInfo place="brutto"/> {props.salary} Ft-ot ajánlottak havonta, ami tehát <PopupInfo place="netto"/> {props.salary * 0.665} Ft.
+                    Értesítettek az interjúm eredményéről, és úgy néz ki megkapom az állást. A <PopupInfo place="felmondasi"/>m leteltével, ami a hó végén letelik, <span className="lower">{props.jobname}ként</span> fogok dolgozni. Nagyon izgatott vagyok, mert mindig is tetszett ez a munkakör, és végre sikerült elérnem.<br/>A fizetésről nem is beszélve, <PopupInfo place="brutto"/> {props.salary} Ft-ot ajánlottak havonta, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft.
                 </div>
             );
         }else if(props.stage === 25){
             return (
                 <div>
-                    Értesítettek az interjúm eredményéről, és sajnos nem lett enyém az állás, találtak jobbat nálam. De egy percig sem szomorkodtam, keresgéltem tovább. Végül találtam egy számomra alkalmas munkát, így a következő hónaptól <span className="lower">{props.jobname}ként</span> fogok dolgozni.<br/>A fizetésem legalább magasabb mint a régi munkahelyemen, <PopupInfo place="brutto"/> {props.salary} Ft havonta, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft.
+                    Egy ideje már megérkezett az interjúm eredménye, és sajnos nem lett enyém az állás, találhattak jobbat nálam. De egy percig sem szomorkodtam, mert más helyekre is beadtam az önéletrajzomat. Kis idő elteltével találtam egy állást amit elfogadtam, így a <PopupInfo place="felmondasi"/>m leteltével, ami a hó végén letelik, <span className="lower">{props.jobname}ként</span> fogok dolgozni.<br/>A cég <PopupInfo place="brutto"/> {props.salary} Ft-ot ajánlott havonta, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft.
                 </div>
             );
         }else if(props.stage === 30){
@@ -301,23 +304,23 @@ export default function InfoTable(props) {
                 <div className='table-narration'>
                     Az első részben elért eredmények:
                     <ul>
-                        <li>{props.name} sikeresen elvégezte a {uniLevel} Egyetemet, és kemény munkával megszerezte a diplomáját.</li>
-                        <li>A <PopupInfo place="hitel"/> miatt kapott {props.moneyGet} Ft-ot, amit vissza kell fizetnie miután munkát talál magának.</li>
-                        <li>Az egyetemi évei alatt összesen {props.moneySpent} Ft-ot költött.</li>
+                        <li>{props.name} sikeresen elvégezte a {uniLevel} Egyetemet, kemény és kitartó munkával megszerezte a diplomáját.</li>
+                        <li>A <PopupInfo place="hitel"/> miatt {props.moneyGet} Ft-ot kapott az egyetemi éveire, amit vissza kell fizetnie miután munkát talát magának.</li>
+                        <li>Ez alatt az idő alatt összesen {props.moneySpent} Ft-ot költött.</li>
                     </ul>
-                    <i className="narration">Kattints a felvillanó körre a tovább lépéshez!</i>
+                    <i className="narration">Kattints az aktív körre a tovább lépéshez!</i>
                 </div>
             );
         }else if(props.stage === 31){
             return (
                 <div>
-                    Szia!<br/>Jó újra látni téged!<br/>Sok minden történt amíg nem találkoztunk. Mint tudod megszereztem a diplomámat, és úgy gondolom ideje lenne elkezdeni munkát keresnem. Sürget az idő, mert a <PopupInfo place="hitel"/> <PopupInfo place="torleszt"/>ése is a nyakamon van. Friss diplomásként nehéz lesz munkát találni, akár több interjún is át kell majd menjek. De biztos fogok találni nekem tetsző munkát rendes fizetéssel.<br/>Amint van valami fejlemény, keresni foglak.
+                    Szia!<br/>Jó újra látni téged, régen beszéltünk!<br/>Sok minden történt amíg nem találkoztunk, nem is tudom hol kezdjem. Mint tudod megszereztem a diplomámat, és úgy gondolom ideje lenne elkezdenem munkát keresni. Sürget az idő, mert a <PopupInfo place="hitel"/> <PopupInfo place="torleszt"/>ése is a nyakamon van. Úgy hallottam friss diplomásként nehéz lesz munkát találni, akár több interjún is át kell majd essek. De biztos fogok találni egy nekem tetsző munkát rendes fizetéssel.<br/>Amint van valami fejlemény, keresni foglak.
                 </div>
             );
         }else if(props.stage === 32){
             return(
                 <div className="chapter-two-table">
-                    <p className='box0'>Mindenképp <span className="lower">{props.jobname}</span> szeretnék lenni a végzettségemből kifolyólag, így ehhez kapcsolódó munkát is szeretnék keresni. Jelentkeztem egy munkára ahol az interjú jól is ment, és havi {props.salary} <PopupInfo place="brutto"/> Ft-ot ajánlottak. Döntenem kell, hogy elfogadom-e az állást vagy keresek másikat ahol lehet jobb fizetést is kaphatok.</p>
+                    <p className='box0'>Mindenképpen <span className="lower">{props.jobname}</span>ként szeretnék dolgozni a végzettségemből kifolyólag. Ajánlottak egy munkát, ahol havi {props.salary} <PopupInfo place="brutto"/> Ft-ot kapnék. Adtak egy napot, hogy átgondoljam a dolgot és döntsek, hogy elfogadom-e az állást vagy keresek másikat ahol lehet jobb fizetést is kaphatok.</p>
                     <div className='box1-ch2'>Te hogy döntenél?</div>
                     <button className='box2-ch2' onClick={e => props.onclick1(props.player)}>Elfogadom az állást</button>
                     <button className='box3-ch2' onClick={e => props.onclick2(props.player)}>Másik állást keresek</button>
@@ -326,37 +329,37 @@ export default function InfoTable(props) {
         }else if(props.stage === 33 && props.oldsalary > props.salary){
             return(
                 <div>
-                    Megfogadtam a tanácsodat, és nem fogadtam el az első munkát, hanem tovább keresgéltem. Végül sikerült találnom egy másik munkát, és mivel nem szeretném tovább húzni a dolgokat, ezért egyből el is fogadtam. Havonta <PopupInfo place="brutto"/> {props.salary} Ft-ot kapok majd, ami sajnos kevesebb mint amit az előző munkánál kaptam volna, de így sem szomorkodom.<br/>Felajánlották, hogy ha a következő napra a megoldom a kiadott feladatokat hibátlanra, akkor magasabb alapfizetéssel kezdhetek. Megoldottam a feladatokat, viszont nagyon bizonytalan vagyok a végeredményekben.<br/>Kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
+                    Megfogadtam a tanácsodat, és nem fogadtam el egyből az első munkát, hanem tovább keresgéltem. 1 évembe telt, de végül sikerült találnom egy másik munkát, és mivel már nem szeretném ennél is tovább húzni a dolgokat, ezért egyből el is fogadtam. Havonta <PopupInfo place="brutto"/> {props.salary} Ft-ot kapok majd, ami sajnos kevesebb mint amit az előző munkánál kaptam volna, de így sem szomorkodom.<br/>Felajánlották, hogy ha másnapra hibátlanra megoldom a kiadott feladatokat, akkor <PopupInfo place="brutto"/> +50 000 Ft alapfizetéssel indulhatok. Már megoldottam a feladatokat, de nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit  későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
                 </div>
             );
         }else if(props.stage === 33 && props.oldsalary === props.salary){
             return(
                 <div>
-                    Megfogadtam a tanácsodat, és nem fogadtam el az első munkát, hanem tovább keresgéltem. Végül sikerült találnom egy másik munkát, és mivel nem szeretném tovább húzni a dolgokat, ezért egyből el is fogadtam. Havonta <PopupInfo place="brutto"/> {props.salary} Ft-ot kapok majd, ami pontosan ugyan annyi mint amit előző munkánál kaptam volna.<br/>Felajánlották, hogy ha a következő napra a megoldom a kiadott feladatokat hibátlanra, akkor magasabb alapfizetéssel kezdhetek. Megoldottam a feladatokat, viszont nagyon bizonytalan vagyok a végeredményekben.<br/>Kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
+                    Megfogadtam a tanácsodat, és nem fogadtam el az első munkát, hanem tovább keresgéltem. 1 évembe telt, de végül sikerült találnom egy másik munkát, és mivel már nem szeretném ennél is tovább húzni a dolgokat, ezért egyből el is fogadtam. Havonta <PopupInfo place="brutto"/> {props.salary} Ft-ot kapok majd, ami pontosan ugyan annyi mint amit előző munkánál kaptam volna.<br/>Felajánlották, hogy ha másnapra hibátlanra megoldom a kiadott feladatokat, akkor <PopupInfo place="brutto"/> +50 000 Ft alapfizetéssel indulhatok. Már megoldottam a feladatokat, de nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
                 </div>
             );
         }else if(props.stage === 33 && props.oldsalary < props.salary){
             return(
                 <div>
-                    Megfogadtam a tanácsodat, és nem fogadtam el az első munkát, hanem tovább keresgéltem. Végül sikerült találnom egy másik munkát, és mivel nem szeretném tovább húzni a dolgokat, ezért egyből el is fogadtam. Havonta <PopupInfo place="brutto"/> {props.salary} Ft-ot kapok majd, ami több mint amit az előző munkánál ajánlottak, szóval jobban is jártam hála neked.<br/>Felajánlották, hogy ha a következő napra a megoldom a kiadott feladatokat hibátlanra, akkor magasabb alapfizetéssel kezdhetek. Megoldottam a feladatokat, viszont nagyon bizonytalan vagyok a végeredményekben.<br/>Kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
+                    Megfogadtam a tanácsodat, és nem fogadtam el az első munkát, hanem tovább keresgéltem. 1 évembe telt, de végül sikerült találnom egy másik munkát, és mivel már nem szeretném ennél is tovább húzni a dolgokat, ezért egyből el is fogadtam. Havonta <PopupInfo place="brutto"/> {props.salary} Ft-ot kapok majd, ami több mint amit az előző munkánál ajánlottak, szóval jobban is jártam hála neked.<br/>Felajánlották, hogy ha másnapra hibátlanra megoldom a kiadott feladatokat, akkor <PopupInfo place="brutto"/> +50 000 Ft alapfizetéssel indulhatok. Már megoldottam a feladatokat, de nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
                 </div>
             );
         }else if(props.stage === 34){
             return(
                 <div>
-                    Megfogadtam a tanácsodat, elfogadtam a munkát és nem húzom tovább az időt.<br/>Felajánlották, hogy ha a következő napra a megoldom a kiadott feladatokat hibátlanra, akkor magasabb alapfizetéssel kezdhetek. Megoldottam a feladatokat, viszont nagyon bizonytalan vagyok a végeredményekben.<br/>Kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
+                    Megfogadtam a tanácsodat, már másnap beszéltem is a cég ügyvezetőjével, hogy elfogadom az állásajánlatot, nem húzom tovább az időt.<br/>Felajánlották, hogy ha másnapra hibátlanra megoldom a kiadott feladatokat, akkor <PopupInfo place="brutto"/> +50 000 Ft alapfizetéssel indulhatok. Már megoldottam a feladatokat, de nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit már későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
                 </div>
             );
         }else if((props.stage === 37 || props.stage === 38) && props.answer === 5){
             return ( 
                 <div>
-                    Megérkeztek az eredmények, szerencsére csak 1 napot kellett várni. Nagyon köszönöm, hogy kijavítottad a feladatok megoldásait, hála neked hibátlan lett és megkapom a magasabb alapfizetést. Már minden papír el van intézve, így a következő hónapban kezdhetek is. Nagyon izgatott vagyok miatta, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
+                    Kicsit későn de megkaptam az emailt benne az eredményekkel. Nagyon köszönöm, hogy kijavítottad a feladatok megoldásait, hála neked hibátlan lett és megkapom a magasabb alapfizetést. Holnap elintézzük a papírmunkát, hogy minél hamarabb tudjak kezdeni. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Most viszont megyek, találkozunk 5 év múlva!
                 </div>
             );
         }else if((props.stage === 37 || props.stage === 38) && props.answer < 5){
             return ( 
                 <div>
-                    Megérkeztek az eredmények, szerencsére csak 1 napot kellett várni. Nagyon hálás vagyok a segítségedért, sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Marad az alap felállás, már minden papír el van intézve, így a következő hónapban kezdhetek is. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Találkozunk 5 év múlva!
+                    Kicsit későn de megkaptam az emailt benne az eredményekkel. Nagyon hálás vagyok a segítségedért, de sajnos nem lett hibátlan a feladat, {props.answer} pontot sikerült elérni az 5-ből. Holnap elintézzük a papírmunkát, hogy minél hamarabb tudjak kezdeni. Izgatottan várom milyen lesz a munka, remélem könnyen belejövök és hamar be tudok illeszkedni a csapatba.<br/>Most viszont megyek, találkozunk 5 év múlva!
                 </div>
             );
         }else{
@@ -370,9 +373,9 @@ export default function InfoTable(props) {
                     <ul>
                         <li>{props.name} erőtt vett magán és a főnöke elé állt előléptetés gyanánt. Szerencséje volt, mert egy ideje már érett neki a fizetésemelés, ami most el is érkezett. Az új havi <PopupInfo place="brutto"/> bére {props.salary} Ft, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet} Ft-ot sikerült szereznie.</li>
-                        <li>És ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
+                        <li>Ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
                     </ul>
-                    <i className="narration">Kattints a felvillanó körre a tovább lépéshez!</i>
+                    <i className="narration">Kattints az aktív körre a tovább lépéshez!</i>
                 </div>
             );
         }else if(props.stage === 2){
@@ -382,9 +385,9 @@ export default function InfoTable(props) {
                     <ul>
                         <li>{props.name} erőtt vett magán és a főnöke elé állt előléptetés gyanánt. Sajnos a felettese szerint még nem tett eleget azért, hogy fizetésemelést kapjon, így minden maradt a régi kerékvágásban. A havi <PopupInfo place="brutto"/> bére továbbra is {props.salary} Ft, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet} Ft-ot sikerült szereznie.</li>
-                        <li>És ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
+                        <li>Ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
                     </ul>
-                    <i className="narration">Kattints a felvillanó körre a tovább lépéshez!</i>
+                    <i className="narration">Kattints az aktív körre a tovább lépéshez!</i>
                 </div>
             );
         }else if(props.stage === 3){
@@ -395,9 +398,9 @@ export default function InfoTable(props) {
                         <li>{props.name} 5 év után úgy döntött, hogy új munkát keres. Megtalálta számára az álom munkát, és gondolta szerencsét próbál vele. Jól sikerült az interjú, magabiztos volt és a cég ügyvezetőjét is meggyőzte alkalmasságáról. A továbbiakban <span className="lower">{props.jobname}ként</span> fog dolgozni.</li>
                         <li>Új havi <PopupInfo place="brutto"/> bére {props.salary} Ft, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet} Ft-ot sikerült szereznie.</li>
-                        <li>És ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
+                        <li>Ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
                     </ul>
-                    <i className="narration">Kattints a felvillanó körre a tovább lépéshez!</i>
+                    <i className="narration">Kattints az aktív körre a tovább lépéshez!</i>
                 </div>
             );
         }else if(props.stage === 4){
@@ -405,12 +408,12 @@ export default function InfoTable(props) {
                 <div className='table-narration'>
                     A második részben elért eredmények:
                     <ul>
-                        <li>{props.name} 5 év után úgy döntött, hogy új munkát keres. Megtalálta számára az álom munkát, és gondolta szerencsét próbál vele. Sajnos borzalmasan rosszul sikerült az interjú, végig ideges és stresszes volt. Annyira akarta ezt az állást, hogy végül e miatt nem sikerült neki. Végül egy másik helyre felvették, így a továbbiakban <span className="lower">{props.jobname}ként</span> fog dolgozni.</li>
+                        <li>{props.name} 5 év után úgy döntött, hogy új munkát keres. Megtalálta számára az álom munkát, és gondolta szerencsét próbál vele. Sajnos borzalmasan rosszul sikerült az interjú, végig ideges és stresszes volt. Annyira akarta ezt az állást, hogy végül e miatt nem sikerült neki. Végül egy másik helyre vették fel, így a továbbiakban <span className="lower">{props.jobname}ként</span> fog dolgozni.</li>
                         <li>Új havi <PopupInfo place="brutto"/> bére {props.salary} Ft, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet} Ft-ot sikerült szereznie.</li>
-                        <li>És ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
+                        <li>Ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el.</li>
                     </ul>
-                    <i className="narration">Kattints a felvillanó körre a tovább lépéshez!</i>
+                    <i className="narration">Kattints az aktív körre a tovább lépéshez!</i>
                 </div>
             );
         }else if(props.stage === 5){
@@ -418,12 +421,12 @@ export default function InfoTable(props) {
                 <div className='table-narration'>
                     A második részben elért eredmények:
                     <ul>
-                        <li>{props.name} végzettségéből adódóan <span className="lower">{props.jobname}ként</span> szeretne dolgozni, így nem vesztegetve az időt neki is kezdett munkát keresni. Elfogadta az első ajánlatot ami szembejött vele, hogy minél hamarabb <PopupInfo place="torleszt"/>eni tudja a tartozásait.</li>
+                        <li>{props.name} nem vesztegetve az időt, diploma után egyből elkezdtett munkát keresni. El is fogadta az első ajánlatot ami szembejött vele, hogy minél hamarabb <PopupInfo place="torleszt"/>eni tudja a tartozásait. Végzettségéből adódóan <span className="lower">{props.jobname}ként</span> dolgozik.</li> 
                         <li>A havi <PopupInfo place="brutto"/> bére {props.salary} Ft, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet} Ft-ot sikerült szereznie.</li>
-                        <li>És ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el. Ez az összeg tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</li>
+                        <li>Ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el. Ez az összeg tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</li>
                     </ul>
-                    <i className="narration">Kattints a felvillanó körre a tovább lépéshez!</i>
+                    <i className="narration">Kattints az aktív körre a tovább lépéshez!</i>
                 </div>
             );
         }else if(props.stage === 6){
@@ -439,12 +442,12 @@ export default function InfoTable(props) {
                 <div className='table-narration'>
                     A második részben elért eredmények:
                     <ul>
-                        <li>{props.name} végzettségéből adódóan <span className="lower">{props.jobname}ként</span> szeretne dolgozni, így nem vesztegetve az időt neki is kezdett munkát keresni. Az első ajánlatot nem fogadta el, gondolván akad jobban fizető állás. Rengeteg idő telt el az ajánlat visszautasítása után, és kétségbeesve egyből el is fogadta az első szembejövő munkát.</li>
+                        <li>{props.name} nem vesztegetve az időt, diploma után egyből elkezdtett munkát keresni. Nem fogadta el az első ajánlatot, gondolván akad jobban fizető állás, így tovább keresgélt. 1 év el is telt az ajánlat visszautasítása óta, és kétségbeesve el is fogadta az első szembejövő munkát, hogy minél hamarabb <PopupInfo place="torleszt"/>eni tudja a tartozásait. Végzettségéből adódóan <span className="lower">{props.jobname}ként</span> dolgozik.</li>
                         <li>{betterMoney} Így a havi <PopupInfo place="brutto"/> bére {props.salary} Ft, ami <PopupInfo place="netto"/> {props.salary * 0.665} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet} Ft-ot sikerült szereznie.</li>
-                        <li>És ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el. Ez az összeg tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</li>
+                        <li>Ugyan ebben az időszakban {props.moneySpent} Ft-ot költött el. Ez az összeg tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</li>
                     </ul>
-                    <i className="narration">Kattints a felvillanó körre a tovább lépéshez!</i>
+                    <i className="narration">Kattints az aktív körre a tovább lépéshez!</i>
                 </div>
             );
         }else if(props.stage === 10){

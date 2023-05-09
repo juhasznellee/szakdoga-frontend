@@ -169,13 +169,14 @@ export default function Game() {
             setSkillB1(true);
             setTimeout(function () {
                 setSkillB1(false);
-            }, randomNumber(1500, 3000));
-        }, randomNumber(1000, 3000));
+            }, randomNumber(2000, 3500));
+        }, randomNumber(500, 3000));
     };
 
     /* ----- MUNKA */
     const getJobCh1 = () => { //munka sorsolás, feladat bevezetése - 2.skill (2.gomb)
         setOptionCh1(1);
+        setWeather('evening');
         playerInfo[0].level = 0;
         playerInfo[0].job_id = randomSelector(jobs, 0);
         playerInfo[0].salary_id = randomSelector(salaries, 0);
@@ -193,15 +194,14 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(1500, 3000));
-        }, randomNumber(1000, 3000));
+            }, randomNumber(2000, 3500));
+        }, randomNumber(500, 3000));
         setJob(playerInfo[0].job_name);
         setSalary(salary + parseInt(playerInfo[0].salary));
         setStage(stage + 10 + 1); //14
     };
     const beforeTasksCh1 = () => {
         setStage(stage + 1); //15
-        setWeather('evening');
     };
     const getTasks = () => { //feladatok kiosztása - CH1 / CH2
         if (tasks.length > 0) {
@@ -240,8 +240,8 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(1500, 3000));
-            }, randomNumber(1000, 3000));
+                }, randomNumber(2000, 3500));
+            }, randomNumber(500, 3000));
         } else {
             setStage(stage + 2); // 37 / 38
         }
@@ -268,7 +268,6 @@ export default function Game() {
         setChapter(chapter + 1); //2
         setStage(10);
         setTimeout(function () {
-            setWeather('day');
             setCircleCh2(true);
         }, 5000);
     };
@@ -280,8 +279,8 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(1500, 3000));
-        }, randomNumber(1000, 3000));
+            }, randomNumber(2000, 3500));
+        }, randomNumber(500, 3000));
         setStage(stage + 20 + 1); //24
     };
     const spinWheelCh1 = () => { //kerék pörgetés, hogy melyik egyetem
@@ -297,8 +296,8 @@ export default function Game() {
             setSkillB1(true);
             setTimeout(function () {
                 setSkillB1(false);
-            }, randomNumber(1500, 3000));
-        }, randomNumber(1000, 3000));
+            }, randomNumber(2000, 3500));
+        }, randomNumber(500, 3000));
         if (winner === 3) {
             playerInfo[0].level = 3;
         } else if (winner === 2) {
@@ -331,10 +330,8 @@ export default function Game() {
         setMove(2);
         setChapter(chapter + 1); //2
         setStage(30); //30
-
         setTimeout(function () {
             setCircleCh2(true);
-            setWeather('day');
         }, 5000);
     };
 
@@ -343,6 +340,11 @@ export default function Game() {
     const setCh2 = () => {
         setStage(stage + 1); //11 / 31
         setCircleCh2(false);
+        setWeather('day');
+        if(optionCh1 === 2){
+            playerInfo[0].job_name = "Munkanélküli";
+            setJob("Munkanélküli");
+        }
     };
 
     /* ----- MUNKA - ELŐLÉPTETÉS */
@@ -368,8 +370,8 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(1500, 3000));
-            }, randomNumber(1000, 3000));
+                }, randomNumber(2000, 3500));
+            }, randomNumber(500, 3000));
             setSalary(parseInt(playerInfo[0].salary));
             setStage(stage + 1); //13
         } else { //nem sikerült
@@ -378,8 +380,8 @@ export default function Game() {
                 setSkillB2(true);
                 setTimeout(function () {
                     setSkillB2(false);
-                }, randomNumber(1500, 3000));
-            }, randomNumber(1000, 3000));
+                }, randomNumber(2000, 3500));
+            }, randomNumber(500, 3000));
         }
     };
     const backFromSuccessPromotionCh2 = () => { //sikeres előléptetés után
@@ -401,7 +403,6 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
-            setWeather('day');
         }, 5000);
     };
     const backFromFailedPromotionCh2 = () => { //sikertelen előléptetés után
@@ -423,7 +424,6 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
-            setWeather('day');
         }, 5000);
     };
 
@@ -457,8 +457,8 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(1500, 3000));
-            }, randomNumber(1000, 3000));
+                }, randomNumber(2000, 3500));
+            }, randomNumber(500, 3000));
             setJob(playerInfo[0].job_name);
             setSalary(parseInt(playerInfo[0].salary));
             setStage(stage + 1); //24
@@ -481,8 +481,8 @@ export default function Game() {
                 setSkillB2(true);
                 setTimeout(function () {
                     setSkillB2(false);
-                }, randomNumber(1500, 3000));
-            }, randomNumber(1000, 3000));
+                }, randomNumber(2000, 3500));
+            }, randomNumber(500, 3000));
             setJob(playerInfo[0].job_name);
             setSalary(parseInt(playerInfo[0].salary));
             setStage(stage + 2); //25
@@ -507,7 +507,6 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
-            setWeather('day');
         }, 5000);
     };
     const backFromFailedNewJobCh2 = () => { //sikertelen álom munka megszerzése
@@ -529,12 +528,12 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
-            setWeather('day');
         }, 5000);
     };
 
     /* ----- EGYETEM - MUNKAKERESÉS */
     const jobAfterUniCh2 = () => { //munka + fizetés sorsolása - 4.skill(2.gomb)
+        setWeather('evening');
         playerInfo[0].salary_id = randomSelector(salaries, playerInfo[0].level);
         playerInfo[0].job_id = randomSelector(jobs, playerInfo[0].level);
         for (let i = 0; i < salaries.length; i++) {
@@ -552,10 +551,11 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(1500, 3000));
-        }, randomNumber(1000, 3000));
+            }, randomNumber(2000, 3500));
+        }, randomNumber(500, 3000));
         setOldSalary(playerInfo[0].salary);
         setStage(stage + 1); //32
+        
     };
     const newJobAfterUniCh2 = () => { //nem fogadja el az első munkát
         setWeather('evening');
@@ -585,7 +585,6 @@ export default function Game() {
         setStage(stage + 2); //34
     };
     const beforeTasksCh2 = () => {
-        setWeather('night');
         setStage(stage + 2); //35- nem fogadja / 36- elfogadja
     };
     const backFromWorkFirstJobCh2 = () => {
@@ -619,7 +618,6 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
-            setWeather('day');
         }, 5000);
     };
     const backFromWorkSecondJobCh2 = () => {
@@ -666,7 +664,6 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
-            setWeather('day');
         }, 5000);
     };
 
@@ -674,6 +671,7 @@ export default function Game() {
     /* ---------- Harmadik döntési pont ---------- */
     const setCh3 = () => { //befektetés módja
         setCircleCh3(false);
+        setWeather('day');
         setStage(10); //10
         setMoneySpent(0);
     };
@@ -798,7 +796,7 @@ export default function Game() {
 
     /* ----- VÁSÁRLÁS KIÉRTÉKELÉSE */
     const summaryOfInvestmetCh3 = () => {
-        setStage(stage + 1);
+        setStage(stage + 1); //21 / 31
         setWeather('night');
     };
     const getInvestmentCh3 = () => {
@@ -851,7 +849,7 @@ export default function Game() {
         setMoney(playerInfo[0].money);
         setMoneyGet(allGet);
         setMoneySpent(allSpent);
-        setStage(stage + 1);
+        setStage(stage + 1); //22 / 32
     };
 
     /* ---------- Állapot jelzők ---------- */
@@ -954,7 +952,7 @@ export default function Game() {
                 return (
                     <div className="table-narration-shorter2">
                         <InfoTable chapter={1} stage={16} answer={answers} />
-                        <CustomButton onclick={backFromWorkCh1} />
+                        <CustomButton chapter={1} stage={16} onclick={backFromWorkCh1} />
                     </div>
                 );
             } else if (chapter === 1 && stage === 24) {
@@ -999,7 +997,7 @@ export default function Game() {
                 return (<InfoTable chapter={3} stage={2} name={playerInfo[0].name} jobname={playerInfo[0].job_name} salary={playerInfo[0].salary} moneyGet={moneyGet} moneySpent={moneySpent} />);
             } else if (chapter === 2 && stage === 22) {
                 return (
-                    <div className='table-narration-shorter2'>
+                    <div className='table-narration'>
                         <InfoTable chapter={2} stage={22} />
                         <CustomButton chapter={2} stage={22} onclick={spinWheelNewJobCh2} />
                     </div>
@@ -1008,14 +1006,14 @@ export default function Game() {
                 return <InfoTable chapter={2} stage={23} onclick={afterSpinWheelNewJobCh2} />
             } else if (chapter === 2 && stage === 24) {
                 return (
-                    <div className='table-narration-shorter2'>
+                    <div className='table-narration-shorter1'>
                         <InfoTable chapter={2} stage={24} jobname={playerInfo[0].job_name} salary={playerInfo[0].salary} />
                         <CustomButton onclick={backFromSuccessNewJobCh2} />
                     </div>
                 );
             } else if (chapter === 2 && stage === 25) {
                 return (
-                    <div className='table-narration-shorter2'>
+                    <div className='table-narration-shorter1'>
                         <InfoTable chapter={2} stage={25} jobname={playerInfo[0].job_name} salary={playerInfo[0].salary} />
                         <CustomButton onclick={backFromFailedNewJobCh2} />
                     </div>
@@ -1044,7 +1042,7 @@ export default function Game() {
                 );
             } else if (chapter === 2 && stage === 34) {
                 return (
-                    <div className="table-narration-shorter2">
+                    <div className="table-narration">
                         <InfoTable chapter={2} stage={34} jobname={playerInfo[0].job_name} salary={playerInfo[0].salary} />
                         <CustomButton onclick={beforeTasksCh2} />
                     </div>

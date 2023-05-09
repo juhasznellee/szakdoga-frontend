@@ -23,7 +23,7 @@
 /* ---------- Fő vonal, megálló pontok, skill gombok ---------- */
 .chapter-one-circle{
   background: url(../images/circle_inactive.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -31,7 +31,7 @@
 }
 .chapter-one-circle-active{
   background: url(../images/circle_active.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -39,7 +39,7 @@
 }
 .chapter-one-work{
   background: url(../images/ch1_work.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -47,7 +47,7 @@
 }
 .chapter-one-uni{
   background: url(../images/ch1_uni.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -55,7 +55,7 @@
 }
 .chapter-two-circle{
   background: url(../images/circle_inactive.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -63,7 +63,7 @@
 }
 .chapter-two-circle-active{
   background: url(../images/circle_active.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -71,7 +71,7 @@
 }
 .chapter-two-promotion{
   background: url(../images/ch2_promotion.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -79,7 +79,7 @@
 }
 .chapter-two-new-job{
   background: url(../images/ch2_new_job.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -87,7 +87,7 @@
 }
 .chapter-two-work-after-uni{
   background: url(../images/ch2_work_after_uni.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -95,7 +95,7 @@
 }
 .chapter-two-2nd-work-after-uni{
   background: url(../images/ch2_2nd_work_after_uni.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -103,7 +103,7 @@
 }
 .chapter-three-circle{
   background: url(../images/circle_inactive.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -111,7 +111,7 @@
 }
 .chapter-three-circle-active{
   background: url(../images/circle_active.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -119,7 +119,7 @@
 }
 .chapter-three-valuta{
   background: url(../images/circle_inactive.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -127,7 +127,7 @@
 }
 .chapter-three-bonds{
   background: url(../images/circle_inactive.png);
-  bottom: 17%;
+  bottom: 14%;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -135,8 +135,8 @@
 }
 .skill-circle{
   background: url(../images/button_skill.png);
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   position: absolute;
 }
 /* ---------- Infó tábla + Állapot jelző + Pörgethető kerék + Hiba üzi ---------- */
@@ -240,10 +240,28 @@ div#player-inv4{
   font-weight: 400;
 }
 .wheelspin{
-  margin-left: 60%;
-  font-size: 20px;
-  margin-top: -2%;
+  background-color: rgba(239, 239, 239, 0.85);
+  border-radius: 1%;
+  color: black;
+  width: 30%;
+  margin-left: 36%;
+  margin-top: 50px;
+  height: 45vh;
+  position: absolute;
 }
+span.title{
+  font-size: 26px;
+  font-family: 'Merienda', cursive;
+  font-weight: 600;
+  padding-top: 15px;
+  padding-left: 28%;
+  position: absolute;
+}
+div#wheel{
+  margin-top: -70px;
+  margin-left: -10px;
+}
+
 .error-message{
   color: white;
   font-family: 'Merienda', cursive;
@@ -252,6 +270,8 @@ div#player-inv4{
   margin-top: 23%;
   position: absolute;
   width: 200px;
+  font-size: 20px;
+  font-weight: 400;
 }
 /* ----- Setup */
 .begin-game{
@@ -262,13 +282,13 @@ div#player-inv4{
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
-  height: 40vh;
+  height: 45vh;
   font-family: 'Merienda', cursive;
   letter-spacing: 0.2px;
   line-height: 130%;
   font-size: 20px;
   font-weight: 400;
-  padding: 20px 20px;
+  padding: 50px 20px;
   position: absolute;
 }
 button#to-chapter-one-button{
@@ -296,6 +316,7 @@ button:hover{
 div.task-title{
   font-size: 25px;
   margin-bottom: 20px;
+  font-family: 'Merienda', cursive;
 }
 input.task-input{
   background: 0;
@@ -336,7 +357,7 @@ input::-webkit-inner-spin-button {
 /* ----- Narration Table */
 .narration{
   font-size: 18px;
-  color: rgb(55, 54, 54);
+  color: rgb(89, 88, 88);
   font-weight: 400;
 }
 .table-narration{
@@ -345,14 +366,14 @@ input::-webkit-inner-spin-button {
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
-  height: 40vh;
+  height: 45vh;
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   letter-spacing: 0.2px;
   line-height: 125%;
   font-size: 20px;
-  padding: 20px 20px;
+  padding: 50px 20px;
   position: absolute;
 }
 .table-narration-smaller{
@@ -361,7 +382,7 @@ input::-webkit-inner-spin-button {
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
-  height: 40vh;
+  height: 45vh;
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
@@ -377,7 +398,7 @@ input::-webkit-inner-spin-button {
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
-  height: 40vh;
+  height: 45vh;
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
@@ -394,7 +415,7 @@ input::-webkit-inner-spin-button {
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
-  height: 40vh;
+  height: 45vh;
   color: black;
   letter-spacing: 0.2px;
   line-height: 125%;
@@ -419,22 +440,27 @@ div#info-table button{
   font-size: 20px;
   width: fit-content;
 }
+button#tasks-button, button#after-tasks-button, button#chapter-continue{
+  margin-top: 50px;
+}
 div#info-table button#chapter-investment{
   color: white;
   background: url(../images/button.png);
-  background-size: cover;
+  background-size: 200px 60px;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid;
   border-color: #b6b6b6;
   box-shadow: 4px 4px 15px black;
+  border-radius: 50%;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   font-size: 20px;
-  width: fit-content;
+  width: 200px;
+  height: 60px;
   position: absolute;
   margin-left: 65%;
-  margin-top: 41%;
+  margin-top: 42%;
 }
 .box0{
   grid-column: 1 / 5;
@@ -446,14 +472,14 @@ div#info-table button#chapter-investment{
   width: 50%;
   margin-left: 480px;
   margin-top: 50px;
-  height: 40vh;
+  height: 45vh;
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.2px;
   line-height: 125%;
-  padding: 20px 20px;
+  padding: 100px 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr) ;
   grid-template-rows: 20% 20% auto;
@@ -464,13 +490,15 @@ div#info-table button#chapter-investment{
   grid-column: 1 / 5;
   font-size: 30px;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 .box2-ch1{
   grid-column: 1 / 3;
+  margin-top: 80px;
 }
 .box3-ch1{
   grid-column: 3 / 5;
+  margin-top: 80px;
 }
 /* ----- CH2 ----- */
 .chapter-two-table{
@@ -479,14 +507,14 @@ div#info-table button#chapter-investment{
   width: 50%;
   margin-left: 480px;
   margin-top: 50px;
-  height: 40vh;
+  height: 45vh;
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   letter-spacing: 0.2px;
   line-height: 125%;
   font-size: 20px;
-  padding: 20px 20px;
+  padding: 50px 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr) ;
   grid-template-rows: 20% 20% auto;
@@ -495,17 +523,17 @@ div#info-table button#chapter-investment{
 }
 .box1-ch2{
   grid-column: 1 / 5;
-  margin-top: 100px;
   font-size: 30px;
   font-weight: 600;
+  margin-top: 120px;
 }
 .box2-ch2{
   grid-column: 1 / 3;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 .box3-ch2{
+  margin-top: 130px;
   grid-column: 3 / 5;
-  margin-top: 100px;
 }
 /* ----- CH3 ----- */
 .chapter-three-table{
@@ -514,7 +542,7 @@ div#info-table button#chapter-investment{
   width: 50%;
   margin-left: 480px;
   margin-top: 50px;
-  height: 40vh;
+  height: 45vh;
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
@@ -752,7 +780,7 @@ div#info-table button#chapter-investment{
 /* ---------- Karakter mozgás aimálás ---------- */
 img#character{
   position: absolute;
-  bottom: 20.5%;
+  bottom: 18%;
   height: 30vh;
   margin-left: 5%;
 }
@@ -768,7 +796,7 @@ img#character{
 img.moveChapterOneStyle{
   animation: moveChapterOne forwards 5s linear;
   position: absolute;
-  bottom: 20.5%;
+  bottom: 18%;
   height: 35vh;
   margin-left: 5%;
 }
@@ -784,7 +812,7 @@ img.moveChapterOneStyle{
 img.moveChapterTwoStyle{
   animation: moveChapterTwo forwards 5s linear;
   position: absolute;
-  bottom: 20.5%;
+  bottom: 18%;
   height: 35vh;
   margin-left: 5%;
 }
@@ -800,7 +828,7 @@ img.moveChapterTwoStyle{
 img.moveChapterThreeStyle{
   animation: moveChapterThree forwards 5s linear;
   position: absolute;
-  bottom: 20.5%;
+  bottom: 18%;
   height: 35vh;
   margin-left: 5%;
 }
@@ -816,7 +844,7 @@ img.moveChapterThreeStyle{
 img.moveChapterEndStyle{
   animation: moveChapterEnd forwards 5s linear;
   position: absolute;
-  bottom: 20.5%;
+  bottom: 18%;
   height: 35vh;
   margin-left: 5%;
 }
