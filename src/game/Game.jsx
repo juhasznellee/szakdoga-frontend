@@ -93,6 +93,7 @@ export default function Game() {
     const tasks = useFetch("http://localhost/szakdoga-backend/php/get_tasks.php", []);                //id, task, answer, solution    
     const [answers, setAnswer] = useState(0);
     const [move, setMove] = useState(0);
+    const [stopped, setStopped] = useState(false);
     const [chapter, setChapter] = useState(0);
     const [stage, setStage] = useState(1);
     const [circleCh1, setCircleCh1] = useState(false);
@@ -163,6 +164,7 @@ export default function Game() {
         }, 5000);
     };
     const setCh1 = () => { //döntés választás - 1.skill (1.gomb)
+        setStopped(true);
         setCircleCh1(false);
         setStage(stage + 1); //3
         setTimeout(function () {
@@ -253,10 +255,12 @@ export default function Game() {
     const backFromWorkCh1 = () => {
         let allGet = 0;
         let allSpent = 0;
+        let spent = 0;
+        let get = 0;
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 1) + ". év -----");
-            let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            get = getPaid(playerInfo[0]);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -264,6 +268,7 @@ export default function Game() {
         setMoney(playerInfo[0].money);
         setMoneyGet(allGet);
         setMoneySpent(allSpent);
+        setStopped(false);
         setMove(2);
         setChapter(chapter + 1); //2
         setStage(10);
@@ -327,6 +332,7 @@ export default function Game() {
         setMoney(playerInfo[0].money);
         setMoneyGet(4000000);
         setMoneySpent(allSpent);
+        setStopped(false);
         setMove(2);
         setChapter(chapter + 1); //2
         setStage(30); //30
@@ -340,6 +346,7 @@ export default function Game() {
     const setCh2 = () => {
         setStage(stage + 1); //11 / 31
         setCircleCh2(false);
+        setStopped(true);
         setWeather('day');
         if(optionCh1 === 2){
             playerInfo[0].job_name = "Munkanélküli";
@@ -387,10 +394,12 @@ export default function Game() {
     const backFromSuccessPromotionCh2 = () => { //sikeres előléptetés után
         let allGet = 0;
         let allSpent = 0;
+        let spent = 0;
+        let get = 0;
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 5 + 1) + ". év -----");
-            let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            get = getPaid(playerInfo[0]);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -400,6 +409,7 @@ export default function Game() {
         setMoneySpent(allSpent);
         setChapter(chapter + 1); //3
         setStage(1); //1
+        setStopped(false);
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
@@ -408,10 +418,12 @@ export default function Game() {
     const backFromFailedPromotionCh2 = () => { //sikertelen előléptetés után
         let allGet = 0;
         let allSpent = 0;
+        let spent = 0;
+        let get = 0;
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 5 + 1) + ". év -----");
-            let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            get = getPaid(playerInfo[0]);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -421,6 +433,7 @@ export default function Game() {
         setMoneySpent(allSpent);
         setChapter(chapter + 1); //3
         setStage(2); //2
+        setStopped(false);
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
@@ -491,10 +504,12 @@ export default function Game() {
     const backFromSuccessNewJobCh2 = () => { //sikeres álom munka megszerzése
         let allGet = 0;
         let allSpent = 0;
+        let spent = 0;
+        let get = 0;
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 5 + 1) + ". év -----");
-            let get = getPaid(playerInfo[0]);
-            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            get = getPaid(playerInfo[0]);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -504,6 +519,7 @@ export default function Game() {
         setMoneySpent(allSpent);
         setChapter(chapter + 1); //3
         setStage(3); //3
+        setStopped(false);
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
@@ -512,10 +528,12 @@ export default function Game() {
     const backFromFailedNewJobCh2 = () => { //sikertelen álom munka megszerzése
         let allGet = 0;
         let allSpent = 0;
+        let spent = 0;
+        let get = 0;
         for (let i = 0; i < 5; i++) { //5 év
-            let get = getPaid(playerInfo[0]);
+            get = getPaid(playerInfo[0]);
             console.log("----- " + (i + 5 + 1) + ". év -----");
-            let spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -525,8 +543,10 @@ export default function Game() {
         setMoneySpent(allSpent);
         setChapter(chapter + 1); //3
         setStage(4); //4
+        setStopped(false);
         setMove(3);
         setTimeout(function () {
+            
             setCircleCh3(true);
         }, 5000);
     };
@@ -592,9 +612,11 @@ export default function Game() {
         let allSpent = 0;
         let spent = 0;
         let allPaidLoan = 0;
+        let paidLoan = 0;
+        let get = 0;
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 5 + 1) + ". év -----");
-            let get = getPaid(playerInfo[0]);
+            get = getPaid(playerInfo[0]);
             if (playerInfo[0].level === 3) {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 50);
             } else if (playerInfo[0].level === 2) {
@@ -602,7 +624,7 @@ export default function Game() {
             } else {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             }
-            let paidLoan = payBackStudentLoan();
+            paidLoan = payBackStudentLoan();
             allPaidLoan = allPaidLoan + paidLoan;
             allGet = allGet + get;
             spent = spent + paidLoan;
@@ -615,6 +637,7 @@ export default function Game() {
         setMoneySpent(allSpent);
         setChapter(chapter + 1); //3
         setStage(5); //5
+        setStopped(false);
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
@@ -625,9 +648,11 @@ export default function Game() {
         let allSpent = 0;
         let spent = 0;
         let allPaidLoan = 0;
+        let paidLoan = 0;
+        let get = 0;
         for (let i = 0; i <  4; i++) { //4 év - mivel eltart mire másik munkát keresünk
             console.log("----- " + (i + 5 + 1) + ". év -----");
-            let get = getPaid(playerInfo[0]);
+            get = getPaid(playerInfo[0]);
             if (playerInfo[0].level === 3) {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 50);
             } else if (playerInfo[0].level === 2) {
@@ -635,7 +660,7 @@ export default function Game() {
             } else {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             }
-            let paidLoan = payBackStudentLoan();
+            paidLoan = payBackStudentLoan();
             allPaidLoan = allPaidLoan + paidLoan;
             allGet = allGet + get;
             spent = spent + paidLoan;
@@ -650,7 +675,7 @@ export default function Game() {
         } else {
             spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
         }
-        let paidLoan = payBackStudentLoan();
+        paidLoan = payBackStudentLoan();
         allPaidLoan = allPaidLoan + paidLoan;
         spent = spent + paidLoan;
         allSpent = allSpent + spent;
@@ -661,6 +686,7 @@ export default function Game() {
         setMoneySpent(allSpent);
         setChapter(chapter + 1); //3
         setStage(6); //6
+        setStopped(false);
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
@@ -671,6 +697,7 @@ export default function Game() {
     /* ---------- Harmadik döntési pont ---------- */
     const setCh3 = () => { //befektetés módja
         setCircleCh3(false);
+        setStopped(true);
         setWeather('day');
         setStage(10); //10
         setMoneySpent(0);
@@ -683,55 +710,63 @@ export default function Game() {
         setWeather('evening');
     };
     const selectValuta1Ch3 = (amount) => {
-        if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
-            playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val1);
-            setMoney(playerInfo[0].money);
-            setInv1(inv1 + parseInt(amount));
-            setMoneySpent(moneySpent + (parseInt(amount) * val1));
-        }else{
-            setErrorMsg(true);
-            setTimeout(function () {
-                setErrorMsg(false);
-            }, 3000);
+        if(amount > 0){
+            if(parseInt(playerInfo[0].money) - (parseInt(amount) * val1) >= 0){
+                playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val1);
+                setMoney(playerInfo[0].money);
+                setInv1(inv1 + parseInt(amount));
+                setMoneySpent(moneySpent + (parseInt(amount) * val1));
+            }else{
+                setErrorMsg(true);
+                setTimeout(function () {
+                    setErrorMsg(false);
+                }, 3000);
+            }
         }
     };
     const selectValuta2Ch3 = (amount) => {
-        if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
-            playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val2);
-            setMoney(playerInfo[0].money);
-            setInv2(inv2 + parseInt(amount));
-            setMoneySpent(moneySpent + (parseInt(amount) * val2));
-        }else{
-            setErrorMsg(true);
-            setTimeout(function () {
-                setErrorMsg(false);
-            }, 3000);
+        if(amount > 0){
+            if(parseInt(playerInfo[0].money) - (parseInt(amount) * val2) >= 0){
+                playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val2);
+                setMoney(playerInfo[0].money);
+                setInv2(inv2 + parseInt(amount));
+                setMoneySpent(moneySpent + (parseInt(amount) * val2));
+            }else{
+                setErrorMsg(true);
+                setTimeout(function () {
+                    setErrorMsg(false);
+                }, 3000);
+            }
         }
     };
     const selectValuta3Ch3 = (amount) => {
-        if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
-            playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val3);
-            setMoney(playerInfo[0].money);
-            setInv3(inv3 + parseInt(amount));
-            setMoneySpent(moneySpent + (parseInt(amount) * val3));
-        }else{
-            setErrorMsg(true);
-            setTimeout(function () {
-                setErrorMsg(false);
-            }, 3000);
+        if(amount > 0){
+            if(parseInt(playerInfo[0].money) - (parseInt(amount) * val3) >= 0){
+                playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val3);
+                setMoney(playerInfo[0].money);
+                setInv3(inv3 + parseInt(amount));
+                setMoneySpent(moneySpent + (parseInt(amount) * val3));
+            }else{
+                setErrorMsg(true);
+                setTimeout(function () {
+                    setErrorMsg(false);
+                }, 3000);
+            }
         }
     };
     const selectValuta4Ch3 = (amount) => {
-        if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
-            playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val4);
-            setMoney(playerInfo[0].money);
-            setInv4(inv4 + parseInt(amount));
-            setMoneySpent(moneySpent + (parseInt(amount) * val4));
-        }else{
-            setErrorMsg(true);
-            setTimeout(function () {
-                setErrorMsg(false);
-            }, 3000);
+        if(amount > 0){
+            if(parseInt(playerInfo[0].money) - (parseInt(amount) * val4) >= 0){
+                playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val4);
+                setMoney(playerInfo[0].money);
+                setInv4(inv4 + parseInt(amount));
+                setMoneySpent(moneySpent + (parseInt(amount) * val4));
+            }else{
+                setErrorMsg(true);
+                setTimeout(function () {
+                    setErrorMsg(false);
+                }, 3000);
+            }
         }
     };
 
@@ -742,55 +777,63 @@ export default function Game() {
         setWeather('evening');
     };
     const selectBond1Ch3 = (amount) => {
-        if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
-            playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
-            setMoney(playerInfo[0].money);
-            setInv1(inv1 + parseInt(amount));
-            setMoneySpent(moneySpent + parseInt(amount));
-        }else{
-            setErrorMsg(true);
-            setTimeout(function () {
-                setErrorMsg(false);
-            }, 3000);
+        if(amount > 0){
+            if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
+                playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
+                setMoney(playerInfo[0].money);
+                setInv1(inv1 + parseInt(amount));
+                setMoneySpent(moneySpent + parseInt(amount));
+            }else{
+                setErrorMsg(true);
+                setTimeout(function () {
+                    setErrorMsg(false);
+                }, 3000);
+            }
         }
     };
     const selectBond2Ch3 = (amount) => {
-        if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
-            playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
-            setMoney(playerInfo[0].money);
-            setInv2(inv2 + parseInt(amount));
-            setMoneySpent(moneySpent + parseInt(amount));
-        }else{
-            setErrorMsg(true);
-            setTimeout(function () {
-                setErrorMsg(false);
-            }, 3000);
+        if(amount > 0){
+            if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
+                playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
+                setMoney(playerInfo[0].money);
+                setInv2(inv2 + parseInt(amount));
+                setMoneySpent(moneySpent + parseInt(amount));
+            }else{
+                setErrorMsg(true);
+                setTimeout(function () {
+                    setErrorMsg(false);
+                }, 3000);
+            }
         }
     };
     const selectBond3Ch3 = (amount) => {
-        if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
-            playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
-            setMoney(playerInfo[0].money);
-            setInv3(inv3 + parseInt(amount));
-            setMoneySpent(moneySpent + parseInt(amount));
-        }else{
-            setErrorMsg(true);
-            setTimeout(function () {
-                setErrorMsg(false);
-            }, 3000);
+        if(amount > 0){
+            if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
+                playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
+                setMoney(playerInfo[0].money);
+                setInv3(inv3 + parseInt(amount));
+                setMoneySpent(moneySpent + parseInt(amount));
+            }else{
+                setErrorMsg(true);
+                setTimeout(function () {
+                    setErrorMsg(false);
+                }, 3000);
+            }
         }
     };
     const selectBond4Ch3 = (amount) => {
-        if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
-            playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
-            setMoney(playerInfo[0].money);
-            setInv4(inv4 + parseInt(amount));
-            setMoneySpent(moneySpent + parseInt(amount));
-        }else{
-            setErrorMsg(true);
-            setTimeout(function () {
-                setErrorMsg(false);
-            }, 3000);
+        if(amount > 0){
+            if(parseInt(playerInfo[0].money) - parseInt(amount) >= 0){
+                playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
+                setMoney(playerInfo[0].money);
+                setInv4(inv4 + parseInt(amount));
+                setMoneySpent(moneySpent + parseInt(amount));
+            }else{
+                setErrorMsg(true);
+                setTimeout(function () {
+                    setErrorMsg(false);
+                }, 3000);
+            }
         }
     };
 
@@ -804,26 +847,13 @@ export default function Game() {
         let allSpent = 0;
         let spent = 0;
         let allPaidLoan = 0;
-        if(optionCh3 === 1){ //valuta
-            if(inv1 > 0){
-                
-            }
-            if(inv2 > 0){
-
-            }
-            if(inv3 > 0){
-
-            }
-            if(inv4 > 0){
-
-            }
-        }else{ //kötvény
-
-        }
-        
+        let get = 0;
+        let paidLoan = 0;
+        let sell = 0;
+        let buy = 0;
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 10 + 1) + ". év -----");
-            let get = getPaid(playerInfo[0]);
+            get = getPaid(playerInfo[0]);
             if (playerInfo[0].level === 3) {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 50);
             } else if (playerInfo[0].level === 2) {
@@ -832,17 +862,81 @@ export default function Game() {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
             }
 
-            if(optionCh1 === 2){
-                let paidLoan = payBackStudentLoan();
+            if(optionCh3 === 2){ //kötvény
+                if(i === 0){ // MÁ Prémium - 1 év
+                    if(inv4 > 0){
+                        sell = (inv4 * 1.09);
+                        allGet = allGet + sell;
+                        spent = spent + inv4;
+                        playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
+                    }
+                }
+                if(i === 1){ // MÁ Plusz - 2 év
+                    if(inv3 > 0){
+                        sell = (inv3 * 1.07);
+                        allGet = allGet + sell;
+                        spent = spent + inv3;
+                        playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
+                    }
+                }
+                if(i === 2){ // MÁ 2 - 3 év
+                    if(inv2 > 0){
+                        sell = (inv2 * 1.04);
+                        allGet = allGet + sell;
+                        spent = spent + inv2;
+                        playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
+                    }
+                }
+                if(i === 4){ // MÁ 1 - 5 év
+                    if(inv1 > 0){
+                        sell = (inv1 * 1.06);
+                        allGet = allGet + sell;
+                        spent = spent + inv1;
+                        playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
+                    }
+                }
+            }
+
+            if(optionCh1 === 2){ //egyetemi hitel
+                paidLoan = payBackStudentLoan();
                 allPaidLoan = allPaidLoan + paidLoan;
                 spent = spent + paidLoan;
-                allSpent = allSpent + spent;
-            }else{
-                allSpent = allSpent + spent;
             }
+            allSpent = allSpent + spent;
             allGet = allGet + get;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
         }
+
+        if(optionCh3 === 1){ //valuta - 5 év elteltével
+            if(inv1 > 0){
+                buy = (inv1 * val1);
+                allSpent = allSpent + buy;
+                sell = (inv1 * newVal1);
+                allGet = allGet + sell;
+            }
+            if(inv2 > 0){
+                buy = (inv2 * val2);
+                allSpent = allSpent + buy;
+                sell = (inv2 * newVal2);
+                allGet = allGet + sell;
+                playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
+            }
+            if(inv3 > 0){
+                buy = (inv3 * val3);
+                allSpent = allSpent + buy;
+                sell = (inv3 * newVal3);
+                allGet = allGet + sell;
+                playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
+            }
+            if(inv4 > 0){
+                buy = (inv4 * val4);
+                allSpent = allSpent + buy;
+                sell = (inv4 * newVal4);
+                allGet = allGet + sell;
+                playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
+            }
+        }
+
         if(optionCh1 === 2){
             setLoan(loan - allPaidLoan);
         } 
@@ -850,6 +944,7 @@ export default function Game() {
         setMoneyGet(allGet);
         setMoneySpent(allSpent);
         setStage(stage + 1); //22 / 32
+        setMove(4);
     };
 
     /* ---------- Állapot jelzők ---------- */
@@ -918,7 +1013,7 @@ export default function Game() {
     /* ---------- Karakter képe ---------- */
     const getCharacter = () => {
         if (playerInfo.length > 0) {
-            return <Character gender={playerInfo[0].gender} moveTo={move} />;
+            return <Character gender={playerInfo[0].gender} moveTo={move} stopped={stopped}/>;
         }
         return <Character gender="?" />;
     };
@@ -950,7 +1045,7 @@ export default function Game() {
                 return getTasks();
             } else if (chapter === 1 && stage === 16) {
                 return (
-                    <div className="table-narration-shorter2">
+                    <div className="table-narration">
                         <InfoTable chapter={1} stage={16} answer={answers} />
                         <CustomButton chapter={1} stage={16} onclick={backFromWorkCh1} />
                     </div>
@@ -959,7 +1054,7 @@ export default function Game() {
                 return (
                     <div className="table-narration">
                         <InfoTable chapter={1} stage={24} answer={answers} />
-                        <CustomButton onclick={spinWheelCh1} />
+                        <CustomButton chapter={1} stage={24} onclick={spinWheelCh1} />
                     </div>
                 );
             } else if (chapter === 1 && stage === 25) {
@@ -968,7 +1063,7 @@ export default function Game() {
                 return (
                     <div className='table-narration'>
                         <InfoTable chapter={1} stage={26} level={playerInfo[0].level} />
-                        <CustomButton onclick={backFromUniCh1} />
+                        <CustomButton chapter={1} stage={26} onclick={backFromUniCh1} />
                     </div>
                 );
             } else if (chapter === 2 && stage === 10) {
@@ -979,16 +1074,16 @@ export default function Game() {
                 return <InfoTable chapter={2} stage={12} onclick={afterSpinWheelPromotionCh2} />
             } else if (chapter === 2 && stage === 13) {
                 return (
-                    <div className='table-narration-shorter2'>
+                    <div className='table-narration'>
                         <InfoTable chapter={2} stage={13} salary={playerInfo[0].salary} />
-                        <CustomButton onclick={backFromSuccessPromotionCh2} />
+                        <CustomButton chapter={2} stage={13} onclick={backFromSuccessPromotionCh2} />
                     </div>
                 );
             } else if (chapter === 2 && stage === 14) {
                 return (
                     <div className='table-narration'>
                         <InfoTable chapter={2} stage={14} salary={playerInfo[0].salary} />
-                        <CustomButton onclick={backFromFailedPromotionCh2} />
+                        <CustomButton chapter={2} stage={14} onclick={backFromFailedPromotionCh2} />
                     </div>
                 );
             } else if (chapter === 3 && stage === 1) {
@@ -1006,16 +1101,16 @@ export default function Game() {
                 return <InfoTable chapter={2} stage={23} onclick={afterSpinWheelNewJobCh2} />
             } else if (chapter === 2 && stage === 24) {
                 return (
-                    <div className='table-narration-shorter1'>
+                    <div className='table-narration'>
                         <InfoTable chapter={2} stage={24} jobname={playerInfo[0].job_name} salary={playerInfo[0].salary} />
-                        <CustomButton onclick={backFromSuccessNewJobCh2} />
+                        <CustomButton chapter={2} stage={24} onclick={backFromSuccessNewJobCh2} />
                     </div>
                 );
             } else if (chapter === 2 && stage === 25) {
                 return (
-                    <div className='table-narration-shorter1'>
+                    <div className='table-narration'>
                         <InfoTable chapter={2} stage={25} jobname={playerInfo[0].job_name} salary={playerInfo[0].salary} />
-                        <CustomButton onclick={backFromFailedNewJobCh2} />
+                        <CustomButton chapter={2} stage={25} onclick={backFromFailedNewJobCh2} />
                     </div>
                 );
             } else if (chapter === 3 && stage === 3) {
@@ -1051,16 +1146,16 @@ export default function Game() {
                 return getTasks();
             } else if (chapter === 2 && stage === 37) {
                 return (
-                    <div className="table-narration-shorter2">
+                    <div className="table-narration">
                         <InfoTable chapter={2} stage={37} answer={answers} />
-                        <CustomButton onclick={backFromWorkSecondJobCh2} />
+                        <CustomButton chapter={2} stage={37} onclick={backFromWorkSecondJobCh2} />
                     </div>
                 );
             } else if (chapter === 2 && stage === 38) {
                 return (
-                    <div className="table-narration-shorter2">
+                    <div className="table-narration">
                         <InfoTable chapter={2} stage={38} answer={answers} />
-                        <CustomButton onclick={backFromWorkFirstJobCh2} />
+                        <CustomButton chapter={2} stage={38} onclick={backFromWorkFirstJobCh2} />
                     </div>
                 );
             } else if (chapter === 3 && stage === 5) {
@@ -1072,11 +1167,9 @@ export default function Game() {
             } else if (chapter === 3 && stage === 20) {
                 return (
                     <>
-                        <div>
-                            <InfoTable chapter={3} stage={20} skill={playerSkill} val1={val1} onclick1={selectValuta1Ch3} val2={val2} onclick2={selectValuta2Ch3} val3={val3} onclick3={selectValuta3Ch3} val4={val4} onclick4={selectValuta4Ch3}/>
-                            <div className='error-message'>
-                                <ErrorMsg place="investment" active={errorMsg}/>
-                            </div>
+                        <InfoTable chapter={3} stage={20} skill={playerSkill} val1={val1} onclick1={selectValuta1Ch3} val2={val2} onclick2={selectValuta2Ch3} val3={val3} onclick3={selectValuta3Ch3} val4={val4} onclick4={selectValuta4Ch3}/>
+                        <div className='error-message'>
+                            <ErrorMsg place="investment" active={errorMsg}/>
                         </div>
                         <CustomButton onclick={summaryOfInvestmetCh3} chapter={3} stage={20}/>
                     </>
@@ -1084,11 +1177,9 @@ export default function Game() {
             } else if (chapter === 3 && stage === 30) {
                 return (
                     <>
-                        <div>
-                            <InfoTable chapter={3} stage={30} skill={playerSkill}  onclick1={selectBond1Ch3} onclick2={selectBond2Ch3} onclick3={selectBond3Ch3} onclick4={selectBond4Ch3}/>
-                            <div className='error-message'>
-                                <ErrorMsg place="investment" active={errorMsg}/>
-                            </div>
+                        <InfoTable chapter={3} stage={30} skill={playerSkill}  onclick1={selectBond1Ch3} onclick2={selectBond2Ch3} onclick3={selectBond3Ch3} onclick4={selectBond4Ch3}/>
+                        <div className='error-message'>
+                            <ErrorMsg place="investment" active={errorMsg}/>
                         </div>
                         <CustomButton onclick={summaryOfInvestmetCh3} chapter={3} stage={30}/>
                     </>
@@ -1096,15 +1187,27 @@ export default function Game() {
             } else if (chapter === 3 && stage === 21) {
                 return (
                     <div  className="table-narration-smaller">
-                        <InfoTable chapter={3} stage={21} skill={playerSkill} inv1={inv1} inv2={inv2} inv3={inv3} inv4={inv4}/>
+                        <InfoTable chapter={3} stage={21} inv1={inv1} inv2={inv2} inv3={inv3} inv4={inv4}/>
                         <CustomButton onclick={getInvestmentCh3} chapter={3} stage={21}/>
                     </div>
                 );
             } else if (chapter === 3 && stage === 31) {
                 return (
                     <div  className="table-narration-smaller">
-                        <InfoTable chapter={3} stage={31} skill={playerSkill}  inv1={inv1} inv2={inv2} inv3={inv3} inv4={inv4}/>
+                        <InfoTable chapter={3} stage={31} inv1={inv1} inv2={inv2} inv3={inv3} inv4={inv4}/>
                         <CustomButton onclick={getInvestmentCh3} chapter={3} stage={31}/>
+                    </div>
+                );
+            } else if (chapter === 3 && stage === 22) {
+                return (
+                    <div  className="table-narration-big">
+                        <InfoTable chapter={3} stage={22} name={playerInfo[0].name} salary={playerInfo[0].salary} moneyGet={moneyGet} moneySpent={moneySpent} optionCh1={optionCh1} inv1={inv1} val1={val1} newVal1={newVal1} inv2={inv2} val2={val2} newVal2={newVal2} inv3={inv3} val3={val3} newVal3={newVal1} inv4={inv4} val4={val4} newVal4={newVal4}/>
+                    </div>
+                );
+            } else if (chapter === 3 && stage === 32) {
+                return (
+                    <div  className="table-narration-big">
+                        <InfoTable chapter={3} stage={32} name={playerInfo[0].name} salary={playerInfo[0].salary} moneyGet={moneyGet} moneySpent={moneySpent} optionCh1={optionCh1} inv1={inv1} inv2={inv2} inv3={inv3} inv4={inv4}/>
                     </div>
                 );
             } else {
@@ -1168,7 +1271,7 @@ export default function Game() {
                     {<Circle chapter={1} active={circleCh1} onclick={setCh1} option={optionCh1}/>}
                 </div>
                 <div id='chapter-two-place'>
-                    {<Circle chapter={2} active={circleCh2} onclick={setCh2} option={optionCh2}/>}
+                    {<Circle chapter={2} stage={stage} active={circleCh2} onclick={setCh2} option={optionCh2}/>}
                 </div>
                 <div id='chapter-three-place'>
                     {<Circle chapter={3} active={circleCh3} onclick={setCh3} option={optionCh3}/>}
