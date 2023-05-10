@@ -90,9 +90,9 @@ function AdminPage() {
                 Start
               </button><br/>
               <div id='start-message'>
-                A képre kattintva válaszd ki a karakteredet majd adj neki nevet!
+                A képre kattintva válaszd ki a karakteredet, majd adj neki nevet!
               </div>
-              <DescPopup/><br/>
+              <DescPopup place="admin"/><br/>
               <a href="http://localhost/szakdoga-backend/task/task_edit.php"><button className='button-edit' id='first'>
                 Feladatok szerkesztése
               </button></a><br/>
