@@ -406,14 +406,14 @@ input::-webkit-inner-spin-button {
   width: 50%;
   margin-left: 25%;
   margin-top: 50px;
-  height: 56vh;
+  height: 60vh;
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   letter-spacing: 0.2px;
   line-height: 125%;
   font-size: 20px;
-  padding: 20px 20px;
+  padding: 10px 20px;
   position: absolute;
 }
 .table-narration-shorter{
@@ -446,6 +446,10 @@ div#info-table button{
   font-weight: 400;
   font-size: 20px;
   width: fit-content;
+}
+button#back-to-home{
+  margin-left: 40%;
+  margin-top: -10px;
 }
 button#tasks-button, button#after-tasks-button, button#chapter-continue{
   margin-top: 40px;

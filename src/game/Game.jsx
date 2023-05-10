@@ -947,6 +947,10 @@ export default function Game() {
         setMove(4);
     };
 
+    const backToMenu = () => {
+        window.location.href="http://localhost:3000";
+    };
+
     /* ---------- Állapot jelzők ---------- */
     const setPlayerStateMoney = () => {
         if (playerInfo.length > 0 && money >= 0) {
@@ -1202,12 +1206,14 @@ export default function Game() {
                 return (
                     <div  className="table-narration-big">
                         <InfoTable chapter={3} stage={22} name={playerInfo[0].name} salary={playerInfo[0].salary} moneyGet={moneyGet} moneySpent={moneySpent} optionCh1={optionCh1} inv1={inv1} val1={val1} newVal1={newVal1} inv2={inv2} val2={val2} newVal2={newVal2} inv3={inv3} val3={val3} newVal3={newVal1} inv4={inv4} val4={val4} newVal4={newVal4}/>
+                        <CustomButton onclick={backToMenu} chapter={3} stage={22}/>
                     </div>
                 );
             } else if (chapter === 3 && stage === 32) {
                 return (
                     <div  className="table-narration-big">
                         <InfoTable chapter={3} stage={32} name={playerInfo[0].name} salary={playerInfo[0].salary} moneyGet={moneyGet} moneySpent={moneySpent} optionCh1={optionCh1} inv1={inv1} inv2={inv2} inv3={inv3} inv4={inv4}/>
+                        <CustomButton onclick={backToMenu} chapter={3} stage={32}/>
                     </div>
                 );
             } else {

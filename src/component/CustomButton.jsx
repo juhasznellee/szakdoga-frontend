@@ -22,7 +22,7 @@ export default function CustomButton (props){
     }else if(props.chapter === 3 && (props.stage === 21 || props.stage === 31 )){
         return <button id='chapter-continue-smaller' onClick={props.onclick}>Még látjuk egymást!</button>
     }else if(props.chapter === 3 && (props.stage === 22 || props.stage === 32 )){
-        return <button id='chapter-continue-smaller' onClick={props.onclick}>Összegzés megtekintése</button>
+        return <button id='back-to-home' onClick={props.onclick}>Vissza a kezdőlapra</button>
     }else{
         return <button id='chapter-continue' onClick={props.onclick}>Tovább!</button>
     }
