@@ -26,14 +26,14 @@ export default function InfoTable(props) {
     if(props.chapter === 0 && props.stage === 1){
         return (
             <>
-                Szia!<br/>{props.playername} vagyok, nagyon örülök hogy megismerhetlek!<br/><br/>Idén érettségiztem le, és a szüleim már kérdezősködnek, hogy mivel szeretnék foglalkozni a jövőben. Nagy bajban vagyok, mert ötletem sincs, hogy mit kezdjek jelenleg az életemmel, mitévő legyek.<br/>Nagy szükségem lenne a segítségedre és a tudásodra. Úgy hallottam nem én vagyok az első aki hozzád fordult.<br/><br/>Tudnál nekem segíteni?
+                Szia!<br/>{props.playername} vagyok, nagyon örülök hogy megismerhetlek!<br/><br/>Idén érettségiztem le, és a szüleim már kérdezősködnek, hogy mivel szeretnék foglalkozni a jövőben. Nagy bajban vagyok, mert ötletem sincs, hogy mit kezdjek jelenleg az életemmel, mitévő legyek.<br/>Nagy szükségem lenne a segítségedre és a tudásodra. Úgy hallottam nem én vagyok az első, aki hozzád fordult.<br/><br/>Tudnál nekem segíteni?
             </>
         );
     }else if(props.chapter === 1){
         if(props.stage === 2){
             return(
                 <div className="table-narration-shorter">
-                    <i className="narration">Az aktív mérföldkövekre kattintva láthatod az adott pont döntési lehetőségeit. Az általad választott gombot megnyomva véglegesítheted a döntést, hogy mi szerint cselekedjen {props.name}.<br/><br/>A jobb felső sarokban láthatod {props.name} aktuális pénzét, munkáját, havi <PopupInfo place="brutto"/> fizetését és a képzettségi szintjét.<br/>Lehetőségünk van képzések elvégzésére, amit odafigyeléssel és gyorsasággal szerezhetünk meg.</i>
+                    <i className="narration">Az aktív mérföldkövekre kattintva láthatod az adott pont döntési lehetőségeit. Az általad választott gombot megnyomva véglegesítheted a döntést, hogy mi szerint cselekedjen {props.name}.<br/><br/>A jobb felső sarokban láthatod {props.name} aktuális pénzét, munkáját, havi <PopupInfo place="brutto"/> fizetését és a képzettségi szintjét. Egyes szövegrészekben néhány szó más színnel van írva, mint a többi. Ezek fogalmakat jelentenek, amiket egér ráhúzással meg is tudunk tekinteni.<br/>Lehetőségünk van képzések elvégzésére is, amik a későbbiekben a segítségünkre válnak. Ezeket odafigyeléssel és gyorsasággal szerezhetjük meg.</i>
                 </div>
             );
         }else if(props.stage === 3){
@@ -72,7 +72,7 @@ export default function InfoTable(props) {
                         <li>Egészen átlagos egyetem, semmi kiemelkedő nincs benne: VRF Egyetem</li>
                         <li>Legkevésbé ismert egyetem, alacsony színvonal minimális elvárásokkal: KEG Egyetem</li>
                     </ul>
-                    Most már csak várnom kell, amíg megérkeznek az eredmmények a felvételivel kapcsolatban.
+                    Most már csak várnom kell, amíg megérkeznek az eredmények a felvételivel kapcsolatban.
                 </div>
             );
         }else if(props.stage === 25){
@@ -151,7 +151,7 @@ export default function InfoTable(props) {
                         <li>Mivel {props.name} csak érettségi bizonyítvánnyal rendelkezik, ezért nehezére esett jólfizető munkát találnia. Sok keresgélés után és nagy szerencsével talált magának egy megfelelő munkát, amit el is tudott vállalni. Így most <span className="lower">{props.jobname}ként</span> dolgozik.</li>
                         <li>A <PopupInfo place="brutto"/> fizetése havi {props.salary.toLocaleString()} Ft, ami <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft-ot jelent.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült keresnie.</li>
-                        <li>És ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
+                        <li>És ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
                     </ul>
                     <i className="narration">Kattints az aktív mérföldkőre a tovább lépéshez!</i>
                 </div>
@@ -305,7 +305,7 @@ export default function InfoTable(props) {
                     Az első részben elért eredmények:
                     <ul>
                         <li>{props.name} sikeresen elvégezte a {uniLevel} Egyetemet, kemény és kitartó munkával megszerezte a diplomáját.</li>
-                        <li>A <PopupInfo place="hitel"/> miatt {props.moneyGet.toLocaleString()} Ft-ot kapott az egyetemi éveire, amit vissza kell fizetnie miután munkát talát magának.</li>
+                        <li>A <PopupInfo place="hitel"/> miatt {props.moneyGet.toLocaleString()} Ft-ot kapott az egyetemi éveire, amit vissza kell fizetnie miután munkát talált magának.</li>
                         <li>Ez alatt az idő alatt összesen {props.moneySpent.toLocaleString()} Ft-ot költött.</li>
                     </ul>
                     <i className="narration">Kattints az aktív mérföldkőre a tovább lépéshez!</i>
@@ -374,7 +374,7 @@ export default function InfoTable(props) {
                         <li>{props.name} erőtt vett magán és a főnöke elé állt előléptetés gyanánt. Szerencséje volt, mert egy ideje már érett neki a fizetésemelés, ami most el is érkezett.</li>
                         <li>A havi <PopupInfo place="brutto"/> bére most {props.salary.toLocaleString()} Ft, ami <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült szereznie.</li>
-                        <li>Ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
+                        <li>Ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
                     </ul>
                     <i className="narration">Kattints az aktív mérföldkőre a tovább lépéshez!</i>
                 </div>
@@ -387,7 +387,7 @@ export default function InfoTable(props) {
                         <li>{props.name} erőtt vett magán és a főnöke elé állt előléptetés gyanánt. Sajnos a felettese szerint még nem tett eleget azért, hogy fizetésemelést kapjon, így minden maradt a régi kerékvágásban.</li>
                         <li>A havi <PopupInfo place="brutto"/> bére továbbra is {props.salary.toLocaleString()} Ft, ami <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült szereznie.</li>
-                        <li>Ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
+                        <li>Ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
                     </ul>
                     <i className="narration">Kattints az aktív mérföldkőre a tovább lépéshez!</i>
                 </div>
@@ -400,7 +400,7 @@ export default function InfoTable(props) {
                         <li>{props.name} 5 év után úgy döntött, hogy új munkát keres. Megtalálta számára az álom munkát, és gondolta szerencsét próbál vele. Jól sikerült az interjú, magabiztos volt, és a cég ügyvezetőjét is meggyőzte alkalmasságáról. A továbbiakban <span className="lower">{props.jobname}ként</span> dolgozni.</li>
                         <li>A havi <PopupInfo place="brutto"/> bére most {props.salary.toLocaleString()} Ft, ami <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült szereznie.</li>
-                        <li>Ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
+                        <li>Ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
                     </ul>
                     <i className="narration">Kattints az aktív mérföldkőre a tovább lépéshez!</i>
                 </div>
@@ -413,7 +413,7 @@ export default function InfoTable(props) {
                         <li>{props.name} 5 év után úgy döntött, hogy új munkát keres. Megtalálta számára az álom munkát, és gondolta szerencsét próbál vele. Sajnos borzalmasan rosszul sikerült az interjú, végig ideges és stresszes volt. Annyira akarta ezt az állást, hogy végül e miatt nem sikerült neki. Szomorkodás helyett tovább keresgélt, és rövid időn belül talált is magának egy másik munkát. A továbbiakban <span className="lower">{props.jobname}ként</span> dolgozni.</li>
                         <li>A havi <PopupInfo place="brutto"/> bére most {props.salary.toLocaleString()} Ft, ami <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült szereznie.</li>
-                        <li>Ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
+                        <li>Ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el.</li>
                     </ul>
                     <i className="narration">Kattints az aktív mérföldkőre a tovább lépéshez!</i>
                 </div>
@@ -426,7 +426,7 @@ export default function InfoTable(props) {
                         <li>{props.name} nem vesztegetve az időt, diploma után egyből elkezdtett munkát keresni. El is fogadta az első ajánlatot ami szembejött vele, hogy minél hamarabb <PopupInfo place="torleszt"/>eni tudja a tartozásait. Végzettségéből adódóan <span className="lower">{props.jobname}ként</span> dolgozik.</li> 
                         <li>A havi <PopupInfo place="brutto"/> bére {props.salary.toLocaleString()} Ft, ami <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült szereznie.</li>
-                        <li>Ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el. Ez az összeg tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</li>
+                        <li>Ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el. Ez az összeg tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</li>
                     </ul>
                     <i className="narration">Kattints az aktív mérföldkőre a tovább lépéshez!</i>
                 </div>
@@ -447,7 +447,7 @@ export default function InfoTable(props) {
                         <li>{props.name} nem vesztegetve az időt, diploma után egyből elkezdtett munkát keresni. Nem fogadta el az első ajánlatot, gondolván, hogy akad jobban fizető állás. Már eltelt 1 év az ajánlat visszautasítása óta, és kétségbeesve el is fogadta az első munkaajánlatot ami szembejött vele, hogy minél hamarabb <PopupInfo place="torleszt"/>eni tudja a tartozásait. Végzettségéből adódóan <span className="lower">{props.jobname}ként</span> dolgozik.</li>
                         <li>{betterMoney} Így a havi <PopupInfo place="brutto"/> bére {props.salary.toLocaleString()} Ft, ami <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft-nak felel meg.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült szereznie.</li>
-                        <li>Ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el. Ez az összeg tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</li>
+                        <li>Ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el. Ez az összeg tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</li>
                     </ul>
                     <i className="narration">Kattints az aktív mérföldkőre a tovább lépéshez!</i>
                 </div>
@@ -455,7 +455,7 @@ export default function InfoTable(props) {
         }else if(props.stage === 10){
             return(
                 <div className="chapter-three-table">
-                    <p className='box0'>Szia!<br/>Örülök, hogy újra találkozunk!<br/><br/>Egy utolsó dologban kérném a segítségedet: mióta dolgozni kezdtem, folyamatosan spórolok és félreteszem a pénzemet, mert szeretném <PopupInfo place="befektet"/>ni valamibe. Amit viszont nemtudok, hogy <PopupInfo place="valuta"/> legyen vagy <PopupInfo place="kotveny"/>.</p>
+                    <p className='box0'>Szia!<br/>Örülök, hogy újra találkozunk!<br/><br/>Egy utolsó dologban kérném a segítségedet: mióta dolgozni kezdtem, folyamatosan spórolok és félreteszem a pénzemet, mert szeretném <PopupInfo place="befektet"/>ni valamibe. Amit viszont nem tudok, hogy <PopupInfo place="valuta"/> legyen vagy <PopupInfo place="kotveny"/>.</p>
                     <div className='box1-ch3'>Te mibe fektetnél be?</div>
                     <button className='box2-ch3' onClick={e => props.onclick1(props.player)}>Befektetés valutába</button>
                     <button className='box3-ch3' onClick={e => props.onclick2(props.player)}>Befektetés kötvénybe</button>
@@ -739,7 +739,7 @@ export default function InfoTable(props) {
                         </li>
                         <li>A havi <PopupInfo place="brutto"/> bére nem változott, továbbra is {props.salary.toLocaleString()} Ft, azaz <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült szereznie. Ez az összeg tartalmazza a már eladott valuták értékét.</li>
-                        <li>Ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el. Ez az összeg tartalmazza a már valutába befektetett összeget. {temp5}</li>
+                        <li>Ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el. Ez az összeg tartalmazza a már valutába befektetett összeget. {temp5}</li>
                     </ul>
                 </div>
             );
@@ -780,7 +780,7 @@ export default function InfoTable(props) {
                         </li>
                         <li>A havi <PopupInfo place="brutto"/> bére nem változott, továbbra is {props.salary.toLocaleString()} Ft, azaz <PopupInfo place="netto"/> {(props.salary * 0.665).toLocaleString()} Ft.</li>
                         <li>Ebben az időszakban összesen {props.moneyGet.toLocaleString()} Ft-ot sikerült szereznie. Ez az összeg tartalmazza a már <PopupInfo place="kamat"/>ozott <PopupInfo place="kotveny"/>ek értékét.</li>
-                        <li>Ugyan ebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el. Ez az összeg tartalmazza a már <PopupInfo place="kotveny"/>ekbe befektetett összeget. {temp5}</li>
+                        <li>Ugyanebben az időszakban {props.moneySpent.toLocaleString()} Ft-ot költött el. Ez az összeg tartalmazza a már <PopupInfo place="kotveny"/>ekbe befektetett összeget. {temp5}</li>
                     </ul>
                 </div>
             );

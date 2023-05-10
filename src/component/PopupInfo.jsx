@@ -14,7 +14,7 @@ export default function PopupInfo (props){
                         <li>Kamat: 4.99% - Havonta ennyi %-ot nő a visszafizetendő összeg.</li>
                         <li>Türelmi idő: 5 év (egyetem után) - Ennyi idő elteltével kell elkezdened törleszteni.</li>
                     </ul>
-                    Havonta 48 857 Ft-ot kell majd visszafizetni (törlesztőrészleg).
+                    Havonta 48 857 Ft-ot kell majd visszafizetni (törlesztőrészlet).
                 </div>
             </Popup>
         </>
