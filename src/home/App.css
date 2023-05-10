@@ -100,7 +100,7 @@ input:focus{
   height: 200px;
   font-family: 'Merienda', cursive;
 }
-div#start-error-message{
+div#start-message{
   color: rgb(198, 197, 197);
   margin: 0;
   margin-top: 20px;
@@ -183,6 +183,6 @@ button.button-login{
 }
 .description{
   font-family: 'Merienda', cursive;
-  font-size: 14px;
+  font-size: 12px;
 }
 /* --------------- Egyéb class --------------- */

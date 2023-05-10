@@ -4,7 +4,6 @@ import youngMan from '../images/young_man_home.png';
 import React, { useState, useEffect } from 'react';
 import DescPopup from '../component/GameDescPopup.jsx';
 import 'semantic-ui-css/semantic.min.css';
-import ErrorMsg from '../component/ErrorMsg.jsx';
 
 function PlayerPage() {
   const [isActive_Man, setIsActive_Man] = useState(false);
@@ -12,10 +11,8 @@ function PlayerPage() {
   const [isActive_ManInput, setIsActive_ManInput] = useState(true);
   const [isActive_WomanInput, setIsActive_WomanInput] = useState(true);
   const [playerName, setPlayerName] = useState("");  
-  const [errorMsg, setErrorMsg] = useState(false);
 
   const handleClick1 = () => {
-    setErrorMsg(false);
     if(!isActive_Woman && !isActive_Man){
       setIsActive_Woman(current => !current);
       setIsActive_Man(current => current);
@@ -34,7 +31,6 @@ function PlayerPage() {
     }
   };
   const handleClick2 = () => {
-    setErrorMsg(false);
     if(!isActive_Woman && !isActive_Man){
       setIsActive_Woman(current => current);
       setIsActive_Man(current => !current);
@@ -65,7 +61,7 @@ function PlayerPage() {
       fetch("http://localhost/szakdoga-backend/php/insert_player.php?player=f&name=" + playerName);
       window.location.href="http://localhost:3000/game";
     }else{
-      setErrorMsg(true);
+
     }
   };
 
@@ -93,8 +89,8 @@ function PlayerPage() {
               <button id='button-start-player' onClick={insertCharacterInfo}>
                 Start
               </button><br/>
-              <div id='start-error-message'>
-                <ErrorMsg place="home" active={errorMsg}/>
+              <div id='start-message'>
+                A képre kattintva válaszd ki a karakteredet majd adj neki nevet!
               </div>
               <DescPopup/><br/>
             </div>
