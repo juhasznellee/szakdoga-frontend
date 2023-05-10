@@ -1,6 +1,6 @@
 import './App.css';
-import noi_karakter from '../images/noi_karakter.png';
-import ferfi_karakter from '../images/ferfi_karakter.png';
+import youngWoman from '../images/young_woman.png';
+import youngMan from '../images/young_man_home.png';
 import React, { useState, useEffect } from 'react';
 import DescPopup from '../component/GameDescPopup.jsx';
 import 'semantic-ui-css/semantic.min.css';
@@ -80,7 +80,7 @@ function PlayerPage() {
         <div id='cim'>Educative Gamification</div>
         <div className='mainRow'>
           <div className='columns'>
-            <img alt='noi_karakter'src={noi_karakter} className='player-woman' style={{
+            <img alt='youngWoman'src={youngWoman} className='player-woman' style={{
             scale: (isActive_Woman && !isActive_Man) ? '103%' : '',
             filter: (isActive_Woman && !isActive_Man) ? 'brightness(100%)' : 'brightness(70%)'
           }} onClick={handleClick1}/><br/>
@@ -100,7 +100,7 @@ function PlayerPage() {
             </div>
           </div>
           <div className='columns'>
-            <img alt='ferfi_karakter' src={ferfi_karakter} className='player-man'  style={{
+            <img alt='youngMan' src={youngMan} className='player-man'  style={{
             scale: (isActive_Man && !isActive_Woman) ? '103%' : '',
             filter: (isActive_Man && !isActive_Woman)  ? 'brightness(100%)' : 'brightness(70%)'
           }} onClick={handleClick2}/><br/>

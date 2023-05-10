@@ -22,7 +22,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>bruttó</span>} wide>
                 <div className='description'>
-                    Az az összeg amit a munkáltató fizet a munkavállalónak, mielőtt bármilyen adót és járulékot levonnánk.
+                    Az az összeg, amit a munkáltató fizet a munkavállalónak, mielőtt bármilyen adót és járulékot levonnának.
                 </div>
             </Popup>
         </>
@@ -30,7 +30,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>nettó</span>} wide>
                 <div className='description'>
-                    Az az összeg amit a munkáltató ténylegesen kézhez kap minden adó és járulékfizetés után.<br/><br/>Levonásra kerül a:
+                    Az az összeg, amit a munkavállaló ténylegesen kézhez kap minden adó és járulékfizetés után.<br/><br/>Levonásra kerül a:
                     <ul>
                         <li>személyi jövedelem adó (15%),</li>
                         <li>társadalombiztosítási járulék (18.5%)</li>
@@ -73,6 +73,14 @@ export default function PopupInfo (props){
     }else if(props.place === "valuta"){
         return <>
             <Popup trigger={<span className='popup-info'>valuta</span>} wide>
+                <div className='description'>
+                    Valamely más ország törvényes fizetőeszközének megjelenése fizikai formában egy másik ország fizetési forgalmában.
+                </div>
+            </Popup>
+        </>
+    }else if(props.place === "valutaa"){
+        return <>
+            <Popup trigger={<span className='popup-info'>valutá</span>} wide>
                 <div className='description'>
                     Valamely más ország törvényes fizetőeszközének megjelenése fizikai formában egy másik ország fizetési forgalmában.
                 </div>
@@ -140,6 +148,38 @@ export default function PopupInfo (props){
             <Popup trigger={<span className='popup-info'>Kamat</span>} wide>
                 <div className='description'>
                     A kamat mindig egy pénzösszeg, amit a befektetésünk névértéke (futamidő végén kamatok nélküli visszafizetendő) után fizet meg az, akinek a tőkénket kölcsönadtuk. A névértékre vetített kamat összege %-os formában kifejezve a kamatláb (kamatként is hivatkoznak rá).
+                </div>
+            </Popup>
+        </>
+    }else if(props.place === "piac"){
+        return <>
+            <Popup trigger={<span className='popup-info'>pénzügyi piac</span>} wide>
+                <div className='description'>
+                    Úgynevezett piactér, ahol a pénzügyi instrumentumokat nemzetközi és globális szinten is kereskedik. A kereskedők ezeket az instrumentumokat megveszik és eladják, hogy potenciális nyereségre tehessenek szert, miközben a kockázatokat próbálják korlátozni.
+                </div>
+            </Popup>
+        </>
+    }else if(props.place === "megtakaritas"){
+        return <>
+            <Popup trigger={<span className='popup-info'>megtakarítás</span>} wide>
+                <div className='description'>
+                    Az egyén (vagy a háztartás) nettó pénzeszköz-többletét jelenti, miután minden kiadást és kötelezettséget kifizetett.
+                </div>
+            </Popup>
+        </>
+    }else if(props.place === "veteli"){
+        return <>
+            <Popup trigger={<span className='popup-info'>Vételi árfolyam</span>} wide>
+                <div className='description'>
+                    A valuta azon árfolyama, amin a pénzváltó hajlandó tőlünk megvásárolni a valutát, amelyért cserébe az árfolyamnak megfelelő összegű forintot ad. Minél nagyobb az értéke, annál kedvezőbb számunkra.
+                </div>
+            </Popup>
+        </>
+    }else if(props.place === "eladasi"){
+        return <>
+            <Popup trigger={<span className='popup-info'>Eladási árfolyam</span>} wide>
+                <div className='description'>
+                    A valuta azon árfolyama, amin a pénzváltó (vagy bank) számunkra valutát ad el. Minél kisebb ez az árfolyam, annál jobban járunk.
                 </div>
             </Popup>
         </>
