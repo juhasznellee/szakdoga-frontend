@@ -28,9 +28,9 @@ export const LoginPage = () => {
         <div className='main-container'>
             <div className='login-container'>
                 <form className='login-form' onSubmit={handleSubmit}>
-                    <div className='error-message'>{isSubmitted ? '' : 'Hibás bejelentkezés!'}</div>
+                    <div className='login-error-message'>{isSubmitted ? '' : "Hibás bejelentkezés!"}</div>
                     <a href="http://localhost:3000" className='backPrevPage'><img src={back_icon} alt="Back" className='back'/></a>
-                    <input input={name} onChange={(e) => {setName(e.target.value); setSubmit(true);}} type="email" placeholder="E-mail" id="userName" name="userName" autocomplete="off"/><br/>
+                    <input input={name} onChange={(e) => {setName(e.target.value); setSubmit(true);}} type="email" placeholder="E-mail" id="userName" name="userName" autoComplete="off"/><br/>
                     <input input={pass} onChange={(e) => {setPass(e.target.value); setSubmit(true);}} type="password" placeholder="**********" id="userPassword" name="userPassword"/><br/>
                     <button>Belépés</button>
                 </form>

@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
 .App {
   color: white;
-  min-height: 100vh;
   vertical-align: middle;
+  min-height: 100vh;
 }
 
 div#main-background {
   background: url(../images/background.png);
   background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  background-size: 100%;
   min-height: 100vh;
 }
 
@@ -112,7 +112,7 @@ div#start-message{
   margin-top: 100px;
 }
 #button-start-player{
-  margin-top: 220px;
+  margin-top: 200px;
 }
 div#main-column{
   margin-bottom: 100px;
@@ -133,6 +133,7 @@ button.popover-button{
   font-family: 'Merienda', cursive;
   border: 2px solid;
   border-color: #b6b6b6;
+  margin-bottom: -50px;
 }
 
 button.button-edit{            /*  Módosító hivatkozás gomb */
@@ -145,7 +146,7 @@ button.button-edit{            /*  Módosító hivatkozás gomb */
   position: relative;
   width: 350px;
   height: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: none;
   box-shadow: 8px 8px 30px black;
   font-family: 'Merienda', cursive;
