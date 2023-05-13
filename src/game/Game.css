@@ -302,12 +302,12 @@ div#wheel{
 button#to-chapter-one-button{
   width: 30%;
   color: white;
-  background: url(../images/button.png);
+  background: url(../images/game_button.png);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   border: 2px solid;
-  border-color: #b6b6b6;
+  border-color: white;
   box-shadow: 4px 4px 15px black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
@@ -435,12 +435,12 @@ input::-webkit-inner-spin-button {
 }
 div#info-table button{
   color: white;
-  background: url(../images/button.png);
+  background: url(../images/game_button.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid;
-  border-color: #b6b6b6;
+  border-color: white;
   box-shadow: 4px 4px 15px black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
@@ -593,12 +593,12 @@ button#chapter-continue-smaller{
 }
 div#info-table button#chapter-investment{
   color: white;
-  background: url(../images/button.png);
+  background: url(../images/game_button.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid;
-  border-color: #b6b6b6;
+  border-color: white;
   box-shadow: 4px 4px 15px black;
   font-family: 'Merienda', cursive;
   font-weight: 400;

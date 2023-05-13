@@ -126,6 +126,7 @@ export default function Game() {
     const [optionCh1, setOptionCh1] = useState(0);
     const [optionCh2, setOptionCh2] = useState(0);
     const [optionCh3, setOptionCh3] = useState(0);
+    const [isPromoted, setIsPromoted] = useState(true);
     const [weather, setWeather] = useState('day');
 
     useEffect(() => {
@@ -171,7 +172,7 @@ export default function Game() {
             setSkillB1(true);
             setTimeout(function () {
                 setSkillB1(false);
-            }, randomNumber(2000, 3500));
+            }, randomNumber(2500, 4000));
         }, randomNumber(500, 3000));
     };
 
@@ -196,7 +197,7 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(2000, 3500));
+            }, randomNumber(2500, 4000));
         }, randomNumber(500, 3000));
         setJob(playerInfo[0].job_name);
         setSalary(salary + parseInt(playerInfo[0].salary));
@@ -242,7 +243,7 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(2000, 3500));
+                }, randomNumber(2500, 4000));
             }, randomNumber(500, 3000));
         } else {
             setStage(stage + 2); // 37 / 38
@@ -284,7 +285,7 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(2000, 3500));
+            }, randomNumber(2500, 4000));
         }, randomNumber(500, 3000));
         setStage(stage + 20 + 1); //24
     };
@@ -301,7 +302,7 @@ export default function Game() {
             setSkillB1(true);
             setTimeout(function () {
                 setSkillB1(false);
-            }, randomNumber(2000, 3500));
+            }, randomNumber(2500, 4000));
         }, randomNumber(500, 3000));
         if (winner === 3) {
             playerInfo[0].level = 3;
@@ -377,17 +378,18 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(2000, 3500));
+                }, randomNumber(2500, 4000));
             }, randomNumber(500, 3000));
             setSalary(parseInt(playerInfo[0].salary));
             setStage(stage + 1); //13
         } else { //nem sikerült
             setStage(stage + 2); //14
+            setIsPromoted(false);
             setTimeout(function () {
                 setSkillB2(true);
                 setTimeout(function () {
                     setSkillB2(false);
-                }, randomNumber(2000, 3500));
+                }, randomNumber(2500, 4000));
             }, randomNumber(500, 3000));
         }
     };
@@ -470,7 +472,7 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(2000, 3500));
+                }, randomNumber(2500, 4000));
             }, randomNumber(500, 3000));
             setJob(playerInfo[0].job_name);
             setSalary(parseInt(playerInfo[0].salary));
@@ -494,7 +496,7 @@ export default function Game() {
                 setSkillB2(true);
                 setTimeout(function () {
                     setSkillB2(false);
-                }, randomNumber(2000, 3500));
+                }, randomNumber(2500, 4000));
             }, randomNumber(500, 3000));
             setJob(playerInfo[0].job_name);
             setSalary(parseInt(playerInfo[0].salary));
@@ -571,7 +573,7 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(2000, 3500));
+            }, randomNumber(2500, 4000));
         }, randomNumber(500, 3000));
         setOldSalary(playerInfo[0].salary);
         setStage(stage + 1); //32
@@ -867,7 +869,7 @@ export default function Game() {
                     if(inv4 > 0){
                         sell = (inv4 * 1.09);
                         allGet = allGet + sell;
-                        spent = spent + inv4;
+                        allSpent = allSpent + inv4;
                         playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
                     }
                 }
@@ -875,7 +877,7 @@ export default function Game() {
                     if(inv3 > 0){
                         sell = (inv3 * 1.07);
                         allGet = allGet + sell;
-                        spent = spent + inv3;
+                        allSpent = allSpent + inv3;
                         playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
                     }
                 }
@@ -883,7 +885,7 @@ export default function Game() {
                     if(inv2 > 0){
                         sell = (inv2 * 1.04);
                         allGet = allGet + sell;
-                        spent = spent + inv2;
+                        allSpent = allSpent + inv2;
                         playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
                     }
                 }
@@ -891,7 +893,7 @@ export default function Game() {
                     if(inv1 > 0){
                         sell = (inv1 * 1.06);
                         allGet = allGet + sell;
-                        spent = spent + inv1;
+                        allSpent = allSpent + inv1;
                         playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
                     }
                 }
@@ -1277,7 +1279,7 @@ export default function Game() {
                     {<Circle chapter={1} active={circleCh1} onclick={setCh1} option={optionCh1}/>}
                 </div>
                 <div id='chapter-two-place'>
-                    {<Circle chapter={2} stage={stage} active={circleCh2} onclick={setCh2} option={optionCh2}/>}
+                    {<Circle chapter={2} isPromoted={isPromoted} active={circleCh2} onclick={setCh2} option={optionCh2}/>}
                 </div>
                 <div id='chapter-three-place'>
                     {<Circle chapter={3} active={circleCh3} onclick={setCh3} option={optionCh3}/>}

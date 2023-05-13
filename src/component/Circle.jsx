@@ -21,9 +21,9 @@ export default function Circle (props){
         }else{
             if(props.option === 0){
                 return <div id='chapter-two' className='chapter-two-circle'></div>
-            }else if(props.option === 1 && props.stage !== 14){
+            }else if(props.option === 1 && props.isPromoted === true){
                 return <div id='chapter-two' className='chapter-two-promotion'></div>
-            }else if(props.option === 1 && props.stage === 14){
+            }else if(props.option === 1 && props.isPromoted === false){
                 return <div id='chapter-two' className='chapter-two-failed-promotion'></div>
             }else if(props.option === 2){
                 return <div id='chapter-two' className='chapter-two-new-job'></div>
