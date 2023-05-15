@@ -8,8 +8,8 @@ export default function PopupInfo (props){
                 <div className='description'>
                     Tudnivalók a hitelről:
                     <ul>
-                        <li>Félévek száma: 10 félév - Egy félév 5 hónapot jelent.</li>
-                        <li>Havonta felvett összeg: 80 000 Ft - Így az összesen felvett hitel: 4 000 000 Ft.</li>
+                        <li>Félévek száma: 10 félév</li>
+                        <li>Összesen felvett hitel: 4 000 000 Ft.</li>
                         <li>Futamidő: 10 év - Ennyi év alatt kell visszafizetni az összeget.</li>
                         <li>Kamat: 4.99% - Havonta ennyi %-ot nő a visszafizetendő összeg.</li>
                         <li>Türelmi idő: 5 év (egyetem után) - Ennyi idő elteltével kell elkezdened törleszteni.</li>
@@ -22,7 +22,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>bruttó</span>} wide>
                 <div className='description'>
-                    Az az összeg, amit a munkáltató fizet a munkavállalónak, mielőtt bármilyen adót és járulékot levonnának.
+                    Adó és járulék levonás előtti bérösszeg, amit a munkáltató fizet.
                 </div>
             </Popup>
         </>
@@ -114,7 +114,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>futamidő</span>} wide>
                 <div className='description'>
-                    A hitelszerződésben foglalt időtartam, mely alatt kötelesek visszafizetni az adott hitelt annak minden egyéb jutalékával és kamatával együtt.
+                    A hitelszerződésben foglalt időtartam, mely alatt az adós köteles visszafizetni az kapott hitelt, annak minden egyéb jutalékával és kamatával együtt.
                 </div>
             </Popup>
         </>
@@ -123,7 +123,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>Futamidő</span>} wide>
                 <div className='description'>
-                    A hitelszerződésben foglalt időtartam, mely alatt kötelesek visszafizetni az adott hitelt annak minden egyéb jutalékával és kamatával együtt.
+                    A hitelszerződésben foglalt időtartam, mely alatt az adós köteles visszafizetni az kapott hitelt, annak minden egyéb jutalékával és kamatával együtt.
                 </div>
             </Popup>
         </>
@@ -139,7 +139,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>kamat</span>} wide>
                 <div className='description'>
-                    A kamat mindig egy pénzösszeg, amit a befektetésünk névértéke (futamidő végén kamatok nélküli visszafizetendő) után fizet meg az, akinek a tőkénket kölcsönadtuk. A névértékre vetített kamat összege %-os formában kifejezve a kamatláb (kamatként is hivatkoznak rá).
+                    A kamat mindig egy pénzösszeg, a kölcsönkapott pénznek az ára. A névértékre vetített kamat összege %-os formában kifejezve a kamatláb (kamatként is hivatkoznak rá).
                 </div>
             </Popup>
         </>
@@ -147,7 +147,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>Kamat</span>} wide>
                 <div className='description'>
-                    A kamat mindig egy pénzösszeg, amit a befektetésünk névértéke (futamidő végén kamatok nélküli visszafizetendő) után fizet meg az, akinek a tőkénket kölcsönadtuk. A névértékre vetített kamat összege %-os formában kifejezve a kamatláb (kamatként is hivatkoznak rá).
+                    A kamat mindig egy pénzösszeg, a kölcsönkapott pénznek az ára. A névértékre vetített kamat összege %-os formában kifejezve a kamatláb (kamatként is hivatkoznak rá).
                 </div>
             </Popup>
         </>
@@ -155,7 +155,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>pénzügyi piac</span>} wide>
                 <div className='description'>
-                    Úgynevezett piactér, ahol a pénzügyi instrumentumokat nemzetközi és globális szinten is kereskedik. A kereskedők ezeket az instrumentumokat megveszik és eladják, hogy potenciális nyereségre tehessenek szert, miközben a kockázatokat próbálják korlátozni.
+                    Úgynevezett piactér, ahol a pénzügyi instrumentumokat nemzetközi és globális szinten is kereskedik. A kereskedők ezeket az instrumentumokat megveszik és eladják, hogy potenciális nyereségre tehessenek szert, miközben a kockázatokat próbálják minimalizálni.
                 </div>
             </Popup>
         </>
@@ -171,7 +171,7 @@ export default function PopupInfo (props){
         return <>
             <Popup trigger={<span className='popup-info'>Vételi árfolyam</span>} wide>
                 <div className='description'>
-                    A valuta azon árfolyama, amin a pénzváltó hajlandó tőlünk megvásárolni a valutát, amelyért cserébe az árfolyamnak megfelelő összegű forintot ad. Minél nagyobb az értéke, annál kedvezőbb számunkra.
+                    A valuta azon árfolyama, amin a pénzváltó hajlandó tőlünk megvásárolni a valutát. Minél nagyobb az értéke, annál kedvezőbb számunkra.
                 </div>
             </Popup>
         </>
