@@ -261,7 +261,7 @@ export default function Game() {
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 1) + ". év -----");
             get = getPaid(playerInfo[0]);
-            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            spent = spendMoneyWhileWork(playerInfo[0], 50, 80);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -425,7 +425,7 @@ export default function Game() {
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 5 + 1) + ". év -----");
             get = getPaid(playerInfo[0]);
-            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            spent = spendMoneyWhileWork(playerInfo[0], 50, 80);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -511,7 +511,7 @@ export default function Game() {
         for (let i = 0; i < 5; i++) { //5 év
             console.log("----- " + (i + 5 + 1) + ". év -----");
             get = getPaid(playerInfo[0]);
-            spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            spent = spendMoneyWhileWork(playerInfo[0], 40, 60);
             allGet = allGet + get;
             allSpent = allSpent + spent;
             playerInfo[0].money = parseInt(playerInfo[0].money) + get - spent;
@@ -860,8 +860,10 @@ export default function Game() {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 50);
             } else if (playerInfo[0].level === 2) {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 60);
-            } else {
+            } else if (playerInfo[0].level === 1) {
                 spent = spendMoneyWhileWork(playerInfo[0], 40, 70);
+            } else{
+                spent = spendMoneyWhileWork(playerInfo[0], 50, 80);
             }
 
             if(optionCh3 === 2){ //kötvény
