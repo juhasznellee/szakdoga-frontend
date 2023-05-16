@@ -126,7 +126,7 @@
   margin-left: 70%;
 }
 .chapter-three-valuta{
-  background: url(../images/circle_inactive.png);
+  background: url(../images/ch3_valuta.png);
   bottom: 14%;
   width: 80px;
   height: 80px;
@@ -211,7 +211,7 @@ div#player-inv-title{
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 70px;
   font-weight: 400;
 }
@@ -219,7 +219,7 @@ div#player-inv1{
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 110px;
   font-weight: 400;
 }
@@ -227,7 +227,7 @@ div#player-inv2{
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 150px;
   font-weight: 400;
 }
@@ -235,7 +235,7 @@ div#player-inv3{
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 190px;
   font-weight: 400;
 }
@@ -243,7 +243,7 @@ div#player-inv4{
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 230px;
   font-weight: 400;
 }

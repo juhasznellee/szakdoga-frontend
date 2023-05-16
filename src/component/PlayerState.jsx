@@ -13,7 +13,7 @@ export default function PlayerState (props){
         return <span className={props.class}>Képzettség: {props.value}</span>;
     }else if(props.place === "inv-title"){
         return <span className={props.class}>Befektetések:</span>;
-    }else if(props.investment === 1){
+    }else if(props.investment === 1 && (props.chapter !== 3 && props.stage !== 22)){
         if(props.place === "inv1"){
             return <span className={props.class}>{props.value.toLocaleString()} WEZ</span>;
         }else if(props.place === "inv2"){
@@ -25,7 +25,7 @@ export default function PlayerState (props){
         }else{
             return <></>;
         }
-    }else if(props.investment === 2){
+    }else if(props.investment === 2 && (props.chapter !== 3 && props.stage !== 32)){
         if(props.place === "inv1"){
             return <span className={props.class}>MÁ 1: {props.value.toLocaleString()} Ft</span>;
         }else if(props.place === "inv2"){

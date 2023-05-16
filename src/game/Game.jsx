@@ -994,25 +994,25 @@ export default function Game() {
     }
     const setPlayerInv1 = () => {
         if (playerInfo.length > 0 && optionCh3 > 0 && inv1 > 0) {
-            return <PlayerState investment={optionCh3} place="inv1" value={inv1} class={weather}/>;
+            return <PlayerState investment={optionCh3} place="inv1" value={inv1} class={weather} chaper={chapter} stage={stage}/>;
         }
         return <></>;
     }
     const setPlayerInv2 = () => {
         if (playerInfo.length > 0 && optionCh3 > 0 && inv2 > 0) {
-            return <PlayerState investment={optionCh3} place="inv2" value={inv2} class={weather}/>;
+            return <PlayerState investment={optionCh3} place="inv2" value={inv2} class={weather} chaper={chapter} stage={stage}/>;
         }
         return <></>;
     }
     const setPlayerInv3 = () => {
         if (playerInfo.length > 0 && optionCh3 > 0 && inv3 > 0) {
-            return <PlayerState investment={optionCh3} place="inv3" value={inv3} class={weather}/>;
+            return <PlayerState investment={optionCh3} place="inv3" value={inv3} class={weather} chaper={chapter} stage={stage}/>;
         }
         return <></>;
     }
     const setPlayerInv4 = () => {
         if (playerInfo.length > 0 && optionCh3 > 0  && inv4 > 0) {
-            return <PlayerState investment={optionCh3} place="inv4" value={inv4} class={weather}/>;
+            return <PlayerState investment={optionCh3} place="inv4" value={inv4} class={weather} chaper={chapter} stage={stage}/>;
         }
         return <></>;
     }
