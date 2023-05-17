@@ -7,18 +7,21 @@
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
+  animation: fadeInDay 2s;
 }
 .evening-background{
   background: url(../images/background_evening.png);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
+  animation: fadeInEvening 2s;
 }
 .night-background{
   background: url(../images/background_night.png);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
+  animation: fadeInNight 2s;
 }
 /* ---------- Fő vonal, megálló pontok, skill gombok ---------- */
 .chapter-one-circle{
@@ -282,6 +285,12 @@ div#wheel{
   letter-spacing: 0.2px;
   line-height: 130%;
 }
+.plusz{
+  color: rgb(2, 175, 2);
+}
+.minusz{
+  color: red;
+}
 /* ----- Setup */
 .begin-game{
   background-color: rgba(239, 239, 239, 0.85);
@@ -538,7 +547,7 @@ button#chapter-continue-smaller{
   width: 50%;
   margin-left: 480px;
   margin-top: 50px;
-  height: 45vh;
+  height: 50vh;
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;

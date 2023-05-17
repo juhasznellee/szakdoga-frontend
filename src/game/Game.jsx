@@ -275,6 +275,7 @@ export default function Game() {
         setStage(10);
         setTimeout(function () {
             setCircleCh2(true);
+            setStopped(true);
         }, 5000);
     };
 
@@ -339,6 +340,7 @@ export default function Game() {
         setStage(30); //30
         setTimeout(function () {
             setCircleCh2(true);
+            setStopped(true);
         }, 5000);
     };
 
@@ -347,7 +349,6 @@ export default function Game() {
     const setCh2 = () => {
         setStage(stage + 1); //11 / 31
         setCircleCh2(false);
-        setStopped(true);
         setWeather('day');
         if(optionCh1 === 2){
             playerInfo[0].job_name = "Munkanélküli";
@@ -415,6 +416,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
+            setStopped(true);
         }, 5000);
     };
     const backFromFailedPromotionCh2 = () => { //sikertelen előléptetés után
@@ -439,6 +441,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
+            setStopped(true);
         }, 5000);
     };
 
@@ -525,6 +528,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
+            setStopped(true);
         }, 5000);
     };
     const backFromFailedNewJobCh2 = () => { //sikertelen álom munka megszerzése
@@ -548,7 +552,7 @@ export default function Game() {
         setStopped(false);
         setMove(3);
         setTimeout(function () {
-            
+            setStopped(true);
             setCircleCh3(true);
         }, 5000);
     };
@@ -643,6 +647,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
+            setStopped(true);
         }, 5000);
     };
     const backFromWorkSecondJobCh2 = () => {
@@ -692,6 +697,7 @@ export default function Game() {
         setMove(3);
         setTimeout(function () {
             setCircleCh3(true);
+            setStopped(true);
         }, 5000);
     };
 
@@ -699,7 +705,6 @@ export default function Game() {
     /* ---------- Harmadik döntési pont ---------- */
     const setCh3 = () => { //befektetés módja
         setCircleCh3(false);
-        setStopped(true);
         setWeather('day');
         setStage(10); //10
         setMoneySpent(0);
