@@ -790,6 +790,12 @@ div#info-table button#chapter-investment{
   margin-top: 15px;
   font-size: 19px;
 }
+
+.icon{
+  width: 20px;
+  height: 20px;
+  margin-left: 2%;
+}
 /* ---------- Popup szövegek ---------- */
 .description{
   font-family: 'Merienda', cursive;

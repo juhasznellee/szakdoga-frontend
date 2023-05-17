@@ -1,5 +1,8 @@
 import WheelComponent from 'react-wheel-of-prizes';
 import PopupInfo from '../component/PopupInfo.jsx';
+import minus_icon from '../images/minus_icon.png'
+import plus_icon from '../images/plus_icon.png'
+import natural_icon from '../images/natural_icon.png'
 import React, { useState } from 'react';
 
 export default function InfoTable(props) {
@@ -709,16 +712,41 @@ export default function InfoTable(props) {
             let temp4 = '';
             let temp5 = '';
             if(props.inv1 > 0){
-                temp1 = <li>{props.inv1.toLocaleString()} WEZ - <PopupInfo place="veteli"/>: <span className='minusz'>{props.val1} Ft</span>, <PopupInfo place="eladasi"/>: <span className='plusz'>{props.newVal1} Ft</span></li>;
+                if(props.val1 < props.newVal1){
+                    temp1 = <li>{props.inv1.toLocaleString()} WEZ - <PopupInfo place="veteli"/>: {props.val1} Ft, <PopupInfo place="eladasi"/>: {props.newVal1} Ft<img className='icon' src={plus_icon} alt="plusz"/></li>;
+                }else if(props.val1 === props.newVal1){
+                    temp1 = <li>{props.inv1.toLocaleString()} WEZ - <PopupInfo place="veteli"/>: {props.val1} Ft, <PopupInfo place="eladasi"/>: {props.newVal1} Ft<img className='icon' src={natural_icon} alt="semmi"/></li>;
+                }else{
+                    temp1 = <li>{props.inv1.toLocaleString()} WEZ - <PopupInfo place="veteli"/>: {props.val1} Ft, <PopupInfo place="eladasi"/>: {props.newVal1} Ft<img className='icon' src={minus_icon} alt="minusz"/></li>;
+                }
             }
             if(props.inv2 > 0){
-                temp2 = <li>{props.inv2.toLocaleString()} KNO - <PopupInfo place="veteli"/>: <span className='minusz'>{props.val2} Ft</span>, <PopupInfo place="eladasi"/>: <span className='plusz'>{props.newVal2} Ft</span></li>;
+                if(props.val2 < props.newVal2){
+                    temp2 = <li>{props.inv2.toLocaleString()} KNO - <PopupInfo place="veteli"/>: {props.val2} Ft, <PopupInfo place="eladasi"/>: {props.newVal2} Ft<img className='icon' src={plus_icon} alt="plusz"/></li>;
+                }else if(props.val2 === props.newVal2){
+                    temp2 = <li>{props.inv2.toLocaleString()} KNO - <PopupInfo place="veteli"/>: {props.val2} Ft, <PopupInfo place="eladasi"/>: {props.newVal2} Ft<img className='icon' src={natural_icon} alt="semmi"/></li>;
+                }else{
+                    temp2 = <li>{props.inv2.toLocaleString()} KNO - <PopupInfo place="veteli"/>: {props.val2} Ft, <PopupInfo place="eladasi"/>: {props.newVal2} Ft<img className='icon' src={minus_icon} alt="minusz"/></li>;
+                }   
             }
             if(props.inv3 > 0){
-                temp3 = <li>{props.inv3.toLocaleString()} LIS - <PopupInfo place="veteli"/>: <span className='minusz'>{props.val3} Ft</span>, <PopupInfo place="eladasi"/>: <span className='plusz'>{props.newVal3} Ft</span></li>;
+                if (props.val3 < props.newVal3){
+                    temp3 = <li>{props.inv3.toLocaleString()} LIS - <PopupInfo place="veteli"/>:{props.val3} Ft, <PopupInfo place="eladasi"/>: {props.newVal3} Ft<img className='icon' src={plus_icon} alt="plusz"/></li>;
+                }else if(props.val3 < props.newVal3){
+                    temp3 = <li>{props.inv3.toLocaleString()} LIS - <PopupInfo place="veteli"/>: {props.val3} Ft, <PopupInfo place="eladasi"/>: {props.newVal3} Ft<img className='icon' src={natural_icon} alt="semmi"/></li>;
+                }else{
+                    temp3 = <li>{props.inv3.toLocaleString()} LIS - <PopupInfo place="veteli"/>: {props.val3} Ft, <PopupInfo place="eladasi"/>: {props.newVal3} Ft<img className='icon' src={minus_icon} alt="minusz"/></li>;
+                }
             }
             if(props.inv4 > 0){
-                temp4 = <li>{props.inv4.toLocaleString()} ADP - <PopupInfo place="veteli"/>: <span className='minusz'>{props.val4} Ft</span>, <PopupInfo place="eladasi"/>: <span className='plusz'>{props.newVal4} Ft</span></li>;
+                if (props.val4 < props.newVal4){
+                    temp4 = <li>{props.inv4.toLocaleString()} ADP - <PopupInfo place="veteli"/>: {props.val4} Ft, <PopupInfo place="eladasi"/>: {props.newVal4} Ft<img className='icon' src={plus_icon} alt="plusz"/></li>;
+                }else if(props.val4 < props.newVal4){
+                    temp4 = <li>{props.inv4.toLocaleString()} ADP - <PopupInfo place="veteli"/>: {props.val4} Ft, <PopupInfo place="eladasi"/>: {props.newVal4} Ft<img className='icon' src={natural_icon} alt="semmi"/></li>;
+                }else{
+                    temp4 = <li>{props.inv4.toLocaleString()} ADP - <PopupInfo place="veteli"/>: {props.val4} Ft, <PopupInfo place="eladasi"/>: {props.newVal4} Ft<img className='icon' src={minus_icon} alt="minusz"/></li>;
+                }
+                
             }
             if(props.optionCh1 === 2){
                 temp5 = <span>És tartalmazza a <PopupInfo place="hitel"/> <PopupInfo place="torleszto"/>eit is.</span>
