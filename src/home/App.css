@@ -17,7 +17,7 @@ div#cim{
   font-family: 'Merienda', cursive;
   font-size: 100px;
   text-align: center;
-  letter-spacing: -10px;
+  letter-spacing: -8px;
   padding-top: 60px;
 }
 .button-edit a:link,.button-edit a:visited,.button-edit a:active, #button-start a:link, #button-start a:visited, #button-start a:active{

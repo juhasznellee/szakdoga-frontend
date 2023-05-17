@@ -73,7 +73,7 @@ function PlayerPage() {
     <div className='App'>
       <div id='main-background'>
         <div><a href="http://localhost:3000/login"><button className='button-login'>Bejelentkezés</button></a></div>
-        <div id='cim'>Educative Gamification</div>
+        <div id='cim'>Invesztopolisz</div>
         <div className='mainRow'>
           <div className='columns'>
             <img alt='youngWoman'src={youngWoman} className='player-woman' style={{
