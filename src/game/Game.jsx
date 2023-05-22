@@ -587,16 +587,9 @@ export default function Game() {
         setWeather('evening');
         setOptionCh2(3);
         playerInfo[0].salary_id = randomSelector(salaries, playerInfo[0].level);
-        playerInfo[0].job_id = randomSelector(jobs, playerInfo[0].level);
         for (let i = 0; i < salaries.length; i++) {
             if (salaries[i].id === playerInfo[0].salary_id) {
                 playerInfo[0].salary = parseInt(salaries[i].description);
-            }
-        }
-        playerInfo[0].salary_id = randomSelector(salaries, 0);
-        for (let i = 0; i < jobs.length; i++) {
-            if (jobs[i].id === playerInfo[0].job_id) {
-                playerInfo[0].job_name = jobs[i].description;
             }
         }
         setJob(playerInfo[0].job_name);
