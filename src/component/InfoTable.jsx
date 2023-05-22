@@ -51,7 +51,7 @@ export default function InfoTable(props) {
         }else if(props.stage === 14){
             return(
                 <div>
-                    Ahogy tanácsoltad, elkezdtem munkák után érdeklődni, és rengeteg helyre be is adtam az önéletrajzomat. Hívtak egy cégtől, hogy alkalmasnak találtak az állásra amire jelentkeztem. {props.jobname} lennék és havi <PopupInfo place="brutto"/> {props.salary.toLocaleString()} Ft-ot kaphatnék.<br/>Tetszett az ajánlatuk, így elfogadtam az állásajánlatot.<br/><br/>Felajánlották, hogy ha másnapra hibátlanra megoldom a kiadott feladatokat, akkor <PopupInfo place="brutto"/> <span className='plusz'>+50 000 Ft</span> alapfizetéssel indulhatok. Már megoldottam a feladatokat, de nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
+                    Ahogy tanácsoltad, elkezdtem munkák után érdeklődni, és rengeteg helyre be is adtam az önéletrajzomat. Hívtak egy cégtől, hogy alkalmasnak találtak az állásra amire jelentkeztem. {props.jobname} lennék és <PopupInfo place="brutto"/> {props.salary.toLocaleString()} Ft-ot kaphatnék havonta.<br/>Tetszett az ajánlatuk, így elfogadtam az állásajánlatot.<br/><br/>Felajánlották, hogy ha másnapra hibátlanra megoldom a kiadott feladatokat, akkor <PopupInfo place="brutto"/> <span className='plusz'>+50 000 Ft</span> alapfizetéssel indulhatok. Már megoldottam a feladatokat, de nagyon bizonytalan vagyok a végeredményekben.<br/>Tudom kicsit későn szólok, de kérlek ellenőrizd le nekem a válaszaimat, és hibás eredmény esetén javítsd ki.
                 </div>
             );
         }else if(props.stage === 16 && props.answer === 5){
