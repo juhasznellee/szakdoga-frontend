@@ -11,19 +11,19 @@ function AdminPage() {
   const [isActiveManInput, setIsActiveManInput] = useState(true);
   const [isActiveWomanInput, setIsActiveWomanInput] = useState(true);
   const [playerName, setPlayerName] = useState("");
-  
+
   const handleClick1 = () => {
-    if(!isActiveWoman && !isActiveMan){
+    if (!isActiveWoman && !isActiveMan) {
       setIsActiveWoman(current => !current);
       setIsActiveMan(current => current);
       setIsActiveWomanInput(current => !current);
       setIsActiveManInput(current => current);
-    }else if(isActiveWoman && !isActiveMan){
+    } else if (isActiveWoman && !isActiveMan) {
       setIsActiveWoman(current => !current);
       setIsActiveMan(current => current);
       setIsActiveWomanInput(current => !current);
       setIsActiveManInput(current => current);
-    }else{
+    } else {
       setIsActiveWoman(current => !current);
       setIsActiveMan(current => !current);
       setIsActiveWomanInput(current => !current);
@@ -31,17 +31,17 @@ function AdminPage() {
     }
   };
   const handleClick2 = () => {
-    if(!isActiveWoman && !isActiveMan){
+    if (!isActiveWoman && !isActiveMan) {
       setIsActiveWoman(current => current);
       setIsActiveMan(current => !current);
       setIsActiveWomanInput(current => current);
       setIsActiveManInput(current => !current);
-    }else if(!isActiveWoman && isActiveMan){
+    } else if (!isActiveWoman && isActiveMan) {
       setIsActiveWoman(current => current);
       setIsActiveMan(current => !current);
       setIsActiveWomanInput(current => current);
       setIsActiveManInput(current => !current);
-    }else{
+    } else {
       setIsActiveWoman(current => !current);
       setIsActiveMan(current => !current);
       setIsActiveWomanInput(current => !current);
@@ -54,12 +54,12 @@ function AdminPage() {
   };
 
   const insertCharacterInfo = () => {
-    if(isActiveWoman && !isActiveMan && playerName.length > 0){
+    if (isActiveWoman && !isActiveMan && playerName.length > 0) {
       fetch("http://localhost/szakdoga-backend/php/insert_player.php?player=n&name=" + playerName);
-      window.location.href="http://localhost:3000/game";
-    }else if(!isActiveWoman && isActiveMan && playerName.length > 0){
+      window.location.href = "http://localhost:3000/game";
+    } else if (!isActiveWoman && isActiveMan && playerName.length > 0) {
       fetch("http://localhost/szakdoga-backend/php/insert_player.php?player=f&name=" + playerName);
-      window.location.href="http://localhost:3000/game";
+      window.location.href = "http://localhost:3000/game";
     }
   };
 
@@ -68,48 +68,48 @@ function AdminPage() {
   }, []);
 
   return (
-    <div className='App'>      
+    <div className='App'>
       <div id='main-background'>
         <div><a href="http://localhost:3000"><button className='button-login'>Kijelentkezés</button></a></div>
         <div id='cim'>Invesztopolisz</div>
         <div className='mainRow'>
           <div className='columns'>
-            <img alt='youngWoman'src={youngWoman} className='player-woman' style={{
-            scale: (isActiveWoman && !isActiveMan) ? '103%' : '',
-            filter: (isActiveWoman && !isActiveMan) ? 'brightness(100%)' : 'brightness(70%)'
-          }} onClick={handleClick1}/><br/>
-          <input type='text' placeholder="Adjon meg egy nevet" name='playerNameWoman' id='playerNameWoman' autoComplete="off" onChange={setName} disabled={isActiveWomanInput} style={{
-            filter: (isActiveWoman && !isActiveMan) ? 'brightness(100%)' : 'brightness(70%)'
-          }}/>
+            <img alt='youngWoman' src={youngWoman} className='player-woman' style={{
+              scale: (isActiveWoman && !isActiveMan) ? '103%' : '',
+              filter: (isActiveWoman && !isActiveMan) ? 'brightness(100%)' : 'brightness(70%)'
+            }} onClick={handleClick1} /><br />
+            <input type='text' placeholder="Adjon meg egy nevet" name='playerNameWoman' id='playerNameWoman' autoComplete="off" onChange={setName} disabled={isActiveWomanInput} style={{
+              filter: (isActiveWoman && !isActiveMan) ? 'brightness(100%)' : 'brightness(70%)'
+            }} />
           </div>
           <div className='columns'>
             <div className='buttons' id='main-column'>
               <button id='button-start-admin' onClick={insertCharacterInfo}>
                 Start
-              </button><br/>
+              </button><br />
               <div id='start-message'>
                 A képre kattintva válaszd ki a karakteredet, majd adj neki nevet!
               </div>
-              <DescPopup place="admin"/><br/>
+              <DescPopup place="admin" /><br />
               <a href="http://localhost/szakdoga-backend/task/task_edit.php"><button className='button-edit' id='first'>
                 Feladatok szerkesztése
-              </button></a><br/>
+              </button></a><br />
               <a href="http://localhost/szakdoga-backend/job/job_edit.php"><button className='button-edit'>
                 Munkahelyek szerkesztése
-              </button></a><br/>
+              </button></a><br />
               <a href="http://localhost/szakdoga-backend/salary/salary_edit.php"><button className='button-edit'>
                 Fizetések szerkesztése
-              </button></a><br/>
+              </button></a><br />
             </div>
           </div>
           <div className='columns'>
-            <img alt='youngMan' src={youngMan} className='player-man'  style={{
-            scale: (isActiveMan && !isActiveWoman) ? '103%' : '',
-            filter: (isActiveMan && !isActiveWoman)  ? 'brightness(100%)' : 'brightness(70%)'
-          }} onClick={handleClick2}/><br/>
-          <input type='text' placeholder="Adjon meg egy nevet" name='playerNameMan' id='playerNameMan' autoComplete="off" onChange={setName} disabled={isActiveManInput} style={{
-            filter: (isActiveMan && !isActiveWoman)  ? 'brightness(100%)' : 'brightness(70%)'
-          }}/>
+            <img alt='youngMan' src={youngMan} className='player-man' style={{
+              scale: (isActiveMan && !isActiveWoman) ? '103%' : '',
+              filter: (isActiveMan && !isActiveWoman) ? 'brightness(100%)' : 'brightness(70%)'
+            }} onClick={handleClick2} /><br />
+            <input type='text' placeholder="Adjon meg egy nevet" name='playerNameMan' id='playerNameMan' autoComplete="off" onChange={setName} disabled={isActiveManInput} style={{
+              filter: (isActiveMan && !isActiveWoman) ? 'brightness(100%)' : 'brightness(70%)'
+            }} />
           </div>
         </div>
       </div>

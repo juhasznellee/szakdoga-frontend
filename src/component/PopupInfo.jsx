@@ -1,8 +1,16 @@
 import React from 'react';
 import { Popup } from 'semantic-ui-react'
 
-export default function PopupInfo (props){
-    if(props.place === "hitel"){
+export default function PopupInfo(props) {
+    if (props.place === "brutto") {
+        return <>
+            <Popup trigger={<span className='popup-info'>bruttó</span>} wide>
+                <div className='description'>
+                    Adó és járulék levonás előtti bérösszeg, amit a munkáltató fizet.
+                </div>
+            </Popup>
+        </>
+    } else if (props.place === "hitel") {
         return <>
             <Popup trigger={<span className='popup-info'>Diákhitel 1</span>} wide>
                 <div className='description'>
@@ -18,19 +26,11 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "brutto"){
-        return <>
-            <Popup trigger={<span className='popup-info'>bruttó</span>} wide>
-                <div className='description'>
-                    Adó és járulék levonás előtti bérösszeg, amit a munkáltató fizet.
-                </div>
-            </Popup>
-        </>
-    }else if(props.place === "netto"){
+    } else if (props.place === "netto") {
         return <>
             <Popup trigger={<span className='popup-info'>nettó</span>} wide>
                 <div className='description'>
-                    Az az összeg, amit a munkavállaló ténylegesen kézhez kap minden adó és járulékfizetés után.<br/><br/>Levonásra kerül a:
+                    Az az összeg, amit a munkavállaló ténylegesen kézhez kap minden adó és járulékfizetés után.<br /><br />Levonásra kerül a:
                     <ul>
                         <li>személyi jövedelem adó (15%),</li>
                         <li>társadalombiztosítási járulék (18.5%)</li>
@@ -38,7 +38,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "torleszt"){
+    } else if (props.place === "torleszt") {
         return <>
             <Popup trigger={<span className='popup-info'>törleszt</span>} wide>
                 <div className='description'>
@@ -46,7 +46,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "torleszto"){
+    } else if (props.place === "torleszto") {
         return <>
             <Popup trigger={<span className='popup-info'>törlesztőrészlet</span>} wide>
                 <div className='description'>
@@ -54,7 +54,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "felmondasi"){
+    } else if (props.place === "felmondasi") {
         return <>
             <Popup trigger={<span className='popup-info'>felmondási idő</span>} wide>
                 <div className='description'>
@@ -62,7 +62,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "befektet"){
+    } else if (props.place === "befektet") {
         return <>
             <Popup trigger={<span className='popup-info'>befektet</span>} wide>
                 <div className='description'>
@@ -70,7 +70,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "valuta"){
+    } else if (props.place === "valuta") {
         return <>
             <Popup trigger={<span className='popup-info'>valuta</span>} wide>
                 <div className='description'>
@@ -78,7 +78,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "valutaa"){
+    } else if (props.place === "valutaa") {
         return <>
             <Popup trigger={<span className='popup-info'>valutá</span>} wide>
                 <div className='description'>
@@ -86,15 +86,15 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "kotveny"){
+    } else if (props.place === "kotveny") {
         return <>
             <Popup trigger={<span className='popup-info'>kötvény</span>} wide>
                 <div className='description'>
-                    Hitelviszonyt megtestesítő értékpapír.<br/>A kötvény kibocsátója (az adós - jelen esetben az állam) arra kötelezi magát, hogy a kötvényben megjelelölt pénzösszeget, annak kamatát és egyéb jutalékait a mindenkori tulajdonosnak (hitelezőnek) a megjelölt időpontban és módon visszafizeti.
+                    Hitelviszonyt megtestesítő értékpapír.<br />A kötvény kibocsátója (az adós - jelen esetben az állam) arra kötelezi magát, hogy a kötvényben megjelelölt pénzösszeget, annak kamatát és egyéb jutalékait a mindenkori tulajdonosnak (hitelezőnek) a megjelölt időpontban és módon visszafizeti.
                 </div>
             </Popup>
         </>
-    }else if(props.place === "arfolyam"){
+    } else if (props.place === "arfolyam") {
         return <>
             <Popup trigger={<span className='popup-info'>árfolyam</span>} wide>
                 <div className='description'>
@@ -102,7 +102,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "Arfolyam"){
+    } else if (props.place === "Arfolyam") {
         return <>
             <Popup trigger={<span className='popup-info'>Árfolyam</span>} wide>
                 <div className='description'>
@@ -110,7 +110,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "futamido"){
+    } else if (props.place === "futamido") {
         return <>
             <Popup trigger={<span className='popup-info'>futamidő</span>} wide>
                 <div className='description'>
@@ -119,7 +119,7 @@ export default function PopupInfo (props){
             </Popup>
         </>
     }
-    else if(props.place === "Futamido"){
+    else if (props.place === "Futamido") {
         return <>
             <Popup trigger={<span className='popup-info'>Futamidő</span>} wide>
                 <div className='description'>
@@ -127,7 +127,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "Fixkamat"){
+    } else if (props.place === "Fixkamat") {
         return <>
             <Popup trigger={<span className='popup-info'>Fix kamatozású</span>} wide>
                 <div className='description'>
@@ -135,7 +135,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "kamat"){
+    } else if (props.place === "kamat") {
         return <>
             <Popup trigger={<span className='popup-info'>kamat</span>} wide>
                 <div className='description'>
@@ -143,7 +143,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "Kamat"){
+    } else if (props.place === "Kamat") {
         return <>
             <Popup trigger={<span className='popup-info'>Kamat</span>} wide>
                 <div className='description'>
@@ -151,7 +151,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "piac"){
+    } else if (props.place === "piac") {
         return <>
             <Popup trigger={<span className='popup-info'>pénzügyi piac</span>} wide>
                 <div className='description'>
@@ -159,7 +159,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "megtakaritas"){
+    } else if (props.place === "megtakaritas") {
         return <>
             <Popup trigger={<span className='popup-info'>megtakarítás</span>} wide>
                 <div className='description'>
@@ -167,7 +167,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "veteli"){
+    } else if (props.place === "veteli") {
         return <>
             <Popup trigger={<span className='popup-info'>Vételi árfolyam</span>} wide>
                 <div className='description'>
@@ -175,7 +175,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else if(props.place === "eladasi"){
+    } else if (props.place === "eladasi") {
         return <>
             <Popup trigger={<span className='popup-info'>Eladási árfolyam</span>} wide>
                 <div className='description'>
@@ -183,7 +183,7 @@ export default function PopupInfo (props){
                 </div>
             </Popup>
         </>
-    }else{
+    } else {
         return <></>;
     }
 }

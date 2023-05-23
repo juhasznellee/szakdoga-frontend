@@ -1,31 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
-.App{
+
+.App {
   margin: 0;
 }
+
 /* ---------- Háttér ---------- */
-.day-background{
+.day-background {
   background: url(../images/background_day.png);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
   animation: fadeInDay 2s;
 }
-.evening-background{
+
+.evening-background {
   background: url(../images/background_evening.png);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
   animation: fadeInEvening 2s;
 }
-.night-background{
+
+.night-background {
   background: url(../images/background_night.png);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   min-height: 100vh;
   animation: fadeInNight 2s;
 }
+
 /* ---------- Fő vonal, megálló pontok, skill gombok ---------- */
-.chapter-one-circle{
+.chapter-one-circle {
   background: url(../images/circle_inactive.png);
   bottom: 14%;
   width: 70px;
@@ -33,7 +38,8 @@
   position: absolute;
   margin-left: 30%;
 }
-.chapter-one-circle-active{
+
+.chapter-one-circle-active {
   background: url(../images/circle_active.png);
   bottom: 14%;
   width: 70px;
@@ -41,7 +47,8 @@
   position: absolute;
   margin-left: 30%;
 }
-.chapter-one-work{
+
+.chapter-one-work {
   background: url(../images/ch1_work.png);
   bottom: 14%;
   width: 70px;
@@ -49,7 +56,8 @@
   position: absolute;
   margin-left: 30%;
 }
-.chapter-one-uni{
+
+.chapter-one-uni {
   background: url(../images/ch1_uni.png);
   bottom: 14%;
   width: 70px;
@@ -57,7 +65,8 @@
   position: absolute;
   margin-left: 30%;
 }
-.chapter-two-circle{
+
+.chapter-two-circle {
   background: url(../images/circle_inactive.png);
   bottom: 14%;
   width: 70px;
@@ -65,7 +74,8 @@
   position: absolute;
   margin-left: 50%;
 }
-.chapter-two-circle-active{
+
+.chapter-two-circle-active {
   background: url(../images/circle_active.png);
   bottom: 14%;
   width: 70px;
@@ -73,7 +83,8 @@
   position: absolute;
   margin-left: 50%;
 }
-.chapter-two-promotion{
+
+.chapter-two-promotion {
   background: url(../images/ch2_promotion.png);
   bottom: 14%;
   width: 70px;
@@ -81,7 +92,8 @@
   position: absolute;
   margin-left: 50%;
 }
-.chapter-two-failed-promotion{
+
+.chapter-two-failed-promotion {
   background: url(../images/ch2_failed_promotion.png);
   bottom: 14%;
   width: 70px;
@@ -89,7 +101,8 @@
   position: absolute;
   margin-left: 50%;
 }
-.chapter-two-new-job{
+
+.chapter-two-new-job {
   background: url(../images/ch2_new_job.png);
   bottom: 14%;
   width: 70px;
@@ -97,7 +110,8 @@
   position: absolute;
   margin-left: 50%;
 }
-.chapter-two-work-after-uni{
+
+.chapter-two-work-after-uni {
   background: url(../images/ch2_work_after_uni.png);
   bottom: 14%;
   width: 70px;
@@ -105,7 +119,8 @@
   position: absolute;
   margin-left: 50%;
 }
-.chapter-two-2nd-work-after-uni{
+
+.chapter-two-2nd-work-after-uni {
   background: url(../images/ch2_2nd_work_after_uni.png);
   bottom: 14%;
   width: 70px;
@@ -113,7 +128,8 @@
   position: absolute;
   margin-left: 50%;
 }
-.chapter-three-circle{
+
+.chapter-three-circle {
   background: url(../images/circle_inactive.png);
   bottom: 14%;
   width: 70px;
@@ -121,7 +137,8 @@
   position: absolute;
   margin-left: 70%;
 }
-.chapter-three-circle-active{
+
+.chapter-three-circle-active {
   background: url(../images/circle_active.png);
   bottom: 14%;
   width: 70px;
@@ -129,7 +146,8 @@
   position: absolute;
   margin-left: 70%;
 }
-.chapter-three-valuta{
+
+.chapter-three-valuta {
   background: url(../images/ch3_valuta.png);
   bottom: 14%;
   width: 80px;
@@ -137,7 +155,8 @@
   position: absolute;
   margin-left: 70%;
 }
-.chapter-three-bonds{
+
+.chapter-three-bonds {
   background: url(../images/ch3_bonds.png);
   bottom: 14%;
   width: 70px;
@@ -145,33 +164,40 @@
   position: absolute;
   margin-left: 70%;
 }
-.skill-circle{
+
+.skill-circle {
   background: url(../images/button_skill.png);
   height: 80px;
   width: 80px;
   position: absolute;
 }
+
 /* ---------- Infó tábla + Állapot jelző + Pörgethető kerék + Hiba üzi ---------- */
-div.container{
+div.container {
   display: flex;
   position: relative;
 }
-div.chapterTitle{
+
+div.chapterTitle {
   color: black;
   font-family: 'Merienda', cursive;
   font-weight: 400;
   font-size: 50px;
 }
-.day{
+
+.day {
   color: black;
 }
-.evening{
+
+.evening {
   color: white;
 }
-.night{
+
+.night {
   color: white;
 }
-div#player-money{
+
+div#player-money {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -179,7 +205,8 @@ div#player-money{
   margin-top: 70px;
   font-weight: 400;
 }
-div#player-job{
+
+div#player-job {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -187,7 +214,8 @@ div#player-job{
   margin-top: 110px;
   font-weight: 400;
 }
-div#player-salary{
+
+div#player-salary {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -195,7 +223,8 @@ div#player-salary{
   margin-top: 150px;
   font-weight: 400;
 }
-div#player-skill{
+
+div#player-skill {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -203,7 +232,8 @@ div#player-skill{
   margin-top: 190px;
   font-weight: 400;
 }
-div#player-loan{
+
+div#player-loan {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -211,7 +241,8 @@ div#player-loan{
   margin-top: 230px;
   font-weight: 400;
 }
-div#player-inv-title{
+
+div#player-inv-title {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -219,7 +250,8 @@ div#player-inv-title{
   margin-top: 70px;
   font-weight: 400;
 }
-div#player-inv1{
+
+div#player-inv1 {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -227,7 +259,8 @@ div#player-inv1{
   margin-top: 110px;
   font-weight: 400;
 }
-div#player-inv2{
+
+div#player-inv2 {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -235,7 +268,8 @@ div#player-inv2{
   margin-top: 150px;
   font-weight: 400;
 }
-div#player-inv3{
+
+div#player-inv3 {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -243,7 +277,8 @@ div#player-inv3{
   margin-top: 190px;
   font-weight: 400;
 }
-div#player-inv4{
+
+div#player-inv4 {
   position: absolute;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -251,7 +286,8 @@ div#player-inv4{
   margin-top: 230px;
   font-weight: 400;
 }
-.wheelspin{
+
+.wheelspin {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   color: black;
@@ -261,7 +297,8 @@ div#player-inv4{
   height: 45vh;
   position: absolute;
 }
-span.title{
+
+span.title {
   font-size: 26px;
   font-family: 'Merienda', cursive;
   font-weight: 600;
@@ -269,12 +306,13 @@ span.title{
   padding-left: 28%;
   position: absolute;
 }
-div#wheel{
+
+div#wheel {
   margin-top: -70px;
   margin-left: -10px;
 }
 
-.error-message{
+.error-message {
   color: black;
   font-family: 'Merienda', cursive;
   font-size: 22px;
@@ -286,14 +324,17 @@ div#wheel{
   letter-spacing: 0.2px;
   line-height: 130%;
 }
-.plusz{
+
+.plusz {
   color: rgb(2, 175, 2);
 }
-.minusz{
+
+.minusz {
   color: red;
 }
+
 /* ----- Setup */
-.begin-game{
+.begin-game {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   color: black;
@@ -309,7 +350,8 @@ div#wheel{
   padding: 30px 20px;
   position: absolute;
 }
-button#to-chapter-one-button{
+
+button#to-chapter-one-button {
   width: 30%;
   color: white;
   background: url(../images/game_button.png);
@@ -324,19 +366,23 @@ button#to-chapter-one-button{
   font-size: 20px;
   margin-top: 5%;
 }
-button:hover{
+
+button:hover {
   filter: brightness(120%);
 }
-.lower{
+
+.lower {
   text-transform: lowercase;
 }
+
 /* ----- Feladatok */
-div.task-title{
+div.task-title {
   font-size: 25px;
   margin-bottom: 20px;
   font-family: 'Merienda', cursive;
 }
-input.task-input{
+
+input.task-input {
   background: 0;
   border: 0;
   border-bottom: 2px solid black;
@@ -350,7 +396,8 @@ input.task-input{
   font-family: 'Merienda', cursive;
   font-weight: 400;
 }
-input.investment-input{
+
+input.investment-input {
   background: white;
   border: 2px solid black;
   outline: none;
@@ -364,21 +411,25 @@ input.investment-input{
   font-family: 'Merienda', cursive;
   font-weight: 400;
 }
-input:focus{
+
+input:focus {
   padding-bottom: 5px;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 /* ----- Narration Table */
-.narration{
+.narration {
   font-size: 18px;
   color: rgb(89, 88, 88);
   font-weight: 400;
 }
-.table-narration{
+
+.table-narration {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -394,7 +445,8 @@ input::-webkit-inner-spin-button {
   padding: 30px 20px;
   position: absolute;
 }
-.table-narration-smaller{
+
+.table-narration-smaller {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -410,7 +462,8 @@ input::-webkit-inner-spin-button {
   padding: 20px 20px;
   position: absolute;
 }
-.table-narration-big{
+
+.table-narration-big {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -426,7 +479,8 @@ input::-webkit-inner-spin-button {
   padding: 10px 20px;
   position: absolute;
 }
-.table-narration-shorter{
+
+.table-narration-shorter {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -443,7 +497,8 @@ input::-webkit-inner-spin-button {
   padding-top: 13vh;
   position: absolute;
 }
-div#info-table button{
+
+div#info-table button {
   color: white;
   background: url(../images/game_button.png);
   background-size: cover;
@@ -458,21 +513,28 @@ div#info-table button{
   width: fit-content;
   height: 50px;
 }
-button#back-to-home{
+
+button#back-to-home {
   margin-left: 40%;
   margin-top: -10px;
 }
-button#tasks-button, button#after-tasks-button, button#chapter-continue{
+
+button#tasks-button,
+button#after-tasks-button,
+button#chapter-continue {
   margin-top: 25px;
 }
-button#chapter-continue-smaller{
+
+button#chapter-continue-smaller {
   margin-top: 13px;
 }
-.box0{
+
+.box0 {
   grid-column: 1 / 5;
 }
+
 /* ----- CH1 ----- */
-.chapter-one-table{
+.chapter-one-table {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -487,27 +549,31 @@ button#chapter-continue-smaller{
   line-height: 125%;
   padding: 50px 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr) ;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 20% 20% auto;
   justify-items: center;
   position: absolute;
 }
-.box1-ch1{
+
+.box1-ch1 {
   grid-column: 1 / 5;
   font-size: 30px;
   font-weight: 600;
   margin-top: 60px;
 }
-.box2-ch1{
+
+.box2-ch1 {
   grid-column: 1 / 3;
   margin-top: 80px;
 }
-.box3-ch1{
+
+.box3-ch1 {
   grid-column: 3 / 5;
   margin-top: 80px;
 }
+
 /* ----- CH2 ----- */
-.chapter-two-table{
+.chapter-two-table {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -522,27 +588,31 @@ button#chapter-continue-smaller{
   font-size: 20px;
   padding: 30px 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr) ;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 20% 20% auto;
   justify-items: center;
   position: absolute;
 }
-.box1-ch2{
+
+.box1-ch2 {
   grid-column: 1 / 5;
   font-size: 30px;
   font-weight: 600;
   margin-top: 150px;
 }
-.box2-ch2{
+
+.box2-ch2 {
   grid-column: 1 / 3;
   margin-top: 150px;
 }
-.box3-ch2{
+
+.box3-ch2 {
   margin-top: 150px;
   grid-column: 3 / 5;
 }
+
 /* ----- CH3 ----- */
-.chapter-three-table{
+.chapter-three-table {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -557,12 +627,13 @@ button#chapter-continue-smaller{
   font-size: 20px;
   padding: 20px 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr) ;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 20% 20% auto;
   justify-items: center;
   position: absolute;
 }
-.chapter-three-table-half-skill{
+
+.chapter-three-table-half-skill {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -577,12 +648,13 @@ button#chapter-continue-smaller{
   font-size: 20px;
   padding: 20px 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr) ;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 20% 20% auto;
   justify-items: center;
   position: absolute;
 }
-.chapter-three-table-full-skill{
+
+.chapter-three-table-full-skill {
   background-color: rgba(239, 239, 239, 0.85);
   border-radius: 1%;
   width: 50%;
@@ -597,12 +669,13 @@ button#chapter-continue-smaller{
   font-size: 20px;
   padding: 20px 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr) ;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 20% 20% auto;
   justify-items: center;
   position: absolute;
 }
-div#info-table button#chapter-investment{
+
+div#info-table button#chapter-investment {
   color: white;
   background: url(../images/game_button.png);
   background-size: cover;
@@ -620,270 +693,314 @@ div#info-table button#chapter-investment{
   margin-left: 44%;
   margin-top: 24%;
 }
-.box1-ch3{
+
+.box1-ch3 {
   grid-column: 1 / 5;
   margin-top: 130px;
   font-size: 30px;
   font-weight: 600;
 }
-.box2-ch3{
+
+.box2-ch3 {
   grid-column: 1 / 3;
   margin-top: 130px;
 }
-.box3-ch3{
+
+.box3-ch3 {
   grid-column: 3 / 5;
   margin-top: 130px;
 }
-/* 2 lehetőség */ 
-.seperator2-1{
+
+/* 2 lehetőség */
+.seperator2-1 {
   border-right: 4px solid black;
   height: 200px;
   position: absolute;
   top: 36%;
   left: 50%;
 }
-.col1-ch3-2-title{
+
+.col1-ch3-2-title {
   grid-column: 1 / 3;
   font-size: 21px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col1-ch3-2{
+
+.col1-ch3-2 {
   text-align: center;
   grid-column: 1 / 3;
   margin-top: 15px;
 }
-.col2-ch3-2-title{
+
+.col2-ch3-2-title {
   grid-column: 3 / 5;
   font-size: 21px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col2-ch3-2{
+
+.col2-ch3-2 {
   text-align: center;
   grid-column: 3 / 5;
   margin-top: 15px;
 }
+
 /* 3 lehetőség */
-.seperator3-1{
+.seperator3-1 {
   border-right: 4px solid black;
   height: 200px;
   position: absolute;
   top: 36%;
   left: 33.5%;
 }
-.seperator3-2{
+
+.seperator3-2 {
   border-right: 4px solid black;
   height: 200px;
   position: absolute;
   top: 36%;
   left: 65%;
 }
-.col1-ch3-3-title{
+
+.col1-ch3-3-title {
   grid-column: 1 / 2;
   font-size: 21px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col1-ch3-3{
+
+.col1-ch3-3 {
   text-align: center;
   grid-column: 1 / 2;
   margin-top: 15px;
 }
-.col2-ch3-3-title{
+
+.col2-ch3-3-title {
   grid-column: 2 / 3;
   font-size: 21px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col2-ch3-3{
+
+.col2-ch3-3 {
   text-align: center;
   grid-column: 2 / 3;
   margin-top: 15px;
 }
-.col3-ch3-3-title{
+
+.col3-ch3-3-title {
   grid-column: 3 / 4;
   font-size: 21px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col3-ch3-3{
+
+.col3-ch3-3 {
   text-align: center;
   grid-column: 3 / 4;
   margin-top: 15px;
 }
+
 /* 4 lehetőség */
-.seperator4-1{
+.seperator4-1 {
   border-right: 4px solid black;
   height: 200px;
   position: absolute;
   top: 36%;
   left: 26%;
 }
-.seperator4-2{
+
+.seperator4-2 {
   border-right: 4px solid black;
   height: 200px;
   position: absolute;
   top: 36%;
   left: 50%;
 }
-.seperator4-3{
+
+.seperator4-3 {
   border-right: 4px solid black;
   height: 200px;
   position: absolute;
   top: 36%;
   left: 74%;
 }
-.col1-ch3-4-title{
+
+.col1-ch3-4-title {
   grid-column: 1 / 2;
   font-size: 20px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col1-ch3-4{
+
+.col1-ch3-4 {
   grid-column: 1 / 2;
   text-align: center;
   margin-top: 15px;
   font-size: 19px;
 }
-.col2-ch3-4-title{
+
+.col2-ch3-4-title {
   grid-column: 2 / 3;
   font-size: 20px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col2-ch3-4{
+
+.col2-ch3-4 {
   grid-column: 2 / 3;
   text-align: center;
   margin-top: 15px;
   font-size: 19px;
 }
-.col3-ch3-4-title{
+
+.col3-ch3-4-title {
   grid-column: 3 / 4;
   font-size: 20px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col3-ch3-4{
+
+.col3-ch3-4 {
   grid-column: 3 / 4;
   text-align: center;
   margin-top: 15px;
   font-size: 19px;
 }
-.col4-ch3-4-title{
+
+.col4-ch3-4-title {
   grid-column: 4 / 5;
   font-size: 20px;
   font-weight: 600;
   margin-top: 30px;
   text-align: center;
 }
-.col4-ch3-4{
+
+.col4-ch3-4 {
   grid-column: 4 / 5;
   text-align: center;
   margin-top: 15px;
   font-size: 19px;
 }
 
-.icon{
+.icon {
   width: 20px;
   height: 20px;
   margin-left: 2%;
 }
+
 /* ---------- Popup szövegek ---------- */
-.description{
+.description {
   font-family: 'Merienda', cursive;
   font-size: 14px;
 }
-.popup-info{
+
+.popup-info {
   font-family: 'Merienda', cursive;
   font-size: 20px;
   color: #1799f5;
 }
+
 /* ---------- Karakter mozgás aimálás ---------- */
-img.begin-style{
+img.begin-style {
   position: absolute;
   bottom: 18%;
   height: 30vh;
   margin-left: 96px;
 }
+
 /* ----- Az első fejezet felé */
 @keyframes moveChapterOne {
   from {
     transform: translateX(0px);
   }
+
   to {
     transform: translateX(400px);
   }
 }
-img.move-chapter-one-style{
+
+img.move-chapter-one-style {
   animation: moveChapterOne forwards 5s linear;
   position: absolute;
   bottom: 18%;
   height: 30vh;
   margin-left: 96px;
 }
+
 /* ----- A második fejezet felé */
 @keyframes moveChapterTwo {
   from {
     transform: translateX(400px);
   }
+
   to {
     transform: translateX(800px);
   }
 }
-img.move-chapter-two-style{
+
+img.move-chapter-two-style {
   animation: moveChapterTwo forwards 5s linear;
   position: absolute;
   bottom: 18%;
   height: 30vh;
   margin-left: 96px;
 }
-img.chapter-two-style{
+
+img.chapter-two-style {
   position: absolute;
   bottom: 18%;
   height: 30vh;
   margin-left: 896px;
 }
+
 /* ----- A harmadik fejezet felé */
 @keyframes moveChapterThree {
   from {
     transform: translateX(800px);
   }
+
   to {
     transform: translateX(1200px);
   }
 }
-img.move-chapter-three-style{
+
+img.move-chapter-three-style {
   animation: moveChapterThree forwards 5s linear;
   position: absolute;
   bottom: 18%;
   height: 30vh;
   margin-left: 96px;
 }
-img.chapter-three-style{
+
+img.chapter-three-style {
   position: absolute;
   bottom: 18%;
   height: 30vh;
   margin-left: 1296px;
 }
+
 /* ----- A vége felé */
 @keyframes moveChapterEnd {
   from {
     transform: translateX(1200px);
   }
+
   to {
     transform: translateX(1600px);
   }
 }
-img.move-chapter-end-style{
+
+img.move-chapter-end-style {
   animation: moveChapterEnd forwards 5s linear;
   position: absolute;
   bottom: 18%;
