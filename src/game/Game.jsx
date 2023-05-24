@@ -582,7 +582,6 @@ export default function Game() {
 
     };
     const newJobAfterUniCh2 = () => { //nem fogadja el az első munkát
-        setWeather('evening');
         setOptionCh2(3);
         playerInfo[0].salary_id = randomSelector(salaries, playerInfo[0].level);
         for (let i = 0; i < salaries.length; i++) {
@@ -595,7 +594,6 @@ export default function Game() {
         setStage(stage + 1); //33
     };
     const acceptJobCh2 = () => { //elfogadja az első munkát
-        setWeather('evening');
         setOptionCh2(4);
         setJob(playerInfo[0].job_name);
         setSalary(parseInt(playerInfo[0].salary));
