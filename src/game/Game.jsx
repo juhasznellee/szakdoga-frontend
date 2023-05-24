@@ -696,7 +696,6 @@ export default function Game() {
         setCircleCh3(false);
         setWeather('day');
         setStage(10); //10
-        setMoneySpent(0);
     };
 
     /* ----- VALUTA */
@@ -711,7 +710,6 @@ export default function Game() {
                 playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val1);
                 setMoney(playerInfo[0].money);
                 setInv1(inv1 + parseInt(amount));
-                setMoneySpent(moneySpent + (parseInt(amount) * val1));
             } else {
                 setErrorMsg(true);
                 setTimeout(function () {
@@ -726,7 +724,6 @@ export default function Game() {
                 playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val2);
                 setMoney(playerInfo[0].money);
                 setInv2(inv2 + parseInt(amount));
-                setMoneySpent(moneySpent + (parseInt(amount) * val2));
             } else {
                 setErrorMsg(true);
                 setTimeout(function () {
@@ -741,7 +738,6 @@ export default function Game() {
                 playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val3);
                 setMoney(playerInfo[0].money);
                 setInv3(inv3 + parseInt(amount));
-                setMoneySpent(moneySpent + (parseInt(amount) * val3));
             } else {
                 setErrorMsg(true);
                 setTimeout(function () {
@@ -756,7 +752,6 @@ export default function Game() {
                 playerInfo[0].money = parseInt(playerInfo[0].money) - (parseInt(amount) * val4);
                 setMoney(playerInfo[0].money);
                 setInv4(inv4 + parseInt(amount));
-                setMoneySpent(moneySpent + (parseInt(amount) * val4));
             } else {
                 setErrorMsg(true);
                 setTimeout(function () {
@@ -778,7 +773,6 @@ export default function Game() {
                 playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
                 setMoney(playerInfo[0].money);
                 setInv1(inv1 + parseInt(amount));
-                setMoneySpent(moneySpent + parseInt(amount));
             } else {
                 setErrorMsg(true);
                 setTimeout(function () {
@@ -793,7 +787,6 @@ export default function Game() {
                 playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
                 setMoney(playerInfo[0].money);
                 setInv2(inv2 + parseInt(amount));
-                setMoneySpent(moneySpent + parseInt(amount));
             } else {
                 setErrorMsg(true);
                 setTimeout(function () {
@@ -808,7 +801,6 @@ export default function Game() {
                 playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
                 setMoney(playerInfo[0].money);
                 setInv3(inv3 + parseInt(amount));
-                setMoneySpent(moneySpent + parseInt(amount));
             } else {
                 setErrorMsg(true);
                 setTimeout(function () {
@@ -823,7 +815,6 @@ export default function Game() {
                 playerInfo[0].money = parseInt(playerInfo[0].money) - parseInt(amount);
                 setMoney(playerInfo[0].money);
                 setInv4(inv4 + parseInt(amount));
-                setMoneySpent(moneySpent + parseInt(amount));
             } else {
                 setErrorMsg(true);
                 setTimeout(function () {
@@ -911,6 +902,7 @@ export default function Game() {
                 allSpent = allSpent + buy;
                 sell = (inv1 * newVal1);
                 allGet = allGet + sell;
+                playerInfo[0].money = parseInt(playerInfo[0].money) + sell;
             }
             if (inv2 > 0) {
                 buy = (inv2 * val2);
