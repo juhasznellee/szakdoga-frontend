@@ -3,7 +3,19 @@ import { Popup } from 'semantic-ui-react'
 import '../home/App.css';
 
 export default function GameDescPopup(props) {
-  if (props.place === "admin") {
+  if (props.place === "player") {
+    return (<>
+      <Popup trigger={<button className='popover-button'>Játék leírása</button>} wide='very'>
+        <div className='description'>
+          A játékban segítenünk kell döntéseket meghozni a kiválasztott karakterünknek.<br />
+          Minden döntésünk befolyással van a karakterünk jövőjére nézve, így jól át kell gondolni, hogy mit tanácsolunk neki.<br />
+          Legyünk figyelmesek, mert lehetőségünk adódik képesség pontok szerzésére, mely később a segítségünkre válhat.<br /><br />
+
+          Bejelentkezni csak rendszergazdai jogosultsággal lehetséges.<br />
+        </div>
+      </Popup>
+    </>);
+  } else {
     return (<>
       <Popup trigger={<button className='popover-button'>Játék leírása</button>} wide='very'>
         <div className='description'>
@@ -18,19 +30,6 @@ export default function GameDescPopup(props) {
               A <i>'Fizetések szerkesztése'</i> gombnál a szerezhető havi bruttó fizetéseket módosíthatjuk. Itt is ugyanúgy minden összeghez tartozik egy szint, tehát a munka és a fizetés szintje össze vannak kötve.
             </li>
           </ul>
-        </div>
-      </Popup>
-    </>);
-
-  } else {
-    return (<>
-      <Popup trigger={<button className='popover-button'>Játék leírása</button>} wide='very'>
-        <div className='description'>
-          A játékban segítenünk kell döntéseket meghozni a kiválasztott karakterünknek.<br />
-          Minden döntésünk befolyással van a karakterünk jövőjére nézve, így jól át kell gondolni, hogy mit tanácsolunk neki.<br />
-          Legyünk figyelmesek, mert lehetőségünk adódik képesség pontok szerzésére, mely később a segítségünkre válhat.<br /><br />
-
-          Bejelentkezni csak rendszergazdai jogosultsággal lehetséges.<br />
         </div>
       </Popup>
     </>);

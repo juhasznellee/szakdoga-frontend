@@ -90,7 +90,7 @@ function PlayerPage() {
               <div id='start-message'>
                 A képre kattintva válaszd ki a karakteredet, majd adj neki nevet!
               </div>
-              <DescPopup /><br />
+              <DescPopup place="player" /><br />
             </div>
           </div>
           <div className='columns'>

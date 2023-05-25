@@ -8,11 +8,13 @@ export default function CustomButton(props) {
     } else if (props.chapter === 1 && props.stage === 15) {
         return <button id='after-tasks-button' onClick={props.onclick}>Ellenőrzés!</button>
     } else if (props.chapter === 1 && (props.stage === 16 || props.stage === 26)) {
-        return <button id='chapter-continue' onClick={props.onclick}>Még találkozunk!</button>
+        return <button id='chapter-continue' onClick={props.onclick}>Még beszélünk!</button>
     } else if (props.chapter === 1 && props.stage === 24) {
         return <button id='chapter-continue' onClick={props.onclick}>Eredmények megtekintése!</button>
     } else if (props.chapter === 2 && (props.stage === 13 || props.stage === 14 || props.stage === 24 || props.stage === 25)) {
         return <button id='chapter-continue' onClick={props.onclick}>Még találkozunk!</button>
+    } else if (props.chapter === 2 && (props.stage === 33 || props.stage === 34)) {
+        return <button id='chapter-continue' onClick={props.onclick}>Tovább a feladatokra!</button>
     } else if (props.chapter === 2 && (props.stage === 37 || props.stage === 38)) {
         return <button id='chapter-continue' onClick={props.onclick}>Még találkozunk!</button>
     } else if (props.chapter === 2 && props.stage === 22) {

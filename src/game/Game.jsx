@@ -1126,14 +1126,14 @@ export default function Game() {
                 return (
                     <div className="table-narration">
                         <InfoTable chapter={2} stage={33} salary={playerInfo[0].salary} oldsalary={oldSalary} />
-                        <CustomButton onclick={beforeTasksCh2} />
+                        <CustomButton onclick={beforeTasksCh2} chapter={2} stage={33} />
                     </div>
                 );
             } else if (chapter === 2 && stage === 34) {
                 return (
                     <div className="table-narration">
                         <InfoTable chapter={2} stage={34} jobname={playerInfo[0].job_name} salary={playerInfo[0].salary} />
-                        <CustomButton onclick={beforeTasksCh2} />
+                        <CustomButton onclick={beforeTasksCh2} chapter={2} stage={34} />
                     </div>
                 );
             } else if ((chapter === 2 && stage === 35) || (chapter === 2 && stage === 36)) {
