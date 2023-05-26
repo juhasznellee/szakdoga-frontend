@@ -172,7 +172,7 @@ export default function Game() {
             setSkillB1(true);
             setTimeout(function () {
                 setSkillB1(false);
-            }, randomNumber(2500, 4000));
+            }, randomNumber(3000, 6000));
         }, randomNumber(500, 3000));
     };
 
@@ -197,7 +197,7 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(2500, 4000));
+            }, randomNumber(3000, 6000));
         }, randomNumber(500, 3000));
         setJob(playerInfo[0].job_name);
         setSalary(salary + parseInt(playerInfo[0].salary));
@@ -241,7 +241,7 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(2500, 4000));
+                }, randomNumber(3000, 6000));
             }, randomNumber(500, 3000));
         } else {
             setStage(stage + 2); // 37 / 38
@@ -284,7 +284,7 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(2500, 4000));
+            }, randomNumber(3000, 6000));
         }, randomNumber(500, 3000));
         setStage(stage + 20 + 1); //24
     };
@@ -301,7 +301,7 @@ export default function Game() {
             setSkillB1(true);
             setTimeout(function () {
                 setSkillB1(false);
-            }, randomNumber(2500, 4000));
+            }, randomNumber(3000, 6000));
         }, randomNumber(500, 3000));
         if (winner === 3) {
             playerInfo[0].level = 3;
@@ -377,7 +377,7 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(2500, 4000));
+                }, randomNumber(3000, 6000));
             }, randomNumber(500, 3000));
             setSalary(parseInt(playerInfo[0].salary));
             setStage(stage + 1); //13
@@ -388,7 +388,7 @@ export default function Game() {
                 setSkillB2(true);
                 setTimeout(function () {
                     setSkillB2(false);
-                }, randomNumber(2500, 4000));
+                }, randomNumber(3000, 6000));
             }, randomNumber(500, 3000));
         }
     };
@@ -473,7 +473,7 @@ export default function Game() {
                 setSkillB1(true);
                 setTimeout(function () {
                     setSkillB1(false);
-                }, randomNumber(2500, 4000));
+                }, randomNumber(3000, 6000));
             }, randomNumber(500, 3000));
             setJob(playerInfo[0].job_name);
             setSalary(parseInt(playerInfo[0].salary));
@@ -497,7 +497,7 @@ export default function Game() {
                 setSkillB2(true);
                 setTimeout(function () {
                     setSkillB2(false);
-                }, randomNumber(2500, 4000));
+                }, randomNumber(3000, 6000));
             }, randomNumber(500, 3000));
             setJob(playerInfo[0].job_name);
             setSalary(parseInt(playerInfo[0].salary));
@@ -575,7 +575,7 @@ export default function Game() {
             setSkillB2(true);
             setTimeout(function () {
                 setSkillB2(false);
-            }, randomNumber(2500, 4000));
+            }, randomNumber(3000, 6000));
         }, randomNumber(500, 3000));
         setOldSalary(playerInfo[0].salary);
         setStage(stage + 1); //32
